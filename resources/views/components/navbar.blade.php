@@ -48,7 +48,7 @@
                 </div>
             </div>
             <a href="" class="nav-item nav-link">Contact Us</a>
-            <a href="{{ route('donate') }}" class="donate-link">Donate</a>
+            <a href="/" class="donate-link">Donate</a>
         </div>
     </div>
 </nav>
