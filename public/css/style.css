@@ -499,14 +499,27 @@
 .what-we-believe-list {
     list-style-type: square;
 }
-
+.what-we-believe {
+    margin-top: 50px;
+  }
+  
+  .what-we-believe h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .list-group-item {
+    padding: 15px;
+    font-size: 18px;
+  }
 .mission-vision-values-box {
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
 
 .mission-vision-box {
-    background-color: orange;
     display: grid;
     color: black;
     grid-template-columns: 1fr 1fr;
@@ -525,9 +538,9 @@
     }
 
 .values-box {
-    background-color: rgb(74, 74, 208);
-    color: white;
+    margin-top: 35px;
 }
+
 /*About Us Custom Styles End*/
 .card {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -662,3 +675,50 @@ text-decoration: none;
     height: 300px;
     object-fit: cover;
 }
+.mission-vision {
+    padding: 50px 0;
+    background-color: #f5f5f5; /* Adjust background color as needed */
+  }
+  
+  .mission-vision h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .mission-vision p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .mission-vision .row {
+      flex-direction: column;
+    }
+  }
+
+  .donation {
+    padding: 50px 0;
+  }
+  
+  .donation-option {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .donation-option img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .donation-option button {
+    margin-top: 10px;
+  }
+  .chapa{
+    scale: 1.3;
+    margin-bottom: 45px;
+    margin-top: 35px;
+  }

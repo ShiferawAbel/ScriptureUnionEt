@@ -18,6 +18,9 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/donate', function () {
+    return view('donate');
+});
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 

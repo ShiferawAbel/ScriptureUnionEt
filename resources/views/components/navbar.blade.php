@@ -47,8 +47,8 @@
                     <a href="feature.html" class="dropdown-item">Salvation Stories</a>
                 </div>
             </div>
-            <a href="" class="nav-item nav-link">Contact Us</a>
-            <a href="/" class="donate-link">Donate</a>
+            <a href="{{ url('contact') }}" class="nav-item nav-link">Contact Us</a>
+            <a href="{{ url('donate') }}" class="donate-link">Donate</a>
         </div>
     </div>
 </nav>
