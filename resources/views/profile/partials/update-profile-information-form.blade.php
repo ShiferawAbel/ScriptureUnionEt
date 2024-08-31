@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" enctype="multipart/form-data" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 
@@ -48,6 +48,10 @@
         </div>
 
         <div class="flex items-center gap-4">
+            <input type="file" name="profile_img" id="profile">
+        </div>
+
+        <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
@@ -60,5 +64,6 @@
                 >{{ __('Saved.') }}</p>
             @endif
         </div>
+
     </form>
 </section>
