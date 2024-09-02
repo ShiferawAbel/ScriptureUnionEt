@@ -46,5 +46,20 @@
     </div>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVideo"
+      aria-expanded="true" aria-controls="collapseVideo">
+      <img src="{{ asset('img/video-icon.png') }}" alt="" class="sidebar-icon">
+      <span>Videos</span>
+    </a>
+    <div id="collapseVideo" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Annoucements</h6>
+        <a class="collapse-item" href="{{ route('admin.videos.create') }}">Add New Video</a>
+        <a class="collapse-item" href="{{ route('admin.videos.index') }}">All Videos</a>
+      </div>
+    </div>
+  </li>
+
 </ul>
 <!-- Sidebar -->

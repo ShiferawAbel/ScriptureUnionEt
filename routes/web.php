@@ -5,6 +5,7 @@ use App\Http\Controllers\AnnoucmentController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MinistryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VideoController;
 use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,8 @@ Route::get('/annoucments/{annoucment}', [AnnoucmentController::class, 'show'])->
 Route::get('/ministries/highschool-ministry', [MinistryController::class, 'highschool'])->name('highschool-ministry');
 Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])->name('church-ministry');
 
+Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
+Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'index'])->name('admin.index');
@@ -49,6 +52,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
     Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
     Route::delete('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
+
+    Route::get('/videos', [App\Http\Controllers\admin\VideoController::class, 'index'])->name('admin.videos.index');
+    Route::get('/videos/create', [App\Http\Controllers\admin\VideoController::class, 'create'])->name('admin.videos.create');
+    Route::post('/videos/store', [App\Http\Controllers\admin\VideoController::class, 'store'])->name('admin.videos.store');
+    Route::get('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'show'])->name('admin.videos.show');
+    // Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
+    // Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
+    // Route::delete('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
 });
 
 Route::get('/dashboard', function () {
