@@ -27,13 +27,42 @@
             </div>
             <div class="col-md-6">
               <div class="donation-option">
+                  <img src="{{ asset('img/cbe.png')}}" alt="Cbe">
+                  <h4 class="text-center">Commercial Bank of Ethiopia</h4>
+                  <p class="text-center">Donate using CBE.</p>
+                  <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#cbeModal">Donate with CBE</button>
+               </div>
+          </div>
+      
+          <!-- Modal -->
+          <div class="modal fade" id="cbeModal" tabindex="-1" role="dialog" aria-labelledby="cbeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="cbeModalLabel">Donate with CBE</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Thank you for choosing to donate using the Commercial Bank of Ethiopia.</p>
+                  <h5>SCRIPTURE UNION OF ETHIOPA</h5>
+                  <h5>Account: 1000010818207</h5>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-6 mt-4">
+              <div class="donation-option">
                 <img src="{{ asset('img/paypal-logo.png')}}" alt="PayPal Logo">
                 <h4 class="text-center">PayPal</h4>
                 <p class="text-center">Donate using PayPal.</p>
                 <button class="btn btn-primary btn-block">Donate with PayPal</button>
               </div>
             </div>
-          </div>
-          </div>
       </section>
 </x-layouts.app>

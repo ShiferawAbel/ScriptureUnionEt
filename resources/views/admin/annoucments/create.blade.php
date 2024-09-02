@@ -14,15 +14,30 @@
                 <label for="body">News Body</label>
                 <textarea name="body" id="body" class="form-control" cols="30" rows="10"></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="thumbnail">Banner Image</label>
-                    <input type="file" name="thumbnail" id="thumbnail" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('thumbnail').click()">Choose Banner</button>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                <div class="form-group" id="bannerBox">
+                    <div class="file-upload">
+                      <label for="file-input">
+                        <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
+                    </label>
+                    <input id="file-input" type="file">
+                  </div>         
+                 </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
             </div>
         </div>
-    </div>
-</div>
-    
+    <script>
+      document.getElementById('file-input').addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      }
+        reader.readAsDataURL(file);
+      }
+      });
+    </script>
+        
 </x-layouts.admin>
