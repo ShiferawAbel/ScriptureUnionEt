@@ -15,9 +15,13 @@
                 <input type="text" name="youtube_iframe" class="form-control" id="youtubeFrame" placeholder="Enter Embed Link Here" autocomplete="off">
                 </div>
                 
-                <div class="form-group">
-                    <label for="thumbnail">Thumbail for the video</label>
-                    <input type="file" name="thumbnail" id="thumbnail" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('thumbnail').click()">Choose Banner</button>
+                <div class="form-group" id="bannerBox">
+                    <div class="file-upload">
+                        <label for="file-input">
+                        <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
+                    </label>
+                        <input name="thumbnail" id="file-input" type="file">
+                    </div>         
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -26,5 +30,17 @@
         </div>
     </div>
 </div>
-    
+<script>
+    document.getElementById('file-input').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+      document.getElementById('preview').src = e.target.result;
+    }
+      reader.readAsDataURL(file);
+    }
+    });
+  </script>
+      
 </x-layouts.admin>
