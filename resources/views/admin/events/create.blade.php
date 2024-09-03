@@ -25,13 +25,29 @@
                 <textarea name="description" id="description" class="form-control" cols="30" rows="10"></textarea>
               </div>
               <div class="form-group" id="bannerBox">
-                <label for="banner_img">Banner Image</label>
-                <input type="file" name="banner_img" id="banner_img" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('banner_img').click()">Choose Banner</button>
-              </div>
+                <div class="file-upload">
+                  <label for="file-input">
+                    <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
+                </label>
+                <input id="file-input" type="file">
+              </div>         
+             </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
         </div>
     </div>
+<script>
+  document.getElementById('file-input').addEventListener('change', function() {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+    document.getElementById('preview').src = e.target.result;
+  }
+    reader.readAsDataURL(file);
+  }
+  });
+</script>
     
 </x-layouts.admin>

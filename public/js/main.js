@@ -88,7 +88,7 @@
             '<i class="bi bi-chevron-right"></i>'
         ]
     });
-
+  
 
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
