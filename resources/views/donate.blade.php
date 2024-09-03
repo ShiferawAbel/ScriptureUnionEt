@@ -29,7 +29,7 @@
               <div class="donation-option">
                   <img src="{{ asset('img/cbe.png')}}" alt="Cbe">
                   <h4 class="text-center">Commercial Bank of Ethiopia</h4>
-                  <p class="text-center">Donate using CBE.</p>
+                  <p class="text-center">Donate using CBE. 1000010818207</p>
                   <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#cbeModal">Donate with CBE</button>
                </div>
           </div>

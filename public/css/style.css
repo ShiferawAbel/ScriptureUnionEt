@@ -753,3 +753,18 @@ text-decoration: none;
     max-width: 100%;
     max-height: 120px;
   }
+  .image-in-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    transition: opacity 0.7s ease-in-out;
+  }
+  
+  .card:hover .image-in-front {
+    opacity: 1; 
+  }
