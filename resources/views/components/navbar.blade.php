@@ -47,7 +47,7 @@
                     {{-- <a href="{{ route('videos.index') }}" class="dropdown-item">Salvation Stories</a> --}}
                 </div>
             </div>
-            <a href="{{ url('contact') }}" class="nav-item nav-link">Contact Us</a>
+            <a href="{{ route('contacts.create') }}" class="nav-item nav-link">Contact Us</a>
             <a href="{{ url('donate') }}" class="donate-link">Donate</a>
         </div>
     </div>
