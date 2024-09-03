@@ -16,7 +16,8 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
             <a href="/" class="nav-item nav-link active">Home</a>
-            <div class="nav-item dropdown">
+            <a href="/about" class="nav-link">About Us</a>
+            {{-- <div class="nav-item dropdown">
                 <a href="/about" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="/about" class="dropdown-item">About-Us</a>
@@ -24,8 +25,8 @@
                     <a href="feature.html" class="dropdown-item">Who We Are</a>
                     <a href="quote.html" class="dropdown-item">What We Believe</a>
                     <a href="team.html" class="dropdown-item">Our Staff</a>
-                </div>
-            </div>
+                </div> 
+            </div>--}}
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Ministries</a>
                 <div class="dropdown-menu fade-up m-0">
