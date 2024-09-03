@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\EventController as AdminEventController;
 use App\Http\Controllers\AnnoucmentController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MinistryController;
 use App\Http\Controllers\ProfileController;
@@ -16,12 +17,13 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/contact', function () {
-    return view('contact');
-});
 Route::get('/donate', function () {
     return view('donate');
 });
+
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 
