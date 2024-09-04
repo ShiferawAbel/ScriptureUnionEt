@@ -10,6 +10,9 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
     <x-application-logo></x-application-logo>
+    @auth
+        <a href="{{ route('admin.index') }}" class="donate-link" target="_blank">Admin Dashboard</a>
+    @endauth
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,6 +53,14 @@
             </div>
             <a href="{{ route('contacts.create') }}" class="nav-item nav-link">Contact Us</a>
             <a href="{{ url('donate') }}" class="donate-link">Donate</a>
+
+            @auth
+                <form method="POST" class="d-flex align-center" action="{{ route('logout') }}">
+                    @csrf
+                    
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>   
+            @endauth
         </div>
     </div>
 </nav>
