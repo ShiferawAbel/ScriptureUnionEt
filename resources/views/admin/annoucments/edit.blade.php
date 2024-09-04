@@ -8,17 +8,21 @@
                   @method('patch')
                   <div class="form-group">
                   <label for="headline">News Headline</label>
-                  <input type="text" name="headline" class="form-control" id="headline" value="{{ $annoucment->headline ? $annoucment->headline : '$annoucment->headline'}}" placeholder="Enter News Headline" autocomplete="off">
+                  <input type="text" name="headline" class="form-control" id="headline" value="{{ old('headline') ? old('headline') : $annoucment->headline}}" placeholder="Enter News Headline" autocomplete="off">
                   </div>
                   
                   <div class="form-group">
                   <label for="body">News Body</label>
-                  <textarea name="body" id="body" class="form-control" cols="30" rows="10">{{ $annoucment->headline ? $annoucment->headline : '$annoucment->headline'}}</textarea>
+                  <textarea name="body" id="body" class="form-control" cols="30" rows="10">{{ old('body') ? old('body') : $annoucment->body}}</textarea>
                   </div>
-                  <div class="form-group">
-                      <label for="thumbnail">Banner Image</label>
-                      <input type="file" name="thumbnail" id="thumbnail" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('thumbnail').click()">Choose Banner</button>
-                  </div>
+                  <div class="form-group" id="bannerBox">
+                    <div class="file-upload">
+                    <label for="file-input">
+                      <img id="preview" src="{{asset($annoucment->thumbnail)}}" alt="Choose File">
+                    </label>
+                    <input id="file-input" name="thumbnail" type="file">
+                  </div>         
+                 </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               </div>
