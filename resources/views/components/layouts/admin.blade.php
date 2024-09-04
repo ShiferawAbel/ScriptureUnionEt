@@ -9,16 +9,33 @@
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
   <title>RuangAdmin - Dashboard</title>
-  <link href="{{ asset('admin-resources/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('admin-resources/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+
+  <!-- Template Stylesheet -->
   <link href="{{ asset('admin-resources/css/ruang-admin.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
     <div id="wrapper">
         <x-layouts.admin-sidenav />
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="" class="admin-topnav">
             <div id="content">
                 <x-layouts.admin-topnav />
                 {{ $slot }}
@@ -27,10 +44,12 @@
     </div>
     
      
-<!-- Scroll to top -->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+   
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
 
   <script src="{{ asset('admin-resources/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('admin-resources/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

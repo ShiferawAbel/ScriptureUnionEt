@@ -768,3 +768,28 @@ text-decoration: none;
   .card:hover .image-in-front {
     opacity: 1; 
   }
+  .profilecolor{
+    color: #000;
+  }
+.admin-topnav{
+    top: 0;
+    bottom: 0;
+    width:90%;
+    background-color: #ffffff;
+}
+  
+  .admin-sidenav {
+    position: fixed;
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px; /* Adjust the width as needed */
+    background-color: #ffffff;
+    overflow-y: auto;
+  }
+  
+  #content-wrapper {
+    flex: 1; /* Allow the content to expand to fill the remaining space */
+    padding-left: 225px; /* Adjust the padding to match the side navigation width */
+  }

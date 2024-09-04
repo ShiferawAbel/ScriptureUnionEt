@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+<ul class="navbar-nav  bg-white navbar-light shadow border-top border-5 border-primary sidebar admin-sidenav" id="accordionSidebar">
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
     <div class="sidebar-brand-icon">
       <img src="{{ asset('img/SuLogo.png') }}">
