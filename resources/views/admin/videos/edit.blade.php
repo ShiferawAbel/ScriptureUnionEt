@@ -3,28 +3,55 @@
       <div class="container  d-flex justify-content-center">
           <div class="card w-50 mt-3">
               <div class="card-body">
-              <form action="{{ route('admin.annoucments.update', $annoucment) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('admin.videos.update', $video) }}" method="post" enctype="multipart/form-data">
                   @csrf
-                  @method('patch')
+                  @method('PATCH')
                   <div class="form-group">
-                  <label for="headline">News Headline</label>
-                  <input type="text" name="headline" class="form-control" id="headline" value="{{ $annoucment->headline ? $annoucment->headline : '$annoucment->headline'}}" placeholder="Enter News Headline" autocomplete="off">
+                    <label for="title">Title of the video</label>
+                    <input type="text" name="title" value="{{ old('title') ? old('title') : $video->title }}" class="form-control" id="headline" placeholder="Enter the title of the video" autocomplete="off">
+                    @error('title')
+                        <p>{{$message}}</p>
+                    @enderror
                   </div>
                   
                   <div class="form-group">
-                  <label for="body">News Body</label>
-                  <textarea name="body" id="body" class="form-control" cols="30" rows="10">{{ $annoucment->headline ? $annoucment->headline : '$annoucment->headline'}}</textarea>
+                    <label for="youtubeFrame">Enter the Youtube embed link here</label>
+                    <input type="text" name="youtube_iframe" value="{{ old('youtube_iframe') ? old('youtube_iframe') : $video->youtube_iframe }}" class="form-control" id="youtubeFrame" placeholder="Enter Embed Link Here" autocomplete="off">
+                    @error('youtube_iframe')
+                        <p>{{$message}}</p>
+                    @enderror
                   </div>
-                  <div class="form-group">
-                      <label for="thumbnail">Banner Image</label>
-                      <input type="file" name="thumbnail" id="thumbnail" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('thumbnail').click()">Choose Banner</button>
+                  
+                  <div class="form-group" id="bannerBox">
+                    <div class="file-upload">
+                      <label for="file-input">
+                        <img id="preview" src="{{asset($video->thumbnail)}}" alt="Choose File">
+                      </label>
+                      <input name="thumbnail" id="file-input" type="file">
+                    </div>         
+                    @error('thumbnail')
+                        <p>{{$message}}</p>
+                    @enderror
                   </div>
+  
                   <button type="submit" class="btn btn-primary">Submit</button>
               </form>
               </div>
           </div>
       </div>
   </div>
-      
-  </x-layouts.admin>
+  <script>
+    document.getElementById('file-input').addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      }
+      reader.readAsDataURL(file);
+    }
+    });
+  </script>
+        
+</x-layouts.admin>
   

@@ -53,15 +53,15 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'show'])->name('admin.annoucments.show');
     Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
     Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
-    Route::delete('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
+    Route::delete('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
 
     Route::get('/videos', [App\Http\Controllers\admin\VideoController::class, 'index'])->name('admin.videos.index');
     Route::get('/videos/create', [App\Http\Controllers\admin\VideoController::class, 'create'])->name('admin.videos.create');
     Route::post('/videos/store', [App\Http\Controllers\admin\VideoController::class, 'store'])->name('admin.videos.store');
     Route::get('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'show'])->name('admin.videos.show');
-    // Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
-    // Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
-    // Route::delete('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
+    Route::get('/videos/{video}/edit', [App\Http\Controllers\admin\VideoController::class, 'edit'])->name('admin.videos.edit');
+    Route::patch('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'update'])->name('admin.videos.update');
+    Route::delete('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'destroy'])->name('admin.videos.destroy');
 });
 
 Route::get('/dashboard', function () {
