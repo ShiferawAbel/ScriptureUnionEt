@@ -4,35 +4,68 @@
           <div class="card-body">
             <form action="{{ route('admin.events.update', $event) }}" method="POST" enctype="multipart/form-data">
               @csrf
-              @method('patch') 
+              @method('patch')
               <div class="form-group">
                 <label for="event_name">Event Name</label>
-                <input type="text" name="event_name" class="form-control" id="event_name" value="{{$event->event_name ? $event->event_name : ''}}" placeholder="Enter event name">
+                <input type="text" name="event_name" value="{{old('event_name') ? old('event_name') : $event->event_name}}" class="form-control" id="event_name" placeholder="Enter event name">
+                @error('event_name')
+                    <p>{{ $message }}</p>
+                @enderror
               </div>
               <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" name="location" class="form-control" value="{{$event->location ? $event->location : ''}}" id="location" placeholder="Enter location" autocomplete="home city">
+                <label for="location-input">Location</label>
+                <input type="text" name="location" class="form-control" value="{{old('location') ? old('location') : $event->location}}" id="location-input" placeholder="Enter location">
+                @error('location')
+                    <p>{{ $message }}</p>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="start_date_time">Start Date & Time</label>
-                <input type="datetime-local" name="start_date_time" value="{{$event->start_date_time ? $event->start_date_time : ''}}" class="form-control" id="start_date_time">
+                <input type="datetime-local" name="start_date_time" class="form-control" value="{{old('start_date_time') ? old('start_date_time') : $event->start_date_time->format('Y-m-d\TH:i')}}" id="start_date_time">
+                @error('start_date_time')
+                  <p>{{ $message }}</p>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="end_date_time">End Date & Time</label>
-                <input type="datetime-local" name="end_date_time" value="{{$event->end_date_time ? $event->end_date_time : ''}}" class="form-control" id="end_date_time">
+                <input type="datetime-local" name="end_date_time" class="form-control"value="{{old('end_date_time') ? old('end_date_time') : $event->end_date_time->format('Y-m-d\TH:i')}}" id="end_date_time">
+                @error('end_date_time')
+                  <p>{{ $message }}</p>
+                @enderror
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{$event->description ? $event->description : ''}}</textarea>
+                <textarea name="description" id="description" class="form-control" cols="30" rows="10">{{old('description') ? old('description') : $event->description}}</textarea>
+                @error('description')
+                  <p>{{ $message }}</p>
+                @enderror
               </div>
-              <div class="form-group">
-                  <label for="banner_img">Banner Image</label>
-                  <input type="file" name="banner_img" id="banner_img" style="display: none;">  <button type="button" class="btn btn-primary" onclick="document.getElementById('banner_img').click()">Choose Banner</button>
-                </div>
+              <div class="form-group" id="bannerBox">
+                <div class="file-upload">
+                  <label for="file-input">
+                    <img id="preview" src="{{asset($event->banner_img)}}" alt="Choose File">
+                </label>
+                <input id="file-input" name="banner_img" type="file">
+                @error('banner_img')
+                  <p>{{ $message }}</p>
+                @enderror
+              </div>         
+             </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
         </div>
     </div>
-    
+    <script>
+      document.getElementById('file-input').addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+        document.getElementById('preview').src = e.target.result;
+      }
+        reader.readAsDataURL(file);
+      }
+      });
+    </script>
 </x-layouts.admin>

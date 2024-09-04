@@ -40,9 +40,10 @@ class EventController extends Controller
                 $file_name = date('YmdHi').'1.'.$request->file('banner_img')->extension();
             }
             $file->move(public_path('user_uploads/events/banners'), $file_name);
+            $full_path = 'user_uploads/events/banners/'.$file_name;
         }
         $event = Event::create($data);
-        $event['banner_img'] = $file_name;
+        $event['banner_img'] = $full_path;
         $event->save();
         return redirect(route('admin.events.show', $event));
     }

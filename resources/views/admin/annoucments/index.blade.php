@@ -13,7 +13,7 @@
         <a href="{{ route('admin.annoucments.show', $annoucment) }}">
               <div class="card upcoming-event">
                 <div class="card-image">
-                  <img class="card-img-top" src="{{ asset('user_uploads/annoucments/thumbnails/'.$annoucment->thumbnail) }}">
+                  <img class="card-img-top" src="{{ asset($annoucment->thumbnail) }}">
                   <span class="card-banner">Upcoming</span>
                   <span class="card-title">{{ $annoucment->headline }}</span>
                 </div>

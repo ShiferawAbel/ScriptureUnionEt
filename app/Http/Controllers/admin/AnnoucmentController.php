@@ -32,9 +32,10 @@ class AnnoucmentController extends Controller
                 $file_name = date('YmdHi').'1.'.$request->file('thumbnail')->extension();
             }
             $file->move(public_path('user_uploads/annoucments/thumbnails'), $file_name);
+            $full_path = 'user_uploads/annoucments/thumbnails/'.$file_name;
         }
         $annoucment = Annoucment::create($data);
-        $annoucment['thumbnail'] = $file_name;
+        $annoucment['thumbnail'] = $full_path;
         $annoucment->save();
         return redirect(route('admin.annoucments.show', $annoucment));
     }
@@ -66,7 +67,8 @@ class AnnoucmentController extends Controller
                 $file_name = date('YmdHi').'1.'.$request->file('thumbnail')->extension();
             }
             $file->move(public_path('user_uploads/annoucments/thumbnails'), $file_name);
-            $annoucment['thumbnail'] = $file_name;
+            $full_path = 'user_uploads/annoucments/thumbnails/'.$file_name;
+            $annoucment['thumbnail'] = $full_path;
         }
         $annoucment->save();
         return redirect(route('admin.annoucments.show', $annoucment));

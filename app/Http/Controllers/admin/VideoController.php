@@ -26,11 +26,11 @@ class VideoController extends Controller
         // dd($data);
         $file_name = date('YmdHi').'.'.$request->file('thumbnail')->extension();
         $request->file('thumbnail')->move(public_path('user_uploads/videos/thumbnails'),  $file_name);
-        $file_name = 'user_uploads/videos/thumbnails/'.$file_name;
+        $full_path = 'user_uploads/videos/thumbnails/'.$file_name;
         $video = Video::create([
             'title' => $request->input('title'),
             'youtube_iframe' => $request->input('youtube_iframe'),
-            'thumbnail' => $file_name,
+            'thumbnail' => $full_path,
         ]);
 
         return redirect(route('admin.videos.show', $video));
