@@ -780,7 +780,7 @@ text-decoration: none;
   
   .admin-sidenav {
     position: fixed;
-    position: relative;
+    position: relative;l;
     top: 0;
     left: 0;
     bottom: 0;
@@ -792,4 +792,8 @@ text-decoration: none;
   #content-wrapper {
     flex: 1; /* Allow the content to expand to fill the remaining space */
     padding-left: 225px; /* Adjust the padding to match the side navigation width */
+  }
+
+  iframe{
+    width: 100%;
   }
