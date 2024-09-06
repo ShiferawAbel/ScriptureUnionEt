@@ -1,11 +1,6 @@
 <!-- Sidebar -->
-<ul class="navbar-nav  bg-white navbar-light shadow border-top border-5 border-primary sidebar admin-sidenav" id="accordionSidebar">
-  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
-    <div class="sidebar-brand-icon">
-      <img src="{{ asset('img/SuLogo.png') }}">
-    </div>
-    {{-- <div class="sidebar-brand-text mx-3">Scripture Union</div> --}}
-  </a>
+<ul class="navbar-nav  bg-white navbar-light  fixed-side-nav shadow border-top border-5 border-primary sidebar admin-sidenav" id="accordionSidebar">
+  
   <hr class="sidebar-divider my-0">
   <li class="nav-item active">
     <a class="nav-link" href="{{ route('admin.index') }}">

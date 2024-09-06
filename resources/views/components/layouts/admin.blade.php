@@ -34,31 +34,25 @@
 
 <body id="page-top">
     <div id="wrapper">
-        <x-layouts.admin-sidenav />
-        <div id="" class="admin-topnav">
-            <div id="content">
-                <x-layouts.admin-topnav />
-                {{ $slot }}
-            </div>
+      <div id="" class="admin-topnav">
+        <x-layouts.admin-topnav />
+        <div class="row">
+          <div class="col-md-3">
+            <x-layouts.admin-sidenav />
+          </div>
+          <div id="content" class="mt-5 pt-5 col-md-9"">
+              {{ $slot }}
+          </div>
         </div>
+      </div>
     </div>
     
      
-<<<<<<< Updated upstream
-   
-
-
-  <!-- Back to Top -->
-  <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-=======
 <!-- Scroll to top -->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
   
->>>>>>> Stashed changes
   <script src="{{ asset('admin-resources/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('admin-resources/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('admin-resources/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

@@ -18,7 +18,9 @@
     z-index: 99;
 }
 
-
+html{
+    overflow-x: hidden;
+  }
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -758,14 +760,34 @@ text-decoration: none;
     top: 0;
     left: 0;
     z-index: 1;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0; 
     transition: opacity 0.7s ease-in-out;
   }
-  
-  .card:hover .image-in-front {
+  .imagevideo-in-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    scale: 0.2;
+    top: 15%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    transition: opacity 0.7s ease-in-out;
+  }
+  .youtube-img-top {
+    width: 100%;
+}
+  .cardhover .youtubecard-image {
+    position: relative;
+    }
+  .cardhover:hover .image-in-front {
+    opacity: 1; 
+  }
+  .cardhover:hover .imagevideo-in-front {
     opacity: 1; 
   }
   .profilecolor{
@@ -780,13 +802,13 @@ text-decoration: none;
   
   .admin-sidenav {
     position: fixed;
-    position: relative;l;
+    position: relative;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 250px; /* Adjust the width as needed */
+    width: 300px; /* Adjust the width as needed */
     background-color: #ffffff;
-    overflow-y: auto;
+    overflow:hidden;
   }
   
   #content-wrapper {
@@ -795,5 +817,95 @@ text-decoration: none;
   }
 
   iframe{
-    width: 100%;
+    height: 450px;
   }
+
+/* Tablets in landscape mode */
+@media only screen and (min-width: 0px) and (max-width: 500px){
+    iframe{
+        height: 250px;
+        width: 370px;
+      }
+}
+@media only screen and (min-width: 0px) and (max-width: 554px){
+    iframe{
+        height: 250px;
+        width: 370px;
+      }
+}
+@media only screen and (min-width: 555px) and (max-width: 670px){
+    iframe{
+        height: 250px;
+        width: 500px;
+      }
+}
+@media only screen and (min-width: 671px) and (max-width: 800px){
+    iframe{
+        height: 350px;
+        width: 600px;
+      }
+}
+@media only screen and (min-width: 801px) and (max-width: 900px){
+    iframe{
+        height: 400px;
+        width: 650px;
+      }
+}
+.recommendation-container {
+    top: 0;
+    right: 0;
+    width: 370px;
+    height: 550px;
+    overflow-y: scroll;
+    z-index: 1000;
+    padding: 20px;
+    margin-left: 50px;
+}
+.recommendation-container p{
+    color: #000;
+}
+.recommendation-container:hover p{
+    color: #7a7777;
+}
+
+.recommendation-video {
+    margin-bottom: 20px;
+}
+
+ .recommendation-video img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recommendation-video-title {
+    font-size: 14px;
+    margin-top: 10px;
+} 
+.mainyoutubevideo {
+    margin-left: 25px;
+}
+.fixed-top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.fixed-side-nav {
+    position: fixed;
+    padding-top: 40px;
+    left: 0;
+    top: 60px; /* Adjust for top nav height */
+    bottom: 0;
+    width: 200px; /* Adjust for side nav width */
+    overflow-y: auto;
+    z-index: 999;
+}
+.brand-icon img{
+    margin-left: 20px;
+    width: 80px;
+}
+.nav-item a{
+    color: #000;
+}

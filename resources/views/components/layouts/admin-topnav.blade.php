@@ -1,8 +1,14 @@
 <!-- TopBar -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary  p-0">
+<nav class="navbar navbar-expand-lg bg-white fixed-top-nav navbar-light shadow border-top border-5 border-primary  p-0">
   <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
     <i class="fa fa-bars"></i>
   </button>
+  <a class="d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
+    <div class="brand-icon">
+      <img src="{{ asset('img/SuLogo.png') }}">
+    </div>
+    {{-- <div class="sidebar-brand-text mx-3">Scripture Union</div> --}}
+  </a>
   <ul class="navbar-nav mr-auto  ms-auto profilecolor">
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"

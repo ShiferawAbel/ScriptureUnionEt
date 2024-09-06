@@ -8,7 +8,7 @@
 
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary p-0">
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top border-top border-5 border-primary p-0">
     <div style=>
         <a href="/" class="navbar-brand bg-white d-flex align-items-center px-4 px-lg-5">
             <img src="{{ asset('img/SULogo.png') }}" width="100%" alt="">
