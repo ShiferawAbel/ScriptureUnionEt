@@ -56,5 +56,19 @@
     </div>
   </li>
 
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#contentManagement"
+      aria-expanded="true" aria-controls="contentManagement">
+      <img src="{{ asset('img/content-management-icon.png') }}" alt="" class="sidebar-icon">
+      <span>Content Management</span>
+    </a>
+    <div id="contentManagement" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Content Management</h6>
+        <a class="collapse-item" href="{{ route('admin.carousels.index') }}">Carousels</a>
+      </div>
+    </div>
+  </li>
+
 </ul>
 <!-- Sidebar -->

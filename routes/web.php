@@ -7,12 +7,14 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\MinistryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VideoController;
+use App\Models\Carousel;
 use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $events = Event::all();
-    return view('home', compact('events'));
+    $carousels = Carousel::all();
+    return view('home', compact('events', 'carousels'));
 });
 Route::get('/about', function () {
     return view('about');
@@ -62,6 +64,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/videos/{video}/edit', [App\Http\Controllers\admin\VideoController::class, 'edit'])->name('admin.videos.edit');
     Route::patch('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'update'])->name('admin.videos.update');
     Route::delete('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'destroy'])->name('admin.videos.destroy');
+    
+    Route::get('/carousels', [App\Http\Controllers\admin\CarouselController::class, 'index'])->name('admin.carousels.index');
+    Route::get('/carousels/create', [App\Http\Controllers\admin\CarouselController::class, 'create'])->name('admin.carousels.create');
+    Route::post('/carousels/store', [App\Http\Controllers\admin\CarouselController::class, 'store'])->name('admin.carousels.store');
+    Route::delete('/carousels/{carousel}', [App\Http\Controllers\admin\CarouselController::class, 'destroy'])->name('admin.carousels.destroy');
 });
 
 Route::get('/dashboard', function () {
