@@ -68,6 +68,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/carousels', [App\Http\Controllers\admin\CarouselController::class, 'index'])->name('admin.carousels.index');
     Route::get('/carousels/create', [App\Http\Controllers\admin\CarouselController::class, 'create'])->name('admin.carousels.create');
     Route::post('/carousels/store', [App\Http\Controllers\admin\CarouselController::class, 'store'])->name('admin.carousels.store');
+    Route::get('/carousels/{carousel}/edit', [App\Http\Controllers\admin\CarouselController::class, 'edit'])->name('admin.carousels.edit');
+    Route::patch('/carousels/{carousel}', [App\Http\Controllers\admin\CarouselController::class, 'update'])->name('admin.carousels.update');
     Route::delete('/carousels/{carousel}', [App\Http\Controllers\admin\CarouselController::class, 'destroy'])->name('admin.carousels.destroy');
 });
 
