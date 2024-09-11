@@ -3,6 +3,10 @@
   <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
     <i class="fa fa-bars"></i>
   </button>
+  <a  href="{{ url()->previous() }}">
+    <i class="fa fa-arrow-circle-o-left"></i>
+    <span>Back</span>
+</a>
   <a class="d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
     <div class="brand-icon">
       <img src="{{ asset('img/SuLogo.png') }}">
