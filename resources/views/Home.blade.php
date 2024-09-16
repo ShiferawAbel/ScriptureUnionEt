@@ -1,27 +1,39 @@
 <x-layouts.app>
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
-        <div class="owl-carousel header-carousel position-relative mb-5">
-            @foreach ($carousels as $carousel)
-                <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="{{ asset($carousel->image) }}" alt="">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(6, 3, 21, .5);">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-10 col-lg-8">
-                                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
-                                    <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
-                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }} </p>
-                                    <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                    <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Join Us</a>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="owl-carousel header-carousel position-relative mb-5">
+                    @foreach ($carousels as $carousel)
+                        <div class="owl-carousel-item position-relative">
+                            <img class="img-fluid" src="{{ asset($carousel->image) }}" alt="">
+                            <div class="position-absolute">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-lg-8 text-center">
+                                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                                            <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                                            <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                            <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Join Us</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
+            <div class="col-md-4">
+                <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" style="height: 650px" src="{{ asset($carousel->image) }}" alt="">
+                    
+                </div>
+            </div>
         </div>
     </div>
+    
+    
     <!-- Carousel End -->
 
 

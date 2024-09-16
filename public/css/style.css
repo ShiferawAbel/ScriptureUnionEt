@@ -909,3 +909,19 @@ text-decoration: none;
 .nav-item a{
     color: #000;
 }
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+.position-absolute {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 3, 21, .5);
+}
