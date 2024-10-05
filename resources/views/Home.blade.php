@@ -2,15 +2,15 @@
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
         <div class="row">
-            <div class="col-md-8">
+            <div class="">
                 <div class="owl-carousel header-carousel position-relative mb-5">
                     @foreach ($carousels as $carousel)
                         <div class="owl-carousel-item position-relative">
                             <img class="img-fluid" src="{{ asset($carousel->image) }}" alt="">
                             <div class="position-absolute">
-                                <div class="container">
+                                <div class="container carousel-desc">
                                     <div class="row justify-content-center">
-                                        <div class="col-10 col-lg-8 text-center">
+                                        <div class="text-center">
                                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
                                             <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
                                             <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
@@ -22,12 +22,6 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" style="height: 650px" src="{{ asset($carousel->image) }}" alt="">
-                    
                 </div>
             </div>
         </div>

@@ -20,6 +20,7 @@
 
 html{
     overflow-x: hidden;
+    font-size: 16px;
   }
 /*** Spinner ***/
 #spinner {
@@ -221,7 +222,7 @@ html{
     border-color: var(--primary);
 }
 
-.page-header {
+.page-header-about {
     background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/youngs.jpg) center center no-repeat;
     background-size: cover;
 }
@@ -914,6 +915,7 @@ text-decoration: none;
     object-fit: cover;
     width: 100%;
 }
+
 .position-absolute {
     top: 50%;
     left: 50%;
@@ -921,7 +923,10 @@ text-decoration: none;
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     background: rgba(6, 3, 21, .5);
+}
+
+.carousel-desc {
+    margin-top: 100px;
 }
