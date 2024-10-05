@@ -18,10 +18,10 @@ Route::get('/', function () {
 });
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 Route::get('/donate', function () {
     return view('donate');
-});
+})->name('donate');
 
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
