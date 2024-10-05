@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav  bg-white navbar-light  fixed-side-nav shadow border-top border-5 mt-3 border-primary sidebar admin-sidenav" id="accordionSidebar">
+<ul class="navbar-nav  bg-white navbar-light  fixed-side-nav shadow border-top border-5 border-primary sidebar admin-sidenav" id="accordionSidebar">
   
   <hr class="sidebar-divider my-0">
   <li class="nav-item active">
@@ -49,7 +49,7 @@
     </a>
     <div id="collapseVideo" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Videos</h6>
+        <h6 class="collapse-header">Annoucements</h6>
         <a class="collapse-item" href="{{ route('admin.videos.create') }}">Add New Video</a>
         <a class="collapse-item" href="{{ route('admin.videos.index') }}">All Videos</a>
       </div>
