@@ -12,20 +12,27 @@
         
         {{-- What We Believe Start --}}
         <div class="what-we-believe-container w-75 m-auto pb-5">
-            <h2>What We Believe</h2>
+            <h2>We Believe In...</h2>
             <ul class="list-group">
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s">We believe in the Triune God—God the Father, God the Son, and God the Holy Spirit—one God in three persons.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s">We believe God is the final authority over all creation, salvation of mankind and the coming final judgment.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s">We believe scripture is God-breathed and written through the divine leading of the Holy Spirit. It gives the final authority pertaining all Christian faith and life matters.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe, since Adam, all humankind has sinned and therefore falls under God’s judgment.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe salvation from sin is only obtained through faith in Jesus Christ, who atoned for our sin through his substitutionary death on the cross.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe in the resurrection and bodily ascension of Jesus Christ, who is now at the right hand of God the Father.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe in the Church of Christ, His body, in which true believers are members.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe it is the Holy Spirit who convicts, leads to repentance, and regenerates sinners into a new life. He also empowers believers to carry out God’s mission.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe that righteousness is obtained through the grace that comes only from faith in Jesus Christ.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe the Holy Spirit dwells in believer’s life and effects the work of salvation.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe in the resurrection of the dead, the judgment of the world, and the existence of eternal life.</li>
-                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe in the bodily, second coming of Jesus Christ.</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s"> The Oneness of the Father, Son and Holy Spirit</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s">God in creation; with generosity; by revelation; by redemption; in the end, he is the supreme 
+                judge.</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s"> The Word of God (Bible) written by the Holy Spirit; that he is authoritative and completely 
+                trustworthy in all matters of faith and action;
+                </li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s"> That man is a sinner and under judgment, but that he can be saved from the punishment and 
+                power of sin only through the sacrificial death of Jesus Christ, the son of God who came in flesh.
+                </li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s"> As Jesus Christ rose from the dead in the flesh; As he sat at the right hand of God the Father,
+                </li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">Repenting to God and believing in the Lord Jesus Christ, the need for the work of the Holy 
+                Spirit to accomplish the saving work of Christ's death in every sinner.</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">That a sinner is justified by God's grace only by believing in Jesus Christ,</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">That the Holy Spirit lives and works in believers</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">That there is one holy universal church which is the body of Christ and in which all the true 
+                are found,</li>
+                <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.5s">We believe that our Lord Jesus Christ will return to earth. 
+                </li>
             </ul>
         </div>
         {{-- What we believe End --}}
