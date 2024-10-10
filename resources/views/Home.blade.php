@@ -1,6 +1,6 @@
 <x-layouts.app>
     <!-- Carousel Start -->
-    <div class="container-fluid p-0">
+    <div class="container-fluid carousel-custom p-0">
         <div class="row">
             <div class="">
                 <div class="owl-carousel header-carousel position-relative mb-5">
@@ -30,41 +30,63 @@
     
     <!-- Carousel End -->
 
+    <div>
+        <p class="mottoish wow fadeInDown" data-wow-delay="0.2s"> Serving God’s Vision for high school </p> 
+    </div>
 
     <!-- About Start -->
-    <div class="container-fluid overflow-hidden px-lg-0">
+    <div class="container-fluid about-us-home overflow-hidden px-lg-0">
         <div class="container about py-5 px-lg-0">
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/youngs.jpg" style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about-us-home.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
                     <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
                     <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
-                    <p class="mb-5">At an international gathering in 1985 in Harare Zimbabwe, Scripture Union leaders from around the world agreed the aims, belief statement, and working principles as a framework for all National movements.</p>
+                    <p class="mb-5">The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
+                        middle school and high school students believe in the truth of his word and accept Jesus Christ as 
+                        their savior. The young people who have found salvation will be friends of this life-giving word of 
+                        God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
+                        others. Scripture Union works diligently to be a servant to parents, church and society.</p>
                     <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
                     <div class="row g-4 mb-5">
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                             <i class="fa fa-pray fa-3x text-primary mb-3"></i>
                             <h5>Prayer</h5>
-                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="m-0">
+                                We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we
+                                love our God.
+                            </p>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                             <i class="fa fa-bible fa-3x text-primary mb-3"></i>
                             <h5>Scripture Reading</h5>
-                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="m-0">
+                                SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
+                                our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy 
+                                Word. 
+                            </p>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                             <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
                             <h5>Serving Sacrificially</h5>
-                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="m-0">
+                                Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
+                                by paying all the costs required to serve them (Mark 10:45).
+                            </p>
                         </div>
                         <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                             <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
                             <h5>Serving With Partnership</h5>
-                            <p class="m-0">Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam justo.</p>
+                            <p class="m-0">
+                                We believe 
+                                that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and 
+                                individuals who want to partner with Scripture Union in serving students with their money, skills, 
+                                grace, etc.
+                            </p>
                         </div>
                     </div>
                     <a href="" class="btn btn-primary py-3 px-5">Explore More</a>

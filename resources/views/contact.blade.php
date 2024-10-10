@@ -52,7 +52,7 @@
             </div>
             <div class="col-md-6 pe-lg-4 mt-5 pt-5 wow fadeInRight" data-wow-delay="0.1s">
                 <div class="position-relative h-100">
-                    <img class="w-100 mt-5 pt-3" src="{{ asset('img/event.jpg')}}" alt="" srcset="">
+                    <img class="w-100 mt-5 pt-3" src="{{ asset('img/serving.png')}}" alt="" srcset="">
                 </div>
             </div>
         </div>

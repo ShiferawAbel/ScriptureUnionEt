@@ -223,8 +223,14 @@ html{
 }
 
 .page-header-about {
-    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/youngs.jpg) center center no-repeat;
+    background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url(../img/about-us-header.jpg) center no-repeat;
+    background-position-y: 25%;
+    height: 300px;
     background-size: cover;
+}
+
+.page-header-about h1 {
+    font-size: 5rem;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -678,6 +684,10 @@ text-decoration: none;
     height: 300px;
     object-fit: cover;
 }
+
+.who-we-are, .history, .why-we-exist {
+    background-color: #f5f5f5;
+}
 .mission-vision {
     padding: 50px 0;
     background-color: #f5f5f5; /* Adjust background color as needed */
@@ -874,8 +884,8 @@ text-decoration: none;
 }
 
  .recommendation-video img {
-    width: 100%;
-    height: 150px;
+     width: 100%;
+     height: 150px;
     object-fit: cover;
 }
 
@@ -929,4 +939,25 @@ text-decoration: none;
 
 .carousel-desc {
     margin-top: 100px;
+}
+
+.who-we-are, .history, .why-we-exist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 12%;
+    padding-block: 50px;
+}
+
+.p-styled {
+    text-align: center;
+}
+
+.mottoish{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    background-color: orange;
+    color: white;
 }

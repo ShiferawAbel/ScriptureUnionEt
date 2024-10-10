@@ -53,6 +53,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
   
+  
   <script src="{{ asset('admin-resources/vendor/jquery/jquery.min.js') }}"></script>
   <script src="{{ asset('admin-resources/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('admin-resources/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
