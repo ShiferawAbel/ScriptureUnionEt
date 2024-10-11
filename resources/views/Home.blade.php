@@ -6,7 +6,7 @@
                 <div class="owl-carousel header-carousel position-relative mb-5">
                     @foreach ($carousels as $carousel)
                         <div class="owl-carousel-item position-relative">
-                            <img class="img-fluid" src="{{ asset($carousel->image) }}" alt="">
+                            <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
                             <div class="position-absolute">
                                 <div class="container carousel-desc">
                                     <div class="row justify-content-center">

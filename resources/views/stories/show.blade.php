@@ -1,14 +1,11 @@
 <x-layouts.app>
   <!-- Page Header Start -->
-  <div class="container page-header-about page-header py-5" style="margin-bottom: 6rem;">
-      <div class="container py-5">
-          <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $story->title }}</h1>
-      </div>
+  <div class="story-header">
+    <img src="{{asset('storage'.$story->cover_img)}}" alt="">
   </div>
   <!-- Page Header End -->
-  
-  <div class="container">
+
+  <div class="container story-content wow fadeInUP" data-wow-toggle="0.5s">
     {!! $story->content !!}
   </div>
-  
 </x-layouts.app>

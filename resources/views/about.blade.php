@@ -1,42 +1,64 @@
 <x-layouts.app>
     <!-- Page Header Start -->
-    <div class="container-fluid page-header-about py-5" style="margin-bottom: 6rem;">
+    <div class="container-fluid page-header-about py-5">
         <div class="container py-5">
             <h1 class="text-white mb-3 animated slideInDown">About Us</h1>
         </div>
-    </div>
+    </div>-
     <!-- Page Header End -->
 
 
-    <div>
+    <div class="about-us">
 
-        <div class="who-we-are">
-            <h1 class="wow fadeInDown" data-wow-delay="0.3">WHO WE ARE</h1>
-            <h3 class="wow fadeInDown" data-wow-delay="0.3">AS A UNION</h3>
-            <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                The Scripture Union, whose lives have been changed by the word of God; It is a community of 
-                saints who gave their lives to walk in the will of God as revealed in the Holy Word. The identity of 
-                the Union originates from the Holy Word. What God intended to do from creation to new creation 
-                in his son Jesus Christ does revealed by the Holy Word. Scripture Union firmly believes that the 
-                word of God, which gives life; is the manifestation of His will (Hebrews 4:12). Since the way of the 
-                word is the way of God, SU takes the truth that "Your law is a lamp to my feet and a light to my 
-                path" (Ps. 119:105) as a leading quotation of the Union. The Scripture Union , as a community of 
-                believers, is dedicated to living and even serving by reading and obeying the word, realizing its 
-                importance in the daily lives of believers (2 Tim. 3:16-17).
-            </p>
-            <h3 class="wow fadeInDown" data-wow-delay="0.3">AS A MINISTRY</h3>
-            <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
-                middle school and high school students believe in the truth of his word and accept Jesus Christ as 
-                their savior. The young people who have found salvation will be friends of this life-giving word of 
-                God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
-                others. Scripture Union works diligently to be a servant to parents, church and society.
-            </p>
+        <div class="who-we-are" id="who-we-are">
+            <h1 class="wow fadeInDown about-us-title" data-wow-delay="0.3">WHO WE ARE</h1>
+            <div class="who-we-are-text">
+                <div>
+                    <h3 class="wow fadeInDown about-us-title" data-wow-delay="0.3">AS A UNION</h3>
+                    <p class="p-styled wow fadeInUp about-us-title" data-wow-delay="0.5">
+                        The Scripture Union, whose lives have been changed by the word of God; It is a community of 
+                        saints who gave their lives to walk in the will of God as revealed in the Holy Word. The identity of 
+                        the Union originates from the Holy Word. What God intended to do from creation to new creation 
+                        in his son Jesus Christ does revealed by the Holy Word. Scripture Union firmly believes that the 
+                        word of God, which gives life; is the manifestation of His will (Hebrews 4:12). Since the way of the 
+                        word is the way of God, SU takes the truth that "Your law is a lamp to my feet and a light to my 
+                        path" (Ps. 119:105) as a leading quotation of the Union. The Scripture Union , as a community of 
+                        believers, is dedicated to living and even serving by reading and obeying the word, realizing its 
+                        importance in the daily lives of believers (2 Tim. 3:16-17).
+                    </p>
+
+                </div>
+                <div>
+                    <h3 class="wow fadeInDown about-us-title" data-wow-delay="0.3">AS A MINISTRY</h3>
+                    <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                        The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
+                        middle school and high school students believe in the truth of his word and accept Jesus Christ as 
+                        their savior. The young people who have found salvation will be friends of this life-giving word of 
+                        God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
+                        others. Scripture Union works diligently to be a servant to parents, church and society.
+                    </p>
+
+                </div>
+            </div
+        </div>
         </div>
         
 
-        <div class="history">
+        <div class="history" id="history">
             <h1 class="wow fadeInDown" data-wow-delay="0.3">OUR HISTORY</h1>
+            <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION WORLDWIDE</h3>
+            <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                The Scripture Union of Ethiopia (SU) is a ministry that is closely related to the Word of God, 
+                children and young adults. The ministry was established in London in 1867, and its beginning was 
+                when 15 children gathered in an art school to hear the word of God. The service gained acceptance 
+                in a short period of time and expanded its reach and continued serving 55 children in a school. The 
+                Scripture Union gathers children and young adults in school and outside of school in various ways 
+                and serve them to read the Bible and accept the Lord Jesus as their personal savior. It prepares and 
+                distributes daily bible reading cards in different languages so that children, teenagers and adults can 
+                read the life-changing word of God. Scripture Union is giving service in more than one hundred 
+                and thirty (130) countries around the world.
+            </p>
+            <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION OF ETHIOPIA</h3>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
                 The Scripture Union of Ethiopia was established in Ethiopia in 1965G.C. From the time of its 
                 establishment until 1976G.C, the Union’s service was mostly focused on organizing a daily Bible 
@@ -64,8 +86,9 @@
             </p>
         </div>
 
-        <div class="why-we-exist">
+        <div class="why-we-exist" id="why-we-exist">
             <h1 class="wow fadeInDown" data-wow-delay="0.3">WHY WE EXIST</h1>
+            
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
                 Nowadays, we hear a lot of shocking and sad news about students every day. The Bible tells us that 
                 the times are stressful and full of evil (2 Tim. 3:1-5). If we list the manifestations of evil, where the 
@@ -105,7 +128,7 @@
                 student. They were students who showed excellence in their studies, their lives were not polluted by 
                 the evil of the time, they had a close intimacy with their God, and they introduced their God to nonbelievers and nations. 
             </p>
-            <p class="p-styled wow fadeInUp fw-bold" data-wow-delay="0.5">
+            <p class="p-styled text-center wow fadeInUp fw-bold" data-wow-delay="0.5">
                 The Scripture Union of Ethiopia serves God's will for the high school explained above. It works 
                 diligently to help middle and high school students find biblical answers to their age-related 
                 questions.                
@@ -129,13 +152,13 @@
                     <div class="container-fluid overflow-hidden px-lg-0">
                         <div class="container about px-lg-0">
                             <div class="row g-5 mx-lg-0">
-                                <div class="col-lg-6 p-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                                <div class="image-value col-lg-6 p-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                                     <div class="position-relative h-100">
                                         <img class="position-absolute img-fluid w-100 h-100" src="{{asset('img/prayer-first.jpg')}}" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
-                                    <h3 class="text-secondary text-uppercase mb-3">PRAYER FIRST</h3>
+                                    <h3 class=" text-uppercase mb-3">PRAYER FIRST</h3>
                                     <p class="mb-5">
                                         SU is a praying ministry. We believe that student ministry cannot be accomplished without fervent prayer. Therefore, in any situation, we put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we love our God. We firmly believe in the advice of the Holy Word to pray without ceasing (1 Thessalonians 5:17-18). 
                                     </p>
@@ -147,9 +170,9 @@
                     {{-- scripture --}}
                     <div class="container-fluid overflow-hidden px-lg-0">
                         <div class="container about px-lg-0">
-                            <div class="row g-5 mx-lg-0">
-                                <div class="col-lg-6 pt-3 about-text wow fadeInUp" data-wow-delay="0.3s">
-                                    <h3 class="text-secondary text-uppercase mb-3">SCRIPTURE READING FIRST</h3>
+                            <div class="row g-5 mx-lg-0 need-order">
+                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInUp" data-wow-delay="0.3s">
+                                    <h3 class=" text-uppercase mb-3">SCRIPTURE READING FIRST</h3>
                                     <p class="mb-5">
                                         SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
                                         our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy 
@@ -157,7 +180,7 @@
                                         Timothy 3:16-17, Hebrews 4:12-13).
                                     </p>
                                 </div>
-                                <div class="col-lg-6 p-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                                <div class="col-lg-6 p-0 wow order-img fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                                     <div class="position-relative h-100">
                                         <img class="position-absolute img-fluid w-100 h-100" src="img/scripture-reading-first.png" style="object-fit: cover;" alt="">
                                     </div>
@@ -176,7 +199,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 pt-4 about-text wow fadeInUp" data-wow-delay="0.3s">
-                                    <h3 class="text-secondary text-uppercase mb-3">SACRIFICIAL SERVING</h3>
+                                    <h3 class=" text-uppercase mb-3">SACRIFICIAL SERVING</h3>
                                     <p class="mb-5">
                                         Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
                                         by paying all the costs required to serve them (Mark 10:45). Jesus showed us the value of service by 
@@ -193,9 +216,9 @@
 
                     <div class="container-fluid overflow-hidden px-lg-0">
                         <div class="container about px-lg-0">
-                            <div class="row g-5 mx-lg-0">
-                                <div class="col-lg-6 pt-3 about-text wow fadeInUp" data-wow-delay="0.3s">
-                                    <h3 class="text-secondary text-uppercase mb-3">SERVING IN PARTNERSHIP</h3>
+                            <div class="row g-5 need-order mx-lg-0">
+                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInUp" data-wow-delay="0.3s">
+                                    <h3 class=" text-uppercase mb-3">SERVING IN PARTNERSHIP</h3>
                                     <p class="mb-5">
                                         Ministry requires the participation of many. We serve student together with families, churches, 
                                         partner institutions and individuals (Neh. 2:18, Exodus 35.20-21, 1 Chronicles 29:9). We believe 
@@ -205,7 +228,7 @@
                                         grace, etc.
                                     </p>
                                 </div>
-                                <div class="col-lg-6 p-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
+                                <div class="col-lg-6 p-0 wow fadeInLeft order-img" data-wow-delay="0.1s" style="min-height: 400px;">
                                     <div class="position-relative h-100">
                                         <img class="position-absolute img-fluid w-100 h-100" src="img/partnership.jpg" style="object-fit: cover;" alt="">
                                     </div>

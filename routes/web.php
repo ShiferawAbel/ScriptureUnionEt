@@ -17,6 +17,7 @@ Route::get('/', function () {
     $carousels = Carousel::all();
     return view('home', compact('events', 'carousels'));
 });
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');
@@ -26,7 +27,6 @@ Route::get('/donate', function () {
 
 Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
-
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
 
@@ -39,7 +39,7 @@ Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
 
-Route::get('/stories/{story}', [StoryController::class, 'show'])->name('storys.show');
+Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'index'])->name('admin.index');

@@ -684,19 +684,24 @@ text-decoration: none;
     height: 300px;
     object-fit: cover;
 }
-
-.who-we-are, .history, .why-we-exist {
-    background-color: #f5f5f5;
-}
 .mission-vision {
     padding: 50px 0;
-    background-color: #f5f5f5; /* Adjust background color as needed */
+    background: radial-gradient(circle at center, 
+    rgb(183, 120, 2) 0%, 
+    rgb(183, 120, 2) 25%, 
+    black 75%, 
+    black 100%);
+    color: white;
   }
   
-  .mission-vision h2 {
-    font-size: 36px;
+  .mission-vision h1 {
+    color: white;
     font-weight: bold;
     margin-bottom: 20px;
+  }
+
+  .mission-vision h3 {
+    color: white;
   }
   
   .mission-vision p {
@@ -705,9 +710,7 @@ text-decoration: none;
   }
   
   @media (max-width: 768px) {
-    .mission-vision .row {
-      flex-direction: column;
-    }
+    .image
   }
 
   .donation {
@@ -723,14 +726,14 @@ text-decoration: none;
   }
   
   .donation-option img {
-    width: 100px;
-    height: 100px;
+      width: 100px;
+      height: 100px;
   }
   .modal-dialog {
-    top: 30%;
-}
+      top: 30%;
+    }
   .donation-option button {
-    margin-top: 10px;
+      margin-top: 10px;
   }
   .chapa{
     scale: 1.3;
@@ -739,7 +742,7 @@ text-decoration: none;
   }
   .file-upload {
     display: inline;
-  }
+}
   input[type=file]::file-selector-button {
     margin-right: 20px;
     border: none;
@@ -752,20 +755,20 @@ text-decoration: none;
   }
   
   input[type=file]::file-selector-button:hover {
-    background: #0d45a5;
-  }
-  
-  .file-upload label {
+      background: #0d45a5;
+    }
+    
+    .file-upload label {
     cursor: pointer;
     border-radius: 55px; 
     transition: background-color 0.2s ease-in-out; 
   }
-    
+  
   .file-upload img { 
-    display: block;
+      display: block;
     max-width: 100%;
     max-height: 120px;
-  }
+}
   .image-in-front {
     position: absolute;
     top: 0;
@@ -776,8 +779,8 @@ text-decoration: none;
     transform: translate(-50%, -50%);
     opacity: 0; 
     transition: opacity 0.7s ease-in-out;
-  }
-  .imagevideo-in-front {
+}
+.imagevideo-in-front {
     position: absolute;
     top: 0;
     left: 0;
@@ -792,18 +795,18 @@ text-decoration: none;
   .youtube-img-top {
     width: 100%;
 }
-  .cardhover .youtubecard-image {
+.cardhover .youtubecard-image {
     position: relative;
     }
   .cardhover:hover .image-in-front {
-    opacity: 1; 
-  }
+      opacity: 1; 
+    }
   .cardhover:hover .imagevideo-in-front {
     opacity: 1; 
-  }
+}
   .profilecolor{
     color: #000;
-  }
+}
 .admin-topnav{
     top: 0;
     bottom: 0;
@@ -811,7 +814,7 @@ text-decoration: none;
     background-color: #ffffff;
 }
   
-  .admin-sidenav {
+.admin-sidenav {
     position: fixed;
     position: relative;
     top: 0;
@@ -820,8 +823,8 @@ text-decoration: none;
     width: 300px; /* Adjust the width as needed */
     background-color: #ffffff;
     overflow:hidden;
-  }
-  
+}
+
   #content-wrapper {
     flex: 1; /* Allow the content to expand to fill the remaining space */
     padding-left: 225px; /* Adjust the padding to match the side navigation width */
@@ -843,8 +846,8 @@ text-decoration: none;
         height: 250px;
         width: 370px;
       }
-}
-@media only screen and (min-width: 555px) and (max-width: 670px){
+    }
+    @media only screen and (min-width: 555px) and (max-width: 670px){
     iframe{
         height: 250px;
         width: 500px;
@@ -883,12 +886,12 @@ text-decoration: none;
     margin-bottom: 20px;
 }
 
- .recommendation-video img {
+.recommendation-video img {
      width: 100%;
      height: 150px;
-    object-fit: cover;
-}
-
+     object-fit: cover;
+    }
+    
 .recommendation-video-title {
     font-size: 14px;
     margin-top: 10px;
@@ -933,6 +936,7 @@ text-decoration: none;
     width: 100%;
     height: 100%;
     display: flex;
+    
     justify-content: center;
     background: rgba(6, 3, 21, .5);
 }
@@ -941,7 +945,7 @@ text-decoration: none;
     margin-top: 100px;
 }
 
-.who-we-are, .history, .why-we-exist {
+.history, .why-we-exist {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -951,7 +955,7 @@ text-decoration: none;
 }
 
 .p-styled {
-    text-align: center;
+    text-align: justify;
 }
 
 .mottoish{
@@ -960,4 +964,138 @@ text-decoration: none;
     font-weight: 700;
     background-color: orange;
     color: white;
+}
+
+/* Story */
+
+.story-page-header {
+    height: 500px;
+    display: flex;
+    align-items: end;
+    width: 84%;
+    margin: auto;
+    box-sizing: border-box;
+}                                                 
+
+.header-text {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    display: flex;
+    text-wrap: wrap;
+    align-items: end;
+    background: linear-gradient(rgba(12, 12, 12, 0), rgb(0, 0, 0)), center no-repeat;
+}
+
+
+.image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.image-style-side {
+    float: right;
+    width: 50%;
+}
+
+.image img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.story-content h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.story-content .table {
+    overflow-x: scroll;
+}
+
+.about-us {
+    font-size: 1.2rem;
+}
+
+.who-we-are, .history, .why-we-exist {
+    background-color: #f5f5f5;
+    padding-top: 100px;
+    
+}
+
+.who-we-are {
+    padding-inline: 7%;
+    background: radial-gradient(circle at center, 
+    rgb(183, 120, 2) 0%, 
+    rgb(183, 120, 2) 25%, 
+    black 75%, 
+    black 100%);
+    color: white;
+    color: white;
+}
+
+.who-we-are-img {
+    width: 50%;
+    min-width: 30%;
+    height: 100%;
+}
+
+.who-we-are-text {
+    flex: 1;
+    padding-inline: 10px;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.who-we-are-text div {
+    flex: 1;
+}
+
+.about-us-title{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.who-we-are-text .p-styled{
+    display: flex;
+    text-align: justify;
+}
+
+.who-we-are-img img {
+    width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .who-we-are, .history, .why-we-exist {
+        padding: 5%;
+    }
+
+    .who-we-are {
+        background: linear-gradient(45deg, black 0%, black 30%, rgb(183, 120, 2) 70%, rgb(183, 120, 2) 100%) center no-repeat;
+    }
+    .who-we-are-text {
+        display: block;
+    }
+
+    /* .image-value {
+        display: none;
+    } */
+
+    .need-order {
+        display: flex;
+    }
+
+    .order-img {
+        order: 1;
+    }
+
+    .order-text {
+        padding-top: 50px;
+        margin-top: 0;
+        order: 2;
+    }
 }

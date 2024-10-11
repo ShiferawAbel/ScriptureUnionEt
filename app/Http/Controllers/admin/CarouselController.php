@@ -26,9 +26,7 @@ class CarouselController extends Controller
             'header' => 'required|string',
             'body' => 'required|string',
         ]);
-        $file_name = date('YmdHi').'.'.$request->file('image')->extension();
-        $request->file('image')->move(public_path('user_uploads/carousels/'),  $file_name);
-        $full_path = 'user_uploads/carousels/'.$file_name;
+        $full_path = $request->file('image')->store('public', 'carousels');
         $carousel = Carousel::create([
             'header' => $request->input('header'),
             'body' => $request->input('body'),
