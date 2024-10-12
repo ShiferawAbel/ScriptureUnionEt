@@ -10,12 +10,17 @@ use App\Http\Controllers\StoryController;
 use App\Http\Controllers\VideoController;
 use App\Models\Carousel;
 use App\Models\Event;
+use App\Models\Story;
+use App\Models\Video;
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $events = Event::all();
     $carousels = Carousel::all();
-    return view('home', compact('events', 'carousels'));
+    $videos = Video::latest()->take(3)->get();
+    $stories = Story::latest()->take(3)->get();
+    return view('home', compact('events', 'carousels', 'videos', 'stories'));
 });
 
 Route::get('/about', function () {

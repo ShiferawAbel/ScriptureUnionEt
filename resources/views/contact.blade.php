@@ -52,7 +52,24 @@
             </div>
             <div class="col-md-6 pe-lg-4 mt-5 pt-5 wow fadeInRight" data-wow-delay="0.1s">
                 <div class="position-relative h-100">
-                    <img class="w-100 mt-5 pt-3" src="{{ asset('img/serving.png')}}" alt="" srcset="">
+                    <ul class="contact-list">
+                        <h5>CONTACT US THROUGH OUR ADDRESSES</h5>
+                        <li>
+                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/facebook-con.png')}}"> Face Book</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/instagram-icon.png')}}"> Instagram</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/telegram-icon.png')}}"> Telegram</a>
+                        </li>
+                        <li class="ps-4">
+                            <p>Phone Number: +251-11-56-27-86</p>
+                        </li>
+                        <li class="ps-4">
+                            <p class="mb-2">Email Addres: info@suethiopia.org</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

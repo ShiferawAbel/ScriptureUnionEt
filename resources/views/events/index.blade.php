@@ -11,7 +11,7 @@
         <div class="upcoming">
           <div class="card">
             <div class="card-img-upcoming position-relative">
-              <img class="card-img" style="width: 50%; height: 418px;" src="{{ asset('user_uploads/events/banners/' . $next_event->banner_img) }}">
+              <img class="card-img" style="width: 50%; height: 418px;" src="{{ asset('storage/'.$next_event->banner_img) }}">
             </div>
             <div class="card-body upcoming-detail">
               <span class="card-banner">Next Event</span>
@@ -42,18 +42,19 @@
                   $description = substr($event->description, 0, 100).'...'
                 @endphp
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item p-4">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid events-banner" src="{{ asset('user_uploads/events/banners/'.$event->banner_img) }}" alt="">
-                        </div>
-                        <h4 class="mb-3">{{ $event->title }}</h4>
-                        <p><span class="h5">Event Title: </span> {{ $event->event_name }}</p>
-                        <p><span class="h5">Start Date: </span> {{ $start_date_time }}</p>
-                        <p><span class="h5">End Date: </span> {{ $end_date_time }}</p>
-                        <p><span class="h5">Description: </span> {{ $description }}</p>
-                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
-                    </div>
-                </div>
+                  <div class="service-item">
+                      <div class="overflow-hidden mb-4">
+                          <img class="img-fluid events-banner" src="{{ asset('storage/'.$event->banner_img) }}" alt="">
+                      </div>
+                      <div class="p-4">
+                          <h4 class="mb-3">{{ $event->event_name }}</h4>
+                          <p><span class="h5">Start Date:</span> {{ $start_date_time }}</p>
+                          <p><span class="h5">End Date:</span> {{ $end_date_time }}</p>
+                          <p><span class="h5">Description:</span> {{ $description }}</p>
+                          <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                      </div>
+                  </div>
+              </div>
             @endforeach
     
           </div>

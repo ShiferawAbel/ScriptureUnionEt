@@ -4,7 +4,7 @@
         <div class="container py-5">
             <h1 class="text-white mb-3 animated slideInDown">About Us</h1>
         </div>
-    </div>-
+    </div>
     <!-- Page Header End -->
 
 
@@ -12,7 +12,7 @@
 
         <div class="who-we-are" id="who-we-are">
             <h1 class="wow fadeInDown about-us-title" data-wow-delay="0.3">WHO WE ARE</h1>
-            <div class="who-we-are-text">
+            <div class="who-we-are-text"> 
                 <div>
                     <h3 class="wow fadeInDown about-us-title" data-wow-delay="0.3">AS A UNION</h3>
                     <p class="p-styled wow fadeInUp about-us-title" data-wow-delay="0.5">
@@ -48,6 +48,7 @@
             <h1 class="wow fadeInDown" data-wow-delay="0.3">OUR HISTORY</h1>
             <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION WORLDWIDE</h3>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                <img style="float: right; width: 500px; margin-left: 20px;height: 250px" src="{{asset('img/sumap.png')}}" alt="">
                 The Scripture Union of Ethiopia (SU) is a ministry that is closely related to the Word of God, 
                 children and young adults. The ministry was established in London in 1867, and its beginning was 
                 when 15 children gathered in an art school to hear the word of God. The service gained acceptance 
@@ -60,26 +61,33 @@
             </p>
             <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION OF ETHIOPIA</h3>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                <img style="float: right; width: 500px; margin-left: 20px;height: 250px" src="{{asset('img/picture1.jpg')}}" alt="">
+                <strong style="font-size: 1.4rem; display: block">1965 to 1976</strong>
                 The Scripture Union of Ethiopia was established in Ethiopia in 1965G.C. From the time of its 
-                establishment until 1976G.C, the Union’s service was mostly focused on organizing a daily Bible 
-                reading, as well as organizing camping programs for the youth of the church, especially students. 
-                From 1977 to 1984, the service of the Scripture Union Ethiopia continued to prepare the daily 
+                establishment until 1976G.C,  the Union’s service was mostly focused on organizing a daily Bible 
+                reading, as well as organizing camping programs for the youth of the church, especially students.
+             
+            </p>
+            <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                <strong style="font-size: 1.4rem; display: block">1977 to 1984</strong>The service of the Scripture Union Ethiopia continued to prepare the daily 
                 Bible reading planner, but mostly the focus was on giving different trainings to family leaders, 
                 Christian writers and children's teachers. Bible study preparation and study method training as well 
                 as library services are also mentioned. 
             </p>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                <img style="float: left; width: 350px; margin-right: 20px;height: 240px" src="{{asset('img/picture2.jpg')}}" alt="">
                 Mr.J.R.H.Conacher, Mrs. Kebebewu Geda, Mrs. Ruth Abraham and Mr. Hailu Woldesamayat are 
                 among those who contributed significantly to the establishment of the Scripture Union in Ethiopia. 
                 Among the early ministers who served as directors of the association were Mr. Fiseha Woldearegay, 
                 Mr. Mikru Bekele, Mr. Shewangezaw, Pastor Kebede Degu, Pastor Asefa Alemu, Mr. Ayinalem 
-                Engeda, Pastor Asayehegn Berihe (Dr), Pastor Tiruwork Mesfen, Mr. Niguse. Bulcha and Mr. 
+                Engeda, Pastor Asayehegn Berihe (Dr), Pastor Tiruwork Mesfen, Mr. Niguse Bulcha and Mr. 
                 Alemayheu Bekele. 
 
             </p>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                
-                From 1985 - until now, the Scripture Union of Ethiopia has been serving by preparing daily Bible 
+                <img style="float: right; width: 400px; margin-left: 20px;height: 180px" src="{{asset('img/picture3.jpg')}}" alt="">
+                <strong style="font-size: 1.4rem; display: block">1985 - UNTILL NOW</strong>
+                The Scripture Union of Ethiopia has been serving by preparing daily Bible 
                 reading planner, equipping children's ministers for ministry and providing training on various topics. 
                 At the moment, it is mostly providing services for middle and high school Christian students' 
                 fellowship.
@@ -135,16 +143,18 @@
             </p>
         </div>
 
-        <section class="mission-vision">
+        <section class="mission-vision" id="mission-vision-value">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h1 class="m-a wow fadeIn">OUR Mission</h1>
-                        <p class="wow fadeIn">Our mission is to create opportunities for children and young people to explore the Bible, respond to Jesus and grow in faith. Through their journey of faith, we want children and young people to discover who Jesus is, and the difference he can make to their life, for themselves. Unlock the full potential of your outreach to children and young people with FREE Mission Support from Scripture Union.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h1 class="m-a wow fadeIn">OUR VISION</h1>
-                        <p class="wow fadeIn">Our vision is to create opportunities for children and young people to explore the Bible, respond to Jesus and grow in faith. Through their journey of faith, we want children and young people to discover who Jesus is, and the difference he can make to their life, for themselves. Unlock the full potential of your outreach to children and young people with FREE Mission Support from Scripture Union.</p>
+                    <div>
+                        <div class="col-md-12">
+                            <h1 class="m-a wow fadeIn text-center">OUR Mission</h1>
+                            <p class="wow fadeIn">Our mission is to create opportunities for children and young people to explore the Bible, respond to Jesus and grow in faith. Through their journey of faith, we want children and young people to discover who Jesus is, and the difference he can make to their life, for themselves. Unlock the full potential of your outreach to children and young people with FREE Mission Support from Scripture Union.</p>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="m-a wow fadeIn text-center">OUR VISION</h1>
+                            <p class="wow fadeIn">Our vision is to create opportunities for children and young people to explore the Bible, respond to Jesus and grow in faith. Through their journey of faith, we want children and young people to discover who Jesus is, and the difference he can make to their life, for themselves. Unlock the full potential of your outreach to children and young people with FREE Mission Support from Scripture Union.</p>
+                        </div>
                     </div>
 
                     <h1 class="m-auto w-25 mb-5">OUR VALUES</h1>
@@ -157,7 +167,7 @@
                                         <img class="position-absolute img-fluid w-100 h-100" src="{{asset('img/prayer-first.jpg')}}" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-lg-6 about-text wow fadeInDown" data-wow-delay="0.3s">
                                     <h3 class=" text-uppercase mb-3">PRAYER FIRST</h3>
                                     <p class="mb-5">
                                         SU is a praying ministry. We believe that student ministry cannot be accomplished without fervent prayer. Therefore, in any situation, we put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we love our God. We firmly believe in the advice of the Holy Word to pray without ceasing (1 Thessalonians 5:17-18). 
@@ -171,7 +181,7 @@
                     <div class="container-fluid overflow-hidden px-lg-0">
                         <div class="container about px-lg-0">
                             <div class="row g-5 mx-lg-0 need-order">
-                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInDown" data-wow-delay="0.3s">
                                     <h3 class=" text-uppercase mb-3">SCRIPTURE READING FIRST</h3>
                                     <p class="mb-5">
                                         SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
@@ -195,10 +205,10 @@
                             <div class="row g-5 mx-lg-0">
                                 <div class="col-lg-6 p-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="img/serving.png" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 h-100" src="img/serving.jpg" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
-                                <div class="col-lg-6 pt-4 about-text wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-lg-6 pt-4 about-text wow fadeInDown" data-wow-delay="0.3s">
                                     <h3 class=" text-uppercase mb-3">SACRIFICIAL SERVING</h3>
                                     <p class="mb-5">
                                         Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
@@ -217,7 +227,7 @@
                     <div class="container-fluid overflow-hidden px-lg-0">
                         <div class="container about px-lg-0">
                             <div class="row g-5 need-order mx-lg-0">
-                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="col-lg-6 pt-3 order-text about-text wow fadeInDown" data-wow-delay="0.3s">
                                     <h3 class=" text-uppercase mb-3">SERVING IN PARTNERSHIP</h3>
                                     <p class="mb-5">
                                         Ministry requires the participation of many. We serve student together with families, churches, 
@@ -307,8 +317,8 @@
             </div>
         </section>
         {{-- What We Believe Start --}}
-        <div class="what-we-believe-container w-75 m-auto pb-5">
-            <h2 class="wow fadeInDown" data-wow-delay="0.3">We Believe In...</h2>
+        <div class="what-we-believe-container w-75 m-auto mt-5 pb-5" id="what-we-believe">
+            <h1 class="wow fadeInDown text-center" data-wow-delay="0.3">We Believe In...</h1>
             <ul class="list-group">
                 <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s"> The Oneness of the Father, Son and Holy Spirit</li>
                 <li class="what-we-believe-list list-group-item wow fadeInUp" data-wow-delay="0.1s">God in creation; with generosity; by revelation; by redemption; in the end, he is the supreme 
@@ -336,7 +346,7 @@
         
 
            <!-- Team Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="mb-5">Our Staff</h1>
@@ -412,6 +422,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Team End -->
 </x-layouts.app>

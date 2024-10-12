@@ -508,8 +508,9 @@ html{
 .what-we-believe-list {
     list-style-type: square;
 }
-.what-we-believe {
+.what-we-believe-container {
     margin-top: 50px;
+    padding-top: 80px;
   }
   
   .what-we-believe h2 {
@@ -526,6 +527,7 @@ html{
 .mission-vision-values-box {
     display: grid;
     grid-template-rows: 1fr 1fr;
+
 }
 
 .mission-vision-box {
@@ -665,7 +667,7 @@ text-decoration: none;
     width: 50%;
     color: #888; 
     right: 0;
-    background-color: rgba(0, 0, 0, 0.781);
+    background: linear-gradient(45deg, black 0%, black 30%, rgb(78, 53, 8) 70%, rgb(139, 93, 9) 100%) center no-repeat;;
     color: white; 
     height: 418px;
 }
@@ -685,12 +687,12 @@ text-decoration: none;
     object-fit: cover;
 }
 .mission-vision {
-    padding: 50px 0;
+    padding: 80px 0;
     background: radial-gradient(circle at center, 
     rgb(183, 120, 2) 0%, 
     rgb(183, 120, 2) 25%, 
     black 75%, 
-    black 100%);
+    rgb(175, 29, 29) 100%);
     color: white;
   }
   
@@ -962,21 +964,63 @@ text-decoration: none;
     text-align: center;
     font-size: 5rem;
     font-weight: 700;
-    background-color: orange;
+    background: radial-gradient(circle at center, 
+    rgb(183, 120, 2) 0%, 
+    rgb(183, 120, 2) 25%, 
+    black 75%, 
+    black 100%);
     color: white;
 }
 
 /* Story */
 
-.story-page-header {
-    height: 500px;
+.story-header {
+    height: 430px;
     display: flex;
     align-items: end;
     width: 84%;
-    margin: auto;
+    margin-top: 10px;
+    margin-inline: auto;
     box-sizing: border-box;
-}                                                 
+    position: relative;
+    margin-bottom: 40px;
+}   
 
+.cover-img {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.suLogo {
+    position: absolute;
+    z-index: 11;
+    width: 100px;
+    top: 10px;
+    left: 10px;
+}
+
+.story-title {
+    position: absolute;
+    z-index: 10;
+    background: linear-gradient(rgba(255, 255, 255, 0.069), black);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 60px;
+    padding-left: 8%;
+}
+.story-title h1 {
+    border-left: orange 10px solid;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.065);
+    border-radius: 10px;
+    color: white;
+    font-size: 3.5rem;
+}
 .header-text {
     width: 100%;
     height: 100%;
@@ -992,7 +1036,9 @@ text-decoration: none;
 .image {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
 }
 
 
@@ -1002,8 +1048,25 @@ text-decoration: none;
 }
 
 .image img {
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
+}
+
+.story-content {
+    width: 84%;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+.story-content p {
+    text-align: justify;
+}
+
+figcaption {
+    background-color: #00000029;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .story-content h2 {
@@ -1031,8 +1094,7 @@ text-decoration: none;
     rgb(183, 120, 2) 0%, 
     rgb(183, 120, 2) 25%, 
     black 75%, 
-    black 100%);
-    color: white;
+    rgb(165, 38, 38) 100%);
     color: white;
 }
 
@@ -1045,8 +1107,9 @@ text-decoration: none;
 .who-we-are-text {
     flex: 1;
     padding-inline: 10px;
-    display: flex;
-    gap: 40px;
+    /* display: flex;
+    gap: 40px; */
+    padding-bottom: 50px;
     margin-bottom: 40px;
 }
 
@@ -1060,6 +1123,8 @@ text-decoration: none;
     color: white;
 }
 
+
+
 .who-we-are-text .p-styled{
     display: flex;
     text-align: justify;
@@ -1069,9 +1134,28 @@ text-decoration: none;
     width: 100%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 950px) {
     .who-we-are, .history, .why-we-exist {
         padding: 5%;
+    }
+
+    .story-content {
+        width: 92%;
+    }
+
+    .story-header {
+        width: 92%;
+    }
+
+    .story-content .image-style-side {
+        display: block;
+        float: none;
+        margin: auto;
+        width: 100%;
+    }
+
+    .story-content p {
+        text-align:initial
     }
 
     .who-we-are {
@@ -1080,10 +1164,6 @@ text-decoration: none;
     .who-we-are-text {
         display: block;
     }
-
-    /* .image-value {
-        display: none;
-    } */
 
     .need-order {
         display: flex;
@@ -1098,4 +1178,23 @@ text-decoration: none;
         margin-top: 0;
         order: 2;
     }
+}
+
+.contact-list li{
+    list-style: none;
+    border-block: 1px solid orange;
+    border-left: 10px solid orange;
+    border-right: 1px solid orange;
+    height: 66px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.contact-icon {
+    width: 60px;
+}
+
+.contact-icon img{
+    width: 100%;
 }

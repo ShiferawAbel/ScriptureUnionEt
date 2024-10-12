@@ -6,22 +6,22 @@
   </div>
   <div class="container row">
   @foreach ($videos as $video)
-  <div class="col-md-4 upcoming-event">
+    <div class="col-md-4 upcoming-event">
       <a href="{{ route('videos.show', $video) }}">
-            <div class="card upcoming-event">
-              <div class="card-image">
-                <img class="card-img-top image-behind" src="{{ asset($video->thumbnail) }}">
-                <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
-              </div>
-              <div class="card-body">
-                <div class="card-content">
-                  <p class="text-dark">{{ $video->title }}</p>
-                  <p>Watch Now</p>
-                </div>
-              </div>
+        <div class="card upcoming-event">
+          <div class="card-image">
+            <img class="card-img-top image-behind" src="{{ asset($video->thumbnail) }}">
+            <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
+          </div>
+          <div class="card-body">
+            <div class="card-content">
+              <p class="text-dark">{{ $video->title }}</p>
+              <p>Watch Now</p>
             </div>
-          </a>
-        </div>  
+          </div>
+        </div>
+      </a>
+    </div>  
   @endforeach
   </div>
 </x-layouts.app>

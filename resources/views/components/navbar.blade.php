@@ -10,24 +10,24 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
     <x-application-logo></x-application-logo>
-    @auth
-        <a href="{{ route('admin.index') }}" class="donate-link" target="_blank">Admin Dashboard</a>
-    @endauth
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
+            @auth
+                <a href="{{ route('admin.index') }}" class="donate-link" target="_blank">Admin Dashboard</a>
+            @endauth
             <a href="/" class="nav-item nav-link active">Home</a>
-            <a href="/about" class="nav-link">About Us</a>
             <div class="nav-item dropdown">
-                <a href="/about" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/about#why-we-exist" class="dropdown-item">Why We Exist</a>
-                    <a href="/about#history" class="dropdown-item">History</a>
+                    <a href="/about" class="dropdown-item">About Us</a>
                     <a href="/about#who-we-are" class="dropdown-item">Who We Are</a>
-                    <a href="/aboutquote.html" class="dropdown-item">What We Believe</a>
-                    <a href="/aboutteam.html" class="dropdown-item">Our Staff</a>
+                    <a href="/about#history" class="dropdown-item">History</a>
+                    <a href="/about#why-we-exist" class="dropdown-item">Why We Exist</a>
+                    <a href="/about#mission-vision-value" class="dropdown-item">Missios, Vision and Values</a>
+                    <a href="/about#what-we-believe" class="dropdown-item">What We Believe</a>
                 </div> 
             </div>
             <div class="nav-item dropdown">

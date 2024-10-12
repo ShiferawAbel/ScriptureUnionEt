@@ -33,14 +33,7 @@ class EventController extends Controller
         ]);
         // dd($request);
         if ($request->file('banner_img')) {
-            $file = $request->file('banner_img');
-            if (Event::exists()) {
-                $file_name = date('YmdHi').(Event::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('banner_img')->extension();
-            } else {
-                $file_name = date('YmdHi').'1.'.$request->file('banner_img')->extension();
-            }
-            $file->move(public_path('user_uploads/events/banners'), $file_name);
-            $full_path = 'user_uploads/events/banners/'.$file_name;
+            $full_path = $request->file('banner_img')->store('events', 'public');
         }
         $event = Event::create($data);
         $event['banner_img'] = $full_path;
@@ -69,14 +62,8 @@ class EventController extends Controller
         ]);
         $event->update($request->except('banner_img'));
         if ($request->file('banner_img')) {
-            File::delete(public_path('user_uploads/events/banners/'.$event->banner_img));
-            $file = $request->file('banner_img');
-            if (Event::exists()) {
-                $file_name = date('YmdHi').(Event::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('banner_img')->extension();
-            } else {
-                $file_name = date('YmdHi').'1.'.$request->file('banner_img')->extension();
-            }
-            $file->move(public_path('user_uploads/events/banners'), $file_name);
+            File::delete(public_path('storage/'.$event->banner_img));
+            $file_name = $request->file('banner_img')->store('events', 'public');
             $event['banner_img'] = $file_name;
         }
         $event->save();
@@ -85,7 +72,7 @@ class EventController extends Controller
     
     public function destroy(Event $event)
     {
-        File::delete(public_path('user_uploads/events/banners/'.$event->banner_img));
+        File::delete(public_path('storage/'.$event->banner_img));
         $event->delete();
         return redirect(route('admin.events.index'));
     }

@@ -4,6 +4,24 @@
         <div class="row">
             <div class="">
                 <div class="owl-carousel header-carousel position-relative mb-5">
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{ asset('img/9.jpg') }}" alt="">
+                        <div class="position-absolute">
+                            <div class="container carousel-desc">
+                                <div class="row justify-content-center">
+                                    <div class="text-center">
+                                        {{-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5> --}}
+                                        <h1 class="display-3 text-white animated slideInDown mb-3">SCRIPTURE UNION OF ETHIOPIA</h1>
+                                        <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">Students following Jesus;</h5>
+                                        <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.2s">edified by the word of God; </h5>
+                                        <h5 class="fs-5 fw-medium text-white mb-3 pb-2 wow fadeIn" data-wow-delay="0.3s">and prepared for service</h5>
+                                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                        <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Join Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @foreach ($carousels as $carousel)
                         <div class="owl-carousel-item position-relative">
                             <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
@@ -27,11 +45,11 @@
         </div>
     </div>
     
-    
+    {{-- {{dd($carousels)}} --}}
     <!-- Carousel End -->
 
     <div>
-        <p class="mottoish wow fadeInDown" data-wow-delay="0.2s"> Serving God’s Vision for high school </p> 
+        <p class="mottoish wow fadeInLeft" data-wow-delay="0.1s"> Serving God’s Vision for high school </p> 
     </div>
 
     <!-- About Start -->
@@ -97,7 +115,7 @@
     <!-- About End -->
 
     <!-- Feature Start -->
-    <div class="message container-fluid overflow-hidden px-lg-0">
+    {{-- <div class="message container-fluid overflow-hidden px-lg-0">
         <div class="feature px-lg-0">
             <div class="row g-5 mx-lg-0">
                 <div class="col-lg-6 pe-lg-0 p-0 wow fadeInRight" data-wow-delay="0.1s" style="min-height: 400px;">
@@ -113,7 +131,7 @@
                 
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Feature End -->
 
     <!-- Service Start -->
@@ -131,15 +149,17 @@
                       $description = substr($event->description, 0, 100).'...'
                     @endphp
                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item p-4">
+                        <div class="service-item">
                             <div class="overflow-hidden mb-4">
-                                <img class="img-fluid events-banner" src="{{ asset('user_uploads/events/banners/'.$event->banner_img) }}" alt="">
+                                <img class="img-fluid events-banner" src="{{ asset('storage/'.$event->banner_img) }}" alt="">
                             </div>
-                            <h4 class="mb-3">{{ $event->title }}</h4>
-                            <p><span class="h5">Start Date:</span> {{ $start_date_time }}</p>
-                            <p><span class="h5">End Date:</span> {{ $end_date_time }}</p>
-                            <p><span class="h5">Description:</span> {{ $description }}</p>
-                            <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                            <div class="p-4">
+                                <h4 class="mb-3">{{ $event->event_name }}</h4>
+                                <p><span class="h5">Start Date:</span> {{ $start_date_time }}</p>
+                                <p><span class="h5">End Date:</span> {{ $end_date_time }}</p>
+                                <p><span class="h5">Description:</span> {{ $description }}</p>
+                                <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -148,4 +168,59 @@
         </div>
     </div>
     <!-- Service End -->
+
+    <div class="container row m-auto">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">VIDEOS</h6>
+                <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
+            </div>
+            @foreach ($videos as $video)
+            <div class="col-md-4 upcoming-event">
+                <a href="{{ route('videos.show', $video) }}">
+                    <div class="card upcoming-event">
+                        <div class="card-image">
+                            <img class="card-img-top image-behind" src="{{ asset($video->thumbnail) }}">
+                            <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
+                        </div>
+                        <div class="card-body watch-video-desc">
+                            <div class="card-content">
+                            <p class="text-dark">{{ $video->title }}</p>
+                            <p>Watch Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>  
+            @endforeach
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">STORIES</h6>
+                <h1 class="mb-5">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
+            </div>
+            <div class="row g-4">
+                @foreach ($stories as $story)
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid stories-banner" src="{{ asset('storage/'.$story->cover_img) }}" alt="">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="mb-3">{{ $story->title }}</h4>
+                                {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
+                                <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+        
+              </div>
+        </div>
+    </div>
+
 </x-layouts.app>
