@@ -49,7 +49,7 @@
     <!-- Carousel End -->
 
     <div>
-        <p class="mottoish wow fadeInLeft" data-wow-delay="0.1s"> Serving God’s Vision for high school </p> 
+        <p class="mottoish wow fadeInLeft" data-wow-delay="0.1s"> Servinggggggggggggggg God’s Vision for high school </p> 
     </div>
 
     <!-- About Start -->
