@@ -5,7 +5,7 @@
           <div class="">
               <div class="owl-carousel header-carousel position-relative mb-5">
                   <div class="owl-carousel-item position-relative">
-                      <img class="img-fluid" src="{{ asset('img/9.jpg') }}" alt="">
+                      <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students.jpg'') }}" alt="Scripture union of Ethiopia highschool students photo">
                       <div class="position-absolute">
                           <div class="container carousel-desc">
                               <div class="row justify-content-center">
@@ -15,8 +15,8 @@
                                       <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">Students following Jesus;</h5>
                                       <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.2s">edified by the word of God; </h5>
                                       <h5 class="fs-5 fw-medium text-white mb-3 pb-2 wow fadeIn" data-wow-delay="0.3s">and prepared for service</h5>
-                                      <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                      <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Join Us</a>
+                                      <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                      <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
                                   </div>
                               </div>
                           </div>
@@ -32,8 +32,8 @@
                                           <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
                                           <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
                                           <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
-                                          <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                          <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Join Us</a>
+                                          <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                          <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
                                       </div>
                                   </div>
                               </div>
