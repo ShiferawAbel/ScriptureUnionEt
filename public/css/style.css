@@ -963,7 +963,8 @@ text-decoration: none;
     text-align: center;
     font-size: 5rem;
     font-weight: 700;
-    background: orange;
+    background: rgb(164, 111, 13);
+    color: white;
 }
 
 /* Story */
