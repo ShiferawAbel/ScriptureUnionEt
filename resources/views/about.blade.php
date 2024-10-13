@@ -48,7 +48,7 @@
             <h1 class="wow fadeInDown" data-wow-delay="0.3">OUR HISTORY</h1>
             <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION WORLDWIDE</h3>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                <img style="float: right; width: 500px; margin-left: 20px;height: 250px" src="{{asset('img/sumap.png')}}" alt="">
+                <img style="float: right; width: 50%; margin-left: 20px;height: 250px" src="{{asset('img/sumap.png')}}" alt="">
                 The Scripture Union of Ethiopia (SU) is a ministry that is closely related to the Word of God, 
                 children and young adults. The ministry was established in London in 1867, and its beginning was 
                 when 15 children gathered in an art school to hear the word of God. The service gained acceptance 
@@ -61,7 +61,7 @@
             </p>
             <h3 class="wow fadeInDown text-center" data-wow-delay="0.3">SCRIPTURE UNION OF ETHIOPIA</h3>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                <img style="float: right; width: 500px; margin-left: 20px;height: 250px" src="{{asset('img/picture1.jpg')}}" alt="">
+                <img style="float: right; width: 50%; margin-left: 20px;height: 250px" src="{{asset('img/picture1.jpg')}}" alt="">
                 <strong style="font-size: 1.4rem; display: block">1965 to 1976</strong>
                 The Scripture Union of Ethiopia was established in Ethiopia in 1965G.C. From the time of its 
                 establishment until 1976G.C,  the Union’s service was mostly focused on organizing a daily Bible 
@@ -85,7 +85,7 @@
 
             </p>
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
-                <img style="float: right; width: 400px; margin-left: 20px;height: 180px" src="{{asset('img/picture3.jpg')}}" alt="">
+                <img style="float: right; width: 40%; margin-left: 20px;height: 180px" src="{{asset('img/picture3.jpg')}}" alt="">
                 <strong style="font-size: 1.4rem; display: block">1985 - UNTILL NOW</strong>
                 The Scripture Union of Ethiopia has been serving by preparing daily Bible 
                 reading planner, equipping children's ministers for ministry and providing training on various topics. 
