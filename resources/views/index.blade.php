@@ -5,7 +5,7 @@
           <div class="">
               <div class="owl-carousel header-carousel position-relative mb-5">
                   <div class="owl-carousel-item position-relative">
-                      <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students.jpg'') }}" alt="Scripture union of Ethiopia highschool students photo">
+                      <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png'') }}" alt="Scripture union of Ethiopia highschool students photo">
                       <div class="position-absolute">
                           <div class="container carousel-desc">
                               <div class="row justify-content-center">
