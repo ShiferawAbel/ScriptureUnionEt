@@ -41,6 +41,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blogs</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="{{ route('events.index') }}" class="dropdown-item">Events</a>
+                    <a href="{{ route('stories.index') }}" class="dropdown-item">Stories</a>
                     <a href="{{ route('annoucments.index') }}" class="dropdown-item">News/Anoucments</a>
                 </div>
             </div>

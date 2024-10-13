@@ -107,33 +107,11 @@
                           </p>
                       </div>
                   </div>
-                  <a href="" class="btn btn-primary py-3 px-5">Explore More</a>
+                  <a href="/about" class="btn btn-primary py-3 px-5">Explore More</a>
               </div>
           </div>
       </div>
   </div>
-  <!-- About End -->
-
-  <!-- Feature Start -->
-  {{-- <div class="message container-fluid overflow-hidden px-lg-0">
-      <div class="feature px-lg-0">
-          <div class="row g-5 mx-lg-0">
-              <div class="col-lg-6 pe-lg-0 p-0 wow fadeInRight" data-wow-delay="0.1s" style="min-height: 400px;">
-                  <div class="position-relative h-100">
-                      <img style="background-color: black" class="person-image position-absolute img-fluid w-100 h-100" src="{{ asset('img/avatar.png') }}" style="object-fit: cover;" alt="">
-                  </div>
-              </div>
-              <div class="col-lg-6 feature-text wow fadeInUp py-5" data-wow-delay="0.1s">
-                  <h6 class="text-secondary text-uppercase mb-3">A Little Word From Our Director</h6>
-                  <h1 class="mb-5">Welcome To Scripture Union Ethiopia Website</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, non deleniti praesentium fuga hic aliquid nam a consequuntur. Beatae voluptatum illum nihil? Optio commodi numquam doloribus aut, quos quaerat recusandae.entium fuga hic aliquid nam a consequuntur. Beatae voluptatum illum nihil? Optio comm non deleniti praesentium fuga hic aliquid nam a consequuntur. Beatae voluptatum illum nihil? Optio commodi numquam doloribus aut, quos quaerat recusandae.entium fuga hic aliquid nam a consequuntur. Beatae voluptatum illum nihil? Optio commodi numquam doloribus aut, quos quaerat recusandae.entium fuga hic aliquid nam a consequuntur. Beatae voluptatum illum nihil? Optio commodi numquam doloribus aut, quos quaerat recusandae</p>
-              </div>
-              
-          </div>
-      </div>
-  </div> --}}
-  <!-- Feature End -->
-
   <!-- Service Start -->
   <div class="container-xxl py-5">
       <div class="container py-5">

@@ -963,12 +963,7 @@ text-decoration: none;
     text-align: center;
     font-size: 5rem;
     font-weight: 700;
-    background: radial-gradient(circle at center, 
-    rgb(183, 120, 2) 0%, 
-    rgb(183, 120, 2) 25%, 
-    black 75%, 
-    black 100%);
-    color: white;
+    background: orange;
 }
 
 /* Story */
