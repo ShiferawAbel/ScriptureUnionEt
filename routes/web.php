@@ -20,7 +20,7 @@ Route::get('/', function () {
     $carousels = Carousel::all();
     $videos = Video::latest()->take(3)->get();
     $stories = Story::latest()->take(3)->get();
-    return view('home', compact('events', 'carousels', 'videos', 'stories'));
+    return view('Home', compact('events', 'carousels', 'videos', 'stories'));
 });
 
 Route::get('/about', function () {
