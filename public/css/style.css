@@ -691,8 +691,7 @@ text-decoration: none;
     background: radial-gradient(circle at center, 
     rgb(183, 120, 2) 0%, 
     rgb(183, 120, 2) 25%, 
-    black 75%, 
-    rgb(183, 120, 2) 100%);
+    black);
     color: white;
   }
   
