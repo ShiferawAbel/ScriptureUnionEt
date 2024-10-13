@@ -44,6 +44,7 @@ Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
 
+Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
