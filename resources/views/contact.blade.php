@@ -58,10 +58,10 @@
                             <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/facebook-con.png')}}"> Face Book</a>
                         </li>
                         <li>
-                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/instagram-icon.png')}}"> Instagram</a>
+                            <a class="btn btn-social" href="https://www.instagram.com/su.ethiopia57?igsh=d2MwNWdieGx2bWhv&utm_source=qr" target="_blank"><img class="contact-icon" src="{{asset('img/instagram-icon.png')}}"> Instagram</a>
                         </li>
                         <li>
-                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/telegram-icon.png')}}"> Telegram</a>
+                            <a class="btn btn-social" href="https://t.me/su_ethiopia" target="_blank"><img class="contact-icon" src="{{asset('img/telegram-icon.png')}}"> Telegram</a>
                         </li>
                         <li class="ps-4">
                             <p>Phone Number: +251-11-56-27-86</p>
