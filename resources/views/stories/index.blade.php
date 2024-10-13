@@ -1,3 +1,4 @@
+<x-layouts.app>
 @if (count($stories) !== 0)
 <div class="container-xxl py-5">
   <div class="container py-5">
@@ -25,3 +26,5 @@
   </div>
 </div>
 @endif
+
+</x-layouts.app>
