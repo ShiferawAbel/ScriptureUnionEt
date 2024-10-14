@@ -26,7 +26,7 @@ class StaffController extends Controller
         $data['profile_img'] = $profile_path;
         $staff = Staff::create($data);
 
-        return redirect(route('admin.staffs.show', $staff));
+        return redirect(route('staffs.show', $staff));
     }
 
     public function show(Staff $staff)

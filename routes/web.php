@@ -7,6 +7,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\MinistryController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\VideoController;
 use App\Models\Carousel;
@@ -52,6 +53,9 @@ Route::get('/newsletters/{newsletter}', [NewsletterController::class, 'show'])->
 
 Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
+
+Route::get('/staffs/{staff}', [StaffController::class, 'show'])->name('staffs.show');
+
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'index'])->name('admin.index');
