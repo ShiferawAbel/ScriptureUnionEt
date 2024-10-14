@@ -1193,3 +1193,32 @@ figcaption {
 .contact-icon img{
     width: 100%;
 }
+
+.newsletter-card {
+    width: 306px;
+
+}
+
+.newsletter-card img {
+    height: 427px;
+}
+
+.newsletter-show {
+    display: flex;
+    width: 50%;
+    gap: 20px;
+    border: orange 1px solid;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.cover-img-container {
+    min-width: 306px;
+    height: min-content;
+    
+}
+
+.cover-img-container img {
+    width: 100%;
+}
+

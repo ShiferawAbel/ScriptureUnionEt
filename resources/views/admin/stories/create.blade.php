@@ -18,7 +18,7 @@
             <div class="form-group mb-3" id="bannerBox">
               <div class="file-upload">
                 <label for="file-input">
-                  <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
+                <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
                 </label>
               </div>
               <input id="file-input" name="cover_img" type="file">

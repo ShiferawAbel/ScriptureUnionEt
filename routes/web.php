@@ -5,11 +5,13 @@ use App\Http\Controllers\AnnoucmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MinistryController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\VideoController;
 use App\Models\Carousel;
 use App\Models\Event;
+use App\Models\Newsletter;
 use App\Models\Story;
 use App\Models\Video;
 use Illuminate\Container\Attributes\DB;
@@ -18,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $events = Event::all();
     $carousels = Carousel::all();
+    $newsletters = Newsletter::all();
     $videos = Video::latest()->take(3)->get();
     $stories = Story::latest()->take(3)->get();
-    return view('index', compact('events', 'carousels', 'videos', 'stories'));
+    return view('index', compact('events', 'carousels', 'videos', 'stories', 'newsletters'));
 });
 
 Route::get('/about', function () {
@@ -44,12 +47,14 @@ Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
 
+Route::get('/newsletters', [NewsletterController::class, 'index'])->name('newsletters.index');
+Route::get('/newsletters/{newsletter}', [NewsletterController::class, 'show'])->name('newsletters.show');
+
 Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [App\Http\Controllers\admin\AdminController::class, 'index'])->name('admin.index');
-
     Route::get('/events', [App\Http\Controllers\admin\EventController::class, 'index'])->name('admin.events.index');
     Route::get('/events/create', [App\Http\Controllers\admin\EventController::class, 'create'])->name('admin.events.create');
     Route::post('/events/store', [App\Http\Controllers\admin\EventController::class, 'store'])->name('admin.events.store');
@@ -81,6 +86,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/carousels/{carousel}', [App\Http\Controllers\admin\CarouselController::class, 'update'])->name('admin.carousels.update');
     Route::delete('/carousels/{carousel}', [App\Http\Controllers\admin\CarouselController::class, 'destroy'])->name('admin.carousels.destroy');
 
+    Route::get('/newsletters', [App\Http\Controllers\admin\NewsletterController::class, 'index'])->name('admin.newsletters.index');
+    Route::get('/newsletters/create', [App\Http\Controllers\admin\NewsletterController::class, 'create'])->name('admin.newsletters.create');
+    Route::post('/newsletters/store', [App\Http\Controllers\admin\NewsletterController::class, 'store'])->name('admin.newsletters.store');
+    Route::get('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'show'])->name('admin.newsletters.show');
+    Route::get('/newsletters/{newsletter}/edit', [App\Http\Controllers\admin\NewsletterController::class, 'edit'])->name('admin.newsletters.edit');
+    Route::patch('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'update'])->name('admin.newsletters.update');
+    Route::delete('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'destroy'])->name('admin.newsletters.destroy');
+
     Route::get('/stories', [App\Http\Controllers\admin\StoryController::class, 'index'])->name('admin.stories.index');
     Route::get('/stories/create', [App\Http\Controllers\admin\StoryController::class, 'create'])->name('admin.stories.create');
     Route::post('/stories/store', [App\Http\Controllers\admin\StoryController::class, 'store'])->name('admin.stories.store');
@@ -89,6 +102,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'update'])->name('admin.stories.update');
     Route::delete('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'destroy'])->name('admin.stories.destroy');
     Route::post('/ckfinder-upload', [App\Http\Controllers\admin\StoryController::class, 'upload'])->name('ckeditor.upload');
+
 });
 
 Route::get('/dashboard', function () {

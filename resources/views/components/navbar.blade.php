@@ -49,6 +49,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="{{ route('videos.index') }}" class="dropdown-item">Videos</a>
+                    <a href="{{ route('newsletters.index') }}" class="dropdown-item">News Letters</a>
                     {{-- <a href="{{ route('videos.index') }}" class="dropdown-item">Salvation Stories</a> --}}
                 </div>
             </div>
