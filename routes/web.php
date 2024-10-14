@@ -94,6 +94,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'update'])->name('admin.newsletters.update');
     Route::delete('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'destroy'])->name('admin.newsletters.destroy');
 
+    Route::get('/staffs', [App\Http\Controllers\admin\StaffController::class, 'index'])->name('admin.staffs.index');
+    Route::get('/staffs/create', [App\Http\Controllers\admin\StaffController::class, 'create'])->name('admin.staffs.create');
+    Route::post('/staffs/store', [App\Http\Controllers\admin\StaffController::class, 'store'])->name('admin.staffs.store');
+    Route::get('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'show'])->name('admin.staffs.show');
+    Route::get('/staffs/{staff}/edit', [App\Http\Controllers\admin\StaffController::class, 'edit'])->name('admin.staffs.edit');
+    Route::patch('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'update'])->name('admin.staffs.update');
+    Route::delete('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'destroy'])->name('admin.staffs.destroy');
+
     Route::get('/stories', [App\Http\Controllers\admin\StoryController::class, 'index'])->name('admin.stories.index');
     Route::get('/stories/create', [App\Http\Controllers\admin\StoryController::class, 'create'])->name('admin.stories.create');
     Route::post('/stories/store', [App\Http\Controllers\admin\StoryController::class, 'store'])->name('admin.stories.store');
