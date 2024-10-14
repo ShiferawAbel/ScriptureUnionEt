@@ -5,6 +5,6 @@
     <p>First Name: {{$staff->first_name}}</p>
     <p>Last Name: {{$staff->last_name}}</p>
     <p>Role At SU: {{$staff->role}}</p>
-    {!! QrCode::size(200)->generate(url()->current()) !!}
+    {!! QrCode::size(200)->format('png')->generate(url()->current()) !!}
   </div>
 </x-layouts.app>
