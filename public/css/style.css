@@ -1173,6 +1173,10 @@ figcaption {
         margin-top: 0;
         order: 2;
     }
+
+    .newsletter-card {
+        max-width: 306px;
+    }
 }
 
 .contact-list li{
@@ -1195,7 +1199,9 @@ figcaption {
 }
 
 .newsletter-card {
-    width: 306px;
+    flex: 1;
+    min-width: 306px;
+        
 
 }
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StoryController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\VideoController;
 use App\Models\Carousel;
 use App\Models\Event;
@@ -21,8 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $events = Event::all();
     $carousels = Carousel::all();
-    $newsletters = Newsletter::all();
     $videos = Video::latest()->take(3)->get();
+    $newsletters = Newsletter::latest()->take(3)->get();
     $stories = Story::latest()->take(3)->get();
     return view('index', compact('events', 'carousels', 'videos', 'stories', 'newsletters'));
 });
@@ -55,6 +56,8 @@ Route::get('/stories', [StoryController::class, 'index'])->name('stories.index')
 Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
 
 Route::get('/staffs/{staff}', [StaffController::class, 'show'])->name('staffs.show');
+
+Route::post('/subscibe', [SubscriptionController::class, 'store'])->name('subscribe');
 
 // Admin Side
 Route::prefix('admin')->middleware('auth')->group(function () {
