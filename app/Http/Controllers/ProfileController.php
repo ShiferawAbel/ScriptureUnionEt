@@ -29,12 +29,10 @@ class ProfileController extends Controller
     {
         if ($request->hasFile('profile_img')) {
             if ($request->user()->profile_img) {
-                File::delete(public_path('user_uploads/'.$request->user()->profile_img));
+                File::delete(public_path('storage/'.$request->user()->profile_img));
             }
             $file = $request->file('profile_img');
-            $file_name = 'profile_imgs/'.date('YmdHi').$request->user()->id.'.'.$request->file('profile_img')->extension();
-            
-            $file->move(public_path('user_uploads/profile_imgs'), $file_name);
+            $file_name = $file->store('profile_img', 'public');
             
         } else {
             $file_name = $request->user()->profile_img;

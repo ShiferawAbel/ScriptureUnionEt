@@ -55,6 +55,36 @@
       </div>
     </div>
   </li>
+  
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNewsletter"
+      aria-expanded="true" aria-controls="collapseNewsletter">
+      <img src="{{ asset('img/newsletter.png') }}" alt="" class="sidebar-icon">
+      <span>Newsletters</span>
+    </a>
+    <div id="collapseNewsletter" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Annoucements</h6>
+        <a class="collapse-item" href="{{ route('admin.newsletters.create') }}">Add New Newsletter</a>
+        <a class="collapse-item" href="{{ route('admin.newsletters.index') }}">All Newsletters</a>
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStory"
+      aria-expanded="true" aria-controls="collapseStory">
+      <img src="{{ asset('img/story.png') }}" alt="" class="sidebar-icon">
+      <span>Stories</span>
+    </a>
+    <div id="collapseStory" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Annoucements</h6>
+        <a class="collapse-item" href="{{ route('admin.stories.create') }}">Add New Story</a>
+        <a class="collapse-item" href="{{ route('admin.stories.index') }}">All Storys</a>
+      </div>
+    </div>
+  </li>
 
   <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#contentManagement"

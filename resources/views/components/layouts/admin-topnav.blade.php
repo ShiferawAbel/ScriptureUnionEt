@@ -9,7 +9,7 @@
 </a>
   <a class="d-flex align-items-center justify-content-center" href="{{ route('admin.index') }}">
     <div class="brand-icon">
-      <img src="{{ asset('img/SuLogo.png') }}">
+      <img src="{{ asset('img/su-logo.png') }}">
     </div>
     {{-- <div class="sidebar-brand-text mx-3">Scripture Union</div> --}}
   </a>
@@ -17,7 +17,7 @@
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        <img class="img-profile rounded-circle" src="{{ asset('user_uploads/'. auth()->user()->profile_img) }}" style="max-width: 60px">
+        <img class="img-profile rounded-circle" src="{{ asset('storage/'. auth()->user()->profile_img) }}" style="max-width: 60px">
         <span class="ml-2 d-none d-lg-inline small">{{ auth()->user()->name }}</span>
       </a>
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

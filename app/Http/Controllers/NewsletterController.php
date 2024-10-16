@@ -15,6 +15,6 @@ class NewsletterController extends Controller
 
     public function show(Newsletter $newsletter)
     {
-        return view('newsletters.show', compact('newsletter'));
+        return view('admin.newsletters.show', compact('newsletter'));
     }
 }
