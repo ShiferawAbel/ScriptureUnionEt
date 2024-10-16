@@ -33,16 +33,15 @@ class StoryController extends Controller
         $path = $request->file('cover_img')->store('stories/cover_img', 'public');
         $data['cover_img'] = $path;
 
-        
-        $story = Story::create($data);
         if ($request->input('carousel')) {
             $carousel = Carousel::create([
                 'image' => $path,
                 'header' => $request->title,
-                'body' => '',
-                'story_id' => $story->id
+                'body' => ''
             ]);
         }
+
+        $story = Story::create($data);
 
         return redirect(route('admin.stories.show', $story));
     }
