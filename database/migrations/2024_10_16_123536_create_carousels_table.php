@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('header');
             $table->text('body');
+            $table->foreignId('story_id')->constrained()->nullable()->default(null)->onDelete('cascade');
             $table->timestamps();
         });
     }
