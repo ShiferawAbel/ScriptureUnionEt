@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bc1c54a89aeda987267e9e7bb295121",
+    "content-hash": "ac1cf028d5b3e159a6233c3023bc391c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -875,16 +875,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8"
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
                 "shasum": ""
             },
             "require": {
@@ -938,7 +938,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.0.3"
+                "source": "https://github.com/guzzle/promises/tree/2.0.4"
             },
             "funding": [
                 {
@@ -954,7 +954,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-18T10:29:17+00:00"
+            "time": "2024-10-17T10:06:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
