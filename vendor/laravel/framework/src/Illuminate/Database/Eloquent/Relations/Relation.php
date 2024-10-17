@@ -284,7 +284,7 @@ abstract class Relation implements BuilderContract
      *
      * @param  array<int, TDeclaringModel>  $models
      * @param  string|null  $key
-     * @return array<int, int|string|null>
+     * @return array<int, int|string>
      */
     protected function getKeys(array $models, $key = null)
     {

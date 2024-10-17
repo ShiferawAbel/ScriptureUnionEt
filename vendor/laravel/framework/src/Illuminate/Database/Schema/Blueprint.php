@@ -1039,16 +1039,16 @@ class Blueprint
         $column = $column ?: $model->getForeignKey();
 
         if ($model->getKeyType() === 'int' && $model->getIncrementing()) {
-            return $this->foreignId($column)->table($model->getTable());
+            return $this->foreignId($column);
         }
 
         $modelTraits = class_uses_recursive($model);
 
         if (in_array(HasUlids::class, $modelTraits, true)) {
-            return $this->foreignUlid($column, 26)->table($model->getTable());
+            return $this->foreignUlid($column);
         }
 
-        return $this->foreignUuid($column)->table($model->getTable());
+        return $this->foreignUuid($column);
     }
 
     /**
@@ -1450,18 +1450,6 @@ class Blueprint
     public function computed($column, $expression)
     {
         return $this->addColumn('computed', $column, compact('expression'));
-    }
-
-    /**
-     * Create a new vector column on the table.
-     *
-     * @param  string  $column
-     * @param  int  $dimensions
-     * @return \Illuminate\Database\Schema\ColumnDefinition
-     */
-    public function vector($column, $dimensions)
-    {
-        return $this->addColumn('vector', $column, compact('dimensions'));
     }
 
     /**

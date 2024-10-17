@@ -42,8 +42,6 @@ use ReflectionNamedType;
 use RuntimeException;
 use ValueError;
 
-use function Illuminate\Support\enum_value;
-
 trait HasAttributes
 {
     /**
@@ -1255,7 +1253,9 @@ trait HasAttributes
             throw new ValueError(sprintf('Value [%s] is not of the expected enum type [%s].', var_export($value, true), $expectedEnum));
         }
 
-        return enum_value($value);
+        return $value instanceof BackedEnum
+                ? $value->value
+                : $value->name;
     }
 
     /**
@@ -1400,7 +1400,7 @@ trait HasAttributes
             return Hash::make($value);
         }
 
-        /** @phpstan-ignore staticMethod.notFound */
+        /** @phpstan-ignore-next-line */
         if (! Hash::verifyConfiguration($value)) {
             throw new RuntimeException("Could not verify the hashed value's configuration.");
         }
@@ -1620,7 +1620,7 @@ trait HasAttributes
     /**
      * Get the attributes that should be cast.
      *
-     * @return array<string, string>
+     * @return array
      */
     protected function casts()
     {

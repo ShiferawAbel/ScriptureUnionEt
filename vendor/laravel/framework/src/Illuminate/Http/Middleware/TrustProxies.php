@@ -23,7 +23,6 @@ class TrustProxies
                          Request::HEADER_X_FORWARDED_HOST |
                          Request::HEADER_X_FORWARDED_PORT |
                          Request::HEADER_X_FORWARDED_PROTO |
-                         Request::HEADER_X_FORWARDED_PREFIX |
                          Request::HEADER_X_FORWARDED_AWS_ELB;
 
     /**
@@ -90,13 +89,7 @@ class TrustProxies
      */
     protected function setTrustedProxyIpAddressesToSpecificIps(Request $request, array $trustedIps)
     {
-        $request->setTrustedProxies(array_reduce($trustedIps, function ($ips, $trustedIp) use ($request) {
-            $ips[] = $trustedIp === 'REMOTE_ADDR'
-                ? $request->server->get('REMOTE_ADDR')
-                : $trustedIp;
-
-            return $ips;
-        }, []), $this->getTrustedHeaderNames());
+        $request->setTrustedProxies($trustedIps, $this->getTrustedHeaderNames());
     }
 
     /**

@@ -2,7 +2,6 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithDictionary;
 
@@ -25,7 +24,7 @@ class HasManyThrough extends HasOneOrManyThrough
     public function one()
     {
         return HasOneThrough::noConstraints(fn () => new HasOneThrough(
-            tap($this->getQuery(), fn (Builder $query) => $query->getQuery()->joins = []),
+            $this->getQuery(),
             $this->farParent,
             $this->throughParent,
             $this->getFirstKeyName(),

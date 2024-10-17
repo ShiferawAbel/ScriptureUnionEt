@@ -8,9 +8,9 @@ use Illuminate\Support\Env;
 use Illuminate\Support\InteractsWithTime;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
 
-use function Illuminate\Support\php_binary;
 use function Termwind\terminal;
 
 #[AsCommand(name: 'serve')]
@@ -178,7 +178,7 @@ class ServeCommand extends Command
             : __DIR__.'/../resources/server.php';
 
         return [
-            php_binary(),
+            (new PhpExecutableFinder)->find(false),
             '-S',
             $this->host().':'.$this->port(),
             $server,
@@ -357,7 +357,7 @@ class ServeCommand extends Command
      */
     protected function getDateFromLine($line)
     {
-        $regex = ! windows_os() && env('PHP_CLI_SERVER_WORKERS', 1) > 1
+        $regex = env('PHP_CLI_SERVER_WORKERS', 1) > 1
             ? '/^\[\d+]\s\[([a-zA-Z0-9: ]+)\]/'
             : '/^\[([^\]]+)\]/';
 

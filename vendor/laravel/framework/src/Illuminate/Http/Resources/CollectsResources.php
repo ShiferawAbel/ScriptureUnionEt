@@ -68,8 +68,6 @@ trait CollectsResources
      * Get the JSON serialization options that should be applied to the resource response.
      *
      * @return int
-     *
-     * @throws \ReflectionException
      */
     public function jsonOptions()
     {

@@ -2,9 +2,8 @@
 
 namespace Illuminate\Foundation\Console;
 
+use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
-
-use function Illuminate\Support\php_binary;
 
 trait InteractsWithComposerPackages
 {
@@ -40,6 +39,6 @@ trait InteractsWithComposerPackages
      */
     protected function phpBinary()
     {
-        return php_binary();
+        return (new PhpExecutableFinder())->find(false) ?: 'php';
     }
 }

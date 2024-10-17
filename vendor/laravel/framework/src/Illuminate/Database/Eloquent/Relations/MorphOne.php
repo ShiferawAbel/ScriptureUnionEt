@@ -101,12 +101,9 @@ class MorphOne extends MorphOneOrMany implements SupportsPartialRelations
      */
     public function newRelatedInstanceFor(Model $parent)
     {
-        return tap($this->related->newInstance(), function ($instance) use ($parent) {
-            $instance->setAttribute($this->getForeignKeyName(), $parent->{$this->localKey})
-                ->setAttribute($this->getMorphType(), $this->morphClass);
-
-            $this->applyInverseRelationToModel($instance, $parent);
-        });
+        return $this->related->newInstance()
+                    ->setAttribute($this->getForeignKeyName(), $parent->{$this->localKey})
+                    ->setAttribute($this->getMorphType(), $this->morphClass);
     }
 
     /**

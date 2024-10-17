@@ -352,19 +352,7 @@ class Mailable implements MailableContract, Renderable
             }
         }
 
-        return array_merge($data, $this->additionalMessageData());
-    }
-
-    /**
-     * Get additional meta-data to pass along with the view data.
-     *
-     * @return array<string, mixed>
-     */
-    protected function additionalMessageData(): array
-    {
-        return [
-            '__laravel_mailable' => get_class($this),
-        ];
+        return $data;
     }
 
     /**

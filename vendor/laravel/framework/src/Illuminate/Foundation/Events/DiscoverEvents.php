@@ -100,11 +100,11 @@ class DiscoverEvents
 
         $class = trim(Str::replaceFirst($basePath, '', $file->getRealPath()), DIRECTORY_SEPARATOR);
 
-        return ucfirst(Str::camel(str_replace(
+        return str_replace(
             [DIRECTORY_SEPARATOR, ucfirst(basename(app()->path())).'\\'],
             ['\\', app()->getNamespace()],
             ucfirst(Str::replaceLast('.php', '', $class))
-        )));
+        );
     }
 
     /**

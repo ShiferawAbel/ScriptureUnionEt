@@ -28,13 +28,6 @@ class ApplicationBuilder
     protected array $pendingProviders = [];
 
     /**
-     * Any additional routing callbacks that should be invoked while registering routes.
-     *
-     * @var array
-     */
-    protected array $additionalRoutingCallbacks = [];
-
-    /**
      * The Folio / page middleware that have been defined by the user.
      *
      * @var array
@@ -227,10 +220,6 @@ class ApplicationBuilder
                 } else {
                     Route::middleware('web')->group($web);
                 }
-            }
-
-            foreach ($this->additionalRoutingCallbacks as $callback) {
-                $callback();
             }
 
             if (is_string($pages) &&

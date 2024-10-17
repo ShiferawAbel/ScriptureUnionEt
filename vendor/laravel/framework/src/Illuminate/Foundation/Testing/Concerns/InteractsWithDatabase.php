@@ -272,10 +272,6 @@ trait InteractsWithDatabase
      */
     protected function getTable($table)
     {
-        if ($table instanceof Model) {
-            return $table->getTable();
-        }
-
         return $this->newModelFor($table)?->getTable() ?: $table;
     }
 
@@ -287,10 +283,6 @@ trait InteractsWithDatabase
      */
     protected function getTableConnection($table)
     {
-        if ($table instanceof Model) {
-            return $table->getConnectionName();
-        }
-
         return $this->newModelFor($table)?->getConnectionName();
     }
 

@@ -358,11 +358,6 @@ class Process implements \IteratorAggregate
 
         try {
             $process = @proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $envPairs, $this->options);
-
-            // Ensure array vs string commands behave the same
-            if (!$process && \is_array($commandline)) {
-                $process = @proc_open('exec '.$this->buildShellCommandline($commandline), $descriptors, $this->processPipes->pipes, $this->cwd, $envPairs, $this->options);
-            }
         } finally {
             if ($this->ignoredSignals && \function_exists('pcntl_sigprocmask')) {
                 // we restore the signal mask here to avoid any side effects
@@ -372,7 +367,7 @@ class Process implements \IteratorAggregate
             restore_error_handler();
         }
 
-        if (!$process) {
+        if (!\is_resource($process)) {
             throw new ProcessStartFailedException($this, $lastError);
         }
         $this->process = $process;
@@ -1434,9 +1429,8 @@ class Process implements \IteratorAggregate
     private function close(): int
     {
         $this->processPipes->close();
-        if ($this->process) {
+        if (\is_resource($this->process)) {
             proc_close($this->process);
-            $this->process = null;
         }
         $this->exitcode = $this->processInformation['exitcode'];
         $this->status = self::STATUS_TERMINATED;

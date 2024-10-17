@@ -8,8 +8,6 @@ use Illuminate\Support\Arr;
 use PHPUnit\Framework\Assert as PHPUnit;
 use RuntimeException;
 
-use function Illuminate\Support\enum_value;
-
 trait Queueable
 {
     /**
@@ -78,12 +76,12 @@ trait Queueable
     /**
      * Set the desired connection for the job.
      *
-     * @param  \BackedEnum|string|null  $connection
+     * @param  string|null  $connection
      * @return $this
      */
     public function onConnection($connection)
     {
-        $this->connection = enum_value($connection);
+        $this->connection = $connection;
 
         return $this;
     }
@@ -91,12 +89,12 @@ trait Queueable
     /**
      * Set the desired queue for the job.
      *
-     * @param  \BackedEnum|string|null  $queue
+     * @param  string|null  $queue
      * @return $this
      */
     public function onQueue($queue)
     {
-        $this->queue = enum_value($queue);
+        $this->queue = $queue;
 
         return $this;
     }
@@ -104,15 +102,13 @@ trait Queueable
     /**
      * Set the desired connection for the chain.
      *
-     * @param  \BackedEnum|string|null  $connection
+     * @param  string|null  $connection
      * @return $this
      */
     public function allOnConnection($connection)
     {
-        $resolvedConnection = enum_value($connection);
-
-        $this->chainConnection = $resolvedConnection;
-        $this->connection = $resolvedConnection;
+        $this->chainConnection = $connection;
+        $this->connection = $connection;
 
         return $this;
     }
@@ -120,15 +116,13 @@ trait Queueable
     /**
      * Set the desired queue for the chain.
      *
-     * @param  \BackedEnum|string|null  $queue
+     * @param  string|null  $queue
      * @return $this
      */
     public function allOnQueue($queue)
     {
-        $resolvedQueue = enum_value($queue);
-
-        $this->chainQueue = $resolvedQueue;
-        $this->queue = $resolvedQueue;
+        $this->chainQueue = $queue;
+        $this->queue = $queue;
 
         return $this;
     }

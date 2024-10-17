@@ -112,13 +112,6 @@ class Vite implements Htmlable
     protected $prefetchConcurrently = 3;
 
     /**
-     * The name of the event that should trigger prefetching. The event must be dispatched on the `window`.
-     *
-     * @var string
-     */
-    protected $prefetchEvent = 'load';
-
-    /**
      * Get the preloaded assets.
      *
      * @return array
@@ -289,24 +282,9 @@ class Vite implements Htmlable
     }
 
     /**
-     * Eagerly prefetch assets.
-     *
-     * @param  int|null  $concurrency
-     * @param  string  $event
-     * @return $this
-     */
-    public function prefetch($concurrency = null, $event = 'load')
-    {
-        $this->prefetchEvent = $event;
-
-        return $concurrency === null
-            ? $this->usePrefetchStrategy('aggressive')
-            : $this->usePrefetchStrategy('waterfall', ['concurrency' => $concurrency]);
-    }
-
-    /**
      * Use the "waterfall" prefetching strategy.
      *
+     * @param  int|null  $concurrency
      * @return $this
      */
     public function useWaterfallPrefetching(?int $concurrency = null)
@@ -495,8 +473,8 @@ class Vite implements Htmlable
             ->pipe(fn ($assets) => with(Js::from($assets), fn ($assets) => match ($this->prefetchStrategy) {
                 'waterfall' => new HtmlString($base.<<<HTML
 
-                    <script{$this->nonceAttribute()}>
-                         window.addEventListener('{$this->prefetchEvent}', () => window.setTimeout(() => {
+                    <script>
+                         window.addEventListener('load', () => window.setTimeout(() => {
                             const makeLink = (asset) => {
                                 const link = document.createElement('link')
 
@@ -538,8 +516,8 @@ class Vite implements Htmlable
                     HTML),
                 'aggressive' => new HtmlString($base.<<<HTML
 
-                    <script{$this->nonceAttribute()}>
-                         window.addEventListener('{$this->prefetchEvent}', () => window.setTimeout(() => {
+                    <script>
+                         window.addEventListener('load', () => window.setTimeout(() => {
                             const makeLink = (asset) => {
                                 const link = document.createElement('link')
 
@@ -974,20 +952,6 @@ class Vite implements Htmlable
         }
 
         return $manifest[$file];
-    }
-
-    /**
-     * Get the nonce attribute for the prefetch script tags.
-     *
-     * @return \Illuminate\Support\HtmlString
-     */
-    protected function nonceAttribute()
-    {
-        if ($this->cspNonce() === null) {
-            return new HtmlString('');
-        }
-
-        return new HtmlString(' nonce="'.$this->cspNonce().'"');
     }
 
     /**

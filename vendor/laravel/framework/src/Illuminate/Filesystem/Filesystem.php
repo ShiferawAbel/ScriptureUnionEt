@@ -184,7 +184,7 @@ class Filesystem
      *
      * @param  string  $path
      * @param  string  $algorithm
-     * @return string|false
+     * @return string
      */
     public function hash($path, $algorithm = 'md5')
     {

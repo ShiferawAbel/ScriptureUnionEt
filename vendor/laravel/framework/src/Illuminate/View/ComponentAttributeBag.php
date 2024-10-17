@@ -34,7 +34,7 @@ class ComponentAttributeBag implements ArrayAccess, IteratorAggregate, JsonSeria
      */
     public function __construct(array $attributes = [])
     {
-        $this->setAttributes($attributes);
+        $this->attributes = $attributes;
     }
 
     /**

@@ -113,14 +113,14 @@ class BelongsToMany extends Relation
     /**
      * The custom pivot table column for the created_at timestamp.
      *
-     * @var string|null
+     * @var string
      */
     protected $pivotCreatedAt;
 
     /**
      * The custom pivot table column for the updated_at timestamp.
      *
-     * @var string|null
+     * @var string
      */
     protected $pivotUpdatedAt;
 
@@ -1478,7 +1478,7 @@ class BelongsToMany extends Relation
      */
     public function createdAt()
     {
-        return $this->pivotCreatedAt ?? $this->parent->getCreatedAtColumn() ?? Model::CREATED_AT;
+        return $this->pivotCreatedAt ?: $this->parent->getCreatedAtColumn();
     }
 
     /**
@@ -1488,7 +1488,7 @@ class BelongsToMany extends Relation
      */
     public function updatedAt()
     {
-        return $this->pivotUpdatedAt ?? $this->parent->getUpdatedAtColumn() ?? Model::UPDATED_AT;
+        return $this->pivotUpdatedAt ?: $this->parent->getUpdatedAtColumn();
     }
 
     /**

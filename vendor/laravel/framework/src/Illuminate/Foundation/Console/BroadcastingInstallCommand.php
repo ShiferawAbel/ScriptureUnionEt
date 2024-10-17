@@ -7,8 +7,8 @@ use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Process;
 use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Process\PhpExecutableFinder;
 
-use function Illuminate\Support\php_binary;
 use function Laravel\Prompts\confirm;
 
 #[AsCommand(name: 'install:broadcasting')]
@@ -154,8 +154,10 @@ class BroadcastingInstallCommand extends Command
             'laravel/reverb:^1.0',
         ]);
 
+        $php = (new PhpExecutableFinder())->find(false) ?: 'php';
+
         Process::run([
-            php_binary(),
+            $php,
             defined('ARTISAN_BINARY') ? ARTISAN_BINARY : 'artisan',
             'reverb:install',
         ]);

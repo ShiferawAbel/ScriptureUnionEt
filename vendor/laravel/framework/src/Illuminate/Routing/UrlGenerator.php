@@ -347,7 +347,7 @@ class UrlGenerator implements UrlGeneratorContract
     /**
      * Create a signed route URL for a named route.
      *
-     * @param  \BackedEnum|string  $name
+     * @param  string  $name
      * @param  mixed  $parameters
      * @param  \DateTimeInterface|\DateInterval|int|null  $expiration
      * @param  bool  $absolute
@@ -402,7 +402,7 @@ class UrlGenerator implements UrlGeneratorContract
     /**
      * Create a temporary signed route URL for a named route.
      *
-     * @param  \BackedEnum|string  $name
+     * @param  string  $name
      * @param  \DateTimeInterface|\DateInterval|int  $expiration
      * @param  array  $parameters
      * @param  bool  $absolute
@@ -491,19 +491,15 @@ class UrlGenerator implements UrlGeneratorContract
     /**
      * Get the URL to a named route.
      *
-     * @param  \BackedEnum|string  $name
+     * @param  string  $name
      * @param  mixed  $parameters
      * @param  bool  $absolute
      * @return string
      *
-     * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException|\InvalidArgumentException
+     * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException
      */
     public function route($name, $parameters = [], $absolute = true)
     {
-        if ($name instanceof BackedEnum && ! is_string($name = $name->value)) {
-            throw new InvalidArgumentException('Attribute [name] expects a string backed enum.');
-        }
-
         if (! is_null($route = $this->routes->getByName($name))) {
             return $this->toRoute($route, $parameters, $absolute);
         }
@@ -586,7 +582,7 @@ class UrlGenerator implements UrlGeneratorContract
     /**
      * Format the array of URL parameters.
      *
-     * @param  mixed  $parameters
+     * @param  mixed|array  $parameters
      * @return array
      */
     public function formatParameters($parameters)

@@ -4,7 +4,6 @@ namespace Illuminate\Database\Eloquent\Relations;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 /**
  * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
@@ -81,7 +80,7 @@ abstract class MorphOneOrMany extends HasOneOrMany
         $attributes[$this->getForeignKeyName()] = $this->getParentKey();
         $attributes[$this->getMorphType()] = $this->morphClass;
 
-        return $this->applyInverseRelationToModel($this->related->forceCreate($attributes));
+        return $this->related->forceCreate($attributes);
     }
 
     /**
@@ -95,8 +94,6 @@ abstract class MorphOneOrMany extends HasOneOrMany
         $model->{$this->getForeignKeyName()} = $this->getParentKey();
 
         $model->{$this->getMorphType()} = $this->morphClass;
-
-        $this->applyInverseRelationToModel($model);
     }
 
     /**
@@ -156,18 +153,5 @@ abstract class MorphOneOrMany extends HasOneOrMany
     public function getMorphClass()
     {
         return $this->morphClass;
-    }
-
-    /**
-     * Get the possible inverse relations for the parent model.
-     *
-     * @return array<non-empty-string>
-     */
-    protected function getPossibleInverseRelations(): array
-    {
-        return array_unique([
-            Str::beforeLast($this->getMorphType(), '_type'),
-            ...parent::getPossibleInverseRelations(),
-        ]);
     }
 }

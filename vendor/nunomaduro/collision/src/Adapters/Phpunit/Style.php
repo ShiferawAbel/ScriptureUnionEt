@@ -455,7 +455,6 @@ final class Style
 
         $description = $result->description;
 
-        /** @var string $description */
         $description = preg_replace('/`([^`]+)`/', '<span class="text-white">$1</span>', $description);
 
         if (class_exists(\Pest\Collision\Events::class)) {

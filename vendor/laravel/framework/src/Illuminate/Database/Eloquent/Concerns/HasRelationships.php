@@ -792,19 +792,17 @@ trait HasRelationships
      */
     public function touchOwners()
     {
-        $this->withoutRecursion(function () {
-            foreach ($this->getTouchedRelations() as $relation) {
-                $this->$relation()->touch();
+        foreach ($this->getTouchedRelations() as $relation) {
+            $this->$relation()->touch();
 
-                if ($this->$relation instanceof self) {
-                    $this->$relation->fireModelEvent('saved', false);
+            if ($this->$relation instanceof self) {
+                $this->$relation->fireModelEvent('saved', false);
 
-                    $this->$relation->touchOwners();
-                } elseif ($this->$relation instanceof Collection) {
-                    $this->$relation->each->touchOwners();
-                }
+                $this->$relation->touchOwners();
+            } elseif ($this->$relation instanceof Collection) {
+                $this->$relation->each->touchOwners();
             }
-        });
+        }
     }
 
     /**

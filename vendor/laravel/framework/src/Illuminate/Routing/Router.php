@@ -1344,7 +1344,7 @@ class Router implements BindingRegistrar, RegistrarContract
     /**
      * Alias for the "currentRouteUses" method.
      *
-     * @param  array|string  ...$patterns
+     * @param  array  ...$patterns
      * @return bool
      */
     public function uses(...$patterns)

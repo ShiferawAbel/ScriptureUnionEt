@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Filesystem\Filesystem;
 use RuntimeException;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
 
 class Composer
@@ -203,7 +204,7 @@ class Composer
      */
     protected function phpBinary()
     {
-        return php_binary();
+        return (string) (new PhpExecutableFinder)->find(false);
     }
 
     /**

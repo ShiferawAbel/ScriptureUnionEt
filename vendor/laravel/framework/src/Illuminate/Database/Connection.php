@@ -672,11 +672,11 @@ class Connection implements ConnectionInterface
 
         $this->pretending = false;
 
-        try {
-            return $callback();
-        } finally {
-            $this->pretending = true;
-        }
+        $result = $callback();
+
+        $this->pretending = true;
+
+        return $result;
     }
 
     /**
@@ -1634,10 +1634,8 @@ class Connection implements ConnectionInterface
     /**
      * Set the table prefix and return the grammar.
      *
-     * @template TGrammar of \Illuminate\Database\Grammar
-     *
-     * @param  TGrammar  $grammar
-     * @return TGrammar
+     * @param  \Illuminate\Database\Grammar  $grammar
+     * @return \Illuminate\Database\Grammar
      */
     public function withTablePrefix(Grammar $grammar)
     {
@@ -1672,7 +1670,7 @@ class Connection implements ConnectionInterface
      * Get the connection resolver for the given driver.
      *
      * @param  string  $driver
-     * @return \Closure|null
+     * @return mixed
      */
     public static function getResolver($driver)
     {

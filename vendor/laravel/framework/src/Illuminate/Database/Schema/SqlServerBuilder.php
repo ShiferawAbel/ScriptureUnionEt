@@ -42,11 +42,17 @@ class SqlServerBuilder extends Builder
     {
         [$schema, $table] = $this->parseSchemaAndTable($table);
 
+        $schema ??= $this->getDefaultSchema();
         $table = $this->connection->getTablePrefix().$table;
 
-        return (bool) $this->connection->scalar(
-            $this->grammar->compileTableExists($schema, $table)
-        );
+        foreach ($this->getTables() as $value) {
+            if (strtolower($table) === strtolower($value['name'])
+                && strtolower($schema) === strtolower($value['schema'])) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
