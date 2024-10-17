@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <p>Stay in the loop! Subscribe to our newsletter for the latest updates and exclusive content.</p>
                     <div class="ምx-auto" style="max-width: 400px;">
                         <form action="{{ route('subscribe') }}" method="post">
                             @csrf
