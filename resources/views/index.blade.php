@@ -23,22 +23,43 @@
                       </div>
                   </div>
                   @foreach ($carousels as $carousel)
-                      <div class="owl-carousel-item position-relative">
-                          <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
-                          <div class="position-absolute">
-                              <div class="container carousel-desc">
-                                  <div class="row justify-content-center">
-                                      <div class="text-center">
-                                          <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
-                                          <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
-                                          <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
-                                          <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                          <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                  @if ($carousel->story)
+                      
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
+                        <div class="position-absolute">
+                            <div class="container carousel-desc">
+                                <div class="row justify-content-center">
+                                    <div class="text-center">
+                                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                                        <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                                        <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                        <a href="{{route('stories.show', $carousel->story)}}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Read Story</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  @else
+                      
+                    <div class="owl-carousel-item position-relative">
+                        <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
+                        <div class="position-absolute">
+                            <div class="container carousel-desc">
+                                <div class="row justify-content-center">
+                                    <div class="text-center">
+                                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                                        <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                                        <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
+                                        <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  @endif
                   @endforeach
               </div>
           </div>
@@ -191,7 +212,7 @@
                           <div class="p-4">
                               <h4 class="mb-3">{{ $story->title }}</h4>
                               {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
-                              <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                              <a class="btn-slide mt-2" href="{{route('stories.show', $story)}}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
                           </div>
                       </div>
                   </div>

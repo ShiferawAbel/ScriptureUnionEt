@@ -26,18 +26,12 @@ class AnnoucmentController extends Controller
         ]);
         if ($request->file('thumbnail')) {
             $file = $request->file('thumbnail');
-            if (Annoucment::exists()) {
-                $file_name = date('YmdHi').(Annoucment::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('thumbnail')->extension();
-            } else {
-                $file_name = date('YmdHi').'1.'.$request->file('thumbnail')->extension();
-            }
-            $file->move(public_path('user_uploads/annoucments/thumbnails'), $file_name);
-            $full_path = 'user_uploads/annoucments/thumbnails/'.$file_name;
+            $full_path = $file->store('annoucemnts', 'public');
         }
         $annoucment = Annoucment::create($data);
         $annoucment['thumbnail'] = $full_path;
         $annoucment->save();
-        return redirect(route('admin.annoucments.show', $annoucment));
+        return redirect(route('admin.annoucemnts.show', $annoucment));
     }
 
     public function show(Annoucment $annoucment)
@@ -59,15 +53,9 @@ class AnnoucmentController extends Controller
         ]);
         $annoucment->update($request->except('thumbnail'));
         if ($request->file('thumbnail')) {
-            File::delete(public_path('user_uploads/annoucments/thumbnails/'.$annoucment->thumbnail));
+            File::delete(public_path('storage/'.$annoucment->thumbnail));
             $file = $request->file('thumbnail');
-            if (Annoucment::exists()) {
-                $file_name = date('YmdHi').(Annoucment::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('thumbnail')->extension();
-            } else {
-                $file_name = date('YmdHi').'1.'.$request->file('thumbnail')->extension();
-            }
-            $file->move(public_path('user_uploads/annoucments/thumbnails'), $file_name);
-            $full_path = 'user_uploads/annoucments/thumbnails/'.$file_name;
+            $full_path = $file->store('annoucments', 'public');
             $annoucment['thumbnail'] = $full_path;
         }
         $annoucment->save();
@@ -76,7 +64,7 @@ class AnnoucmentController extends Controller
     
     public function destroy(Annoucment $annoucment)
     {
-        File::delete(public_path('user_uploads/annoucments/thumbnails/'.$annoucment->thumbnail));
+        File::delete(public_path('storage/'.$annoucment->thumbnail));
         $annoucment->delete();
         return redirect(route('admin.annoucments.index'));
     }

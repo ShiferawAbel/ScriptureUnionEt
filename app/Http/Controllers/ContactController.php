@@ -22,7 +22,7 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('meseleeyasu42@gmail.com')->send(new ContactMail($data));
+        Mail::to('info@suethiopia.org')->send(new ContactMail($data));
 
         return view('contact');
 
