@@ -10,9 +10,4 @@ class Story extends Model
     use HasFactory;
 
     protected $guarded = [];
-
-    public function carousels()
-    {
-        return $this->hasMany(Carousel::class);
-    }
 }

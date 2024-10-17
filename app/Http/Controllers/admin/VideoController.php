@@ -24,8 +24,10 @@ class VideoController extends Controller
             'youtube_iframe' => 'required|string',
             'thumbnail' => 'image',
         ]);
-        
-        $full_path = $request->file('thumbnail')->store('video_thumbnails', 'public');
+        // dd($data);
+        $file_name = date('YmdHi').'.'.$request->file('thumbnail')->extension();
+        $request->file('thumbnail')->move(public_path('user_uploads/videos/thumbnails'),  $file_name);
+        $full_path = 'user_uploads/videos/thumbnails/'.$file_name;
         $video = Video::create([
             'title' => $request->input('title'),
             'youtube_iframe' => $request->input('youtube_iframe'),
@@ -56,7 +58,13 @@ class VideoController extends Controller
         if ($request->file('thumbnail')) {
             File::delete(public_path($video->thumbnail));
             $file = $request->file('thumbnail');
-            $full_path = $file->store('video_thumbnails', 'public');
+            if (Video::exists()) {
+                $file_name = date('YmdHi').(Video::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('thumbnail')->extension();
+            } else {
+                $file_name = date('YmdHi').'1.'.$request->file('thumbnail')->extension();
+            }
+            $file->move(public_path('user_uploads/videos/thumbnails'), $file_name);
+            $full_path = 'user_uploads/videos/thumbnails/'.$file_name;
             $video['thumbnail'] = $full_path;
         }
         $video->save();
@@ -65,7 +73,7 @@ class VideoController extends Controller
 
     public function destroy(Video $video)
     {
-        File::delete(public_path('storage/'.$video->thumbnail));
+        File::delete(public_path($video->thumbnail));
         $video->delete();
         return redirect(route('admin.videos.index'));
     }
