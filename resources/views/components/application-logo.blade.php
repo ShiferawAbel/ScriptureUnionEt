@@ -1,5 +1,5 @@
 <div style="width: 200px">
-    <a href="/" class="navbar-brand bg-white d-flex align-items-center px-4 px-lg-5">
-        <img src="{{ asset('img/su-logo.png') }}" width="100%" alt="">
+    <a href="/" class="navbar-brand bg-white d-flex align-items-center mx-5">
+        <img src="{{ asset('img/Asset 4.png') }}" width="100%" alt="">
     </a>
 </div>

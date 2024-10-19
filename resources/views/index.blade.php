@@ -1,24 +1,36 @@
 <x-layouts.app>
-  <!-- Carousel Start -->
-  <div class="container-fluid carousel-custom p-0">
+    <div class="container-fluid carousel-custom p-0 position-relative">
+    <div class="fixed-image">
+        <img src="{{ asset('img/New Project.png') }}" alt="Fixed Image" class="img-fluid">
+    </div>
+    <!-- Carousel Start -->
+    <div class="container-fluid carousel-custom p-0">
       <div class="row">
           <div class="">
-              <div class="owl-carousel header-carousel position-relative mb-5">
+              <div class="owl-carousel header-carousel position-relative">
                   <div class="owl-carousel-item position-relative">
                       <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="Scripture union of Ethiopia highschool students photo">
                       <div class="position-absolute">
                           <div class="container carousel-desc">
-                              <div class="row justify-content-center">
-                                  <div class="text-center">
-                                      {{-- <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5> --}}
-                                      <h1 class="display-3 text-white animated slideInDown mb-3">SCRIPTURE UNION OF ETHIOPIA</h1>
-                                      <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">Students following Jesus;</h5>
-                                      <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.2s">edified by the word of God; </h5>
-                                      <h5 class="fs-5 fw-medium text-white mb-3 pb-2 wow fadeIn" data-wow-delay="0.3s">and prepared for service</h5>
-                                      <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                      <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
+                            <div class="row justify-content-center">
+                                <div class="text-center">
+                                  <h1 class="display-3 text-white animated slideInDown mb-3">
+                                    SCRIPTURE UNION OF ETHIOPIA
+                                  </h1>
+                                  <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">
+                                    Students following Jesus; edified by the word of God; prepared for service.
+                                  </h5>
+                                  <div class="carousel-buttons">
+                                    <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                        Donate
+                                      </a>
+                                      <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
+                                        About Us
+                                      </a>
                                   </div>
+                                </div>
                               </div>
+                              
                           </div>
                       </div>
                   </div>
@@ -59,82 +71,81 @@
                             </div>
                         </div>
                     </div>
-                  @endif
-                  @endforeach
-              </div>
+                    @endif
+                    @endforeach
+                </div>
           </div>
       </div>
   </div>
-  
+  </div>
+
+    
+
   {{-- {{dd($carousels)}} --}}
   <!-- Carousel End -->
 
-  <div>
+  {{-- <div>
       <p class="mottoish wow fadeInLeft" data-wow-delay="0.1s"> Serving God’s Vision for high school </p> 
-  </div>
+  </div> --}}
 
-  <!-- About Start -->
-  <div class="container-fluid about-us-home overflow-hidden px-lg-0">
-      <div class="container about py-5 px-lg-0">
-          <div class="row g-5 mx-lg-0">
-              <div class="col-lg-6 ps-lg-0 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 400px;">
-                  <div class="position-relative h-100">
-                      <img class="position-absolute img-fluid w-100 h-100" src="img/about-us-home.jpg" style="object-fit: cover;" alt="">
-                  </div>
-              </div>
-              <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
-                  <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
-                  <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
-                  <p class="mb-5">The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
-                      middle school and high school students believe in the truth of his word and accept Jesus Christ as 
-                      their savior. The young people who have found salvation will be friends of this life-giving word of 
-                      God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
-                      others. Scripture Union works diligently to be a servant to parents, church and society.</p>
-                  <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
-                  <div class="row g-4 mb-5">
-                      <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                          <i class="fa fa-pray fa-3x text-primary mb-3"></i>
-                          <h5>Prayer</h5>
-                          <p class="m-0">
-                              We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we
-                              love our God.
-                          </p>
-                      </div>
-                      <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                          <i class="fa fa-bible fa-3x text-primary mb-3"></i>
-                          <h5>Scripture Reading</h5>
-                          <p class="m-0">
-                              SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
-                              our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy 
-                              Word. 
-                          </p>
-                      </div>
-                      <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                          <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
-                          <h5>Serving Sacrificially</h5>
-                          <p class="m-0">
-                              Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
-                              by paying all the costs required to serve them (Mark 10:45).
-                          </p>
-                      </div>
-                      <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                          <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
-                          <h5>Serving With Partnership</h5>
-                          <p class="m-0">
-                              We believe 
-                              that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and 
-                              individuals who want to partner with Scripture Union in serving students with their money, skills, 
-                              grace, etc.
-                          </p>
-                      </div>
-                  </div>
-                  <a href="/about" class="btn btn-primary py-3 px-5">Explore More</a>
-              </div>
+    <!-- About Start -->
+
+  <div class="container-fluid  about-us-home pt-3 ourvalue-section">
+    <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
+    <div class="row">
+      <div class="col-lg-4 help-section" data-wow-delay="0.3s">
+        <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
+        <p class="mb-5">The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
+            middle school and high school students believe in the truth of his word and accept Jesus Christ as 
+            their savior. The young people who have found salvation will be friends of this life-giving word of 
+            God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
+            others. Scripture Union works diligently to be a servant to parents, church and society.</p>
+        </div>
+        <div class="col-lg-8 features-section">
+            <div class="row">
+            <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
+          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+            <i class="fa fa-pray fa-3x text-primary mb-3"></i>
+            <h5>Prayer</h5>
+            <p class="m-0">
+                We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we
+                love our God.
+            </p>
           </div>
+          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+            <i class="fa fa-bible fa-3x text-primary mb-3"></i>
+            <h5>Scripture Reading</h5>
+            <p class="m-0">
+                SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
+                our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy 
+                Word. 
+            </p>
+          </div>
+          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+            <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
+            <h5>Serving Sacrificially</h5>
+            <p class="m-0">
+                Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
+                by paying all the costs required to serve them (Mark 10:45).
+            </p>
+          </div>
+          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+            <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
+            <h5>Serving With Partnership</h5>
+            <p class="m-0">
+                We believe 
+                that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and 
+                individuals who want to partner with Scripture Union in serving students with their money, skills, 
+                grace, etc.
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
+  
   <!-- Service Start -->
-  <div class="container-xxl py-5">
+  <div class="container-xxl Service py-5">
       <div class="container py-5">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
               <h6 class="text-secondary text-uppercase">Events</h6>
@@ -250,4 +261,6 @@
           </div>
     </div>
     </div>
+      </script>
+      
 </x-layouts.app>

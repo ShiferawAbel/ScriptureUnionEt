@@ -113,6 +113,9 @@ html{
 .navbar-light a.btn {
     height: 75px;
 }
+.navbar-brand img{
+    width: 50%;
+}
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--dark);
@@ -709,10 +712,6 @@ text-decoration: none;
     font-size: 18px;
     line-height: 1.5;
   }
-  
-  @media (max-width: 768px) {
-    .image
-  }
 
   .donation {
     padding: 50px 0;
@@ -1228,3 +1227,94 @@ figcaption {
     width: 100%;
 }
 
+
+
+.carousel-custom {
+    position: relative;
+  }
+  
+  .fixed-image {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+  }
+  
+  .fixed-image img {
+    width: 100%;
+    height: auto;
+  }
+  .carousel-desc {
+    z-index: 3;
+    position: relative;
+  }
+  
+  @media (max-width: 768px) {
+    .fixed-image img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fixed-image img {
+      width: 100%;
+      height: auto;
+    }}
+    .about-us-home {
+        margin-top: 0;
+        padding-top: 0;
+        background: #2E97C4;
+      }
+      .ourvalue-section {
+        padding: 20px;
+      }
+      
+      .help-section {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      .features-section {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .feature-box {
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .feature-box i {
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+      
+      .feature-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      
+      .feature-box p {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+      
+      @media (max-width: 768px) {
+        .feature-box {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+      .Service{
+        background: #F79A4E;
+      }
+      
