@@ -94,11 +94,10 @@
   </div> --}}
 
     <!-- About Start -->
-  <div class="container-fluid about-us-home pt-3 ourvalue-section">
+  <div class="container-fluid about-us-home p-3 ourvalue-section">
   
     <div class="back-image">
         <img src="{{ asset('img/circle.png') }}" alt="Fixed Image" class="img-fluid">
-        <img src="{{ asset('img/download.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
   
   <h4 class="text-secondary text-uppercase mb-3">About Us</h4>

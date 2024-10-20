@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF3E41;
+    --primary: #F79A4E;
     --secondary: #51CFED;
     --light: #F8F2F0;
     --dark: #060315;
@@ -114,7 +114,8 @@ html{
     height: 75px;
 }
 .navbar-brand img{
-    width: 50%;
+   scale: 1.5;
+   margin-left: 30px;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -1007,7 +1008,7 @@ text-decoration: none;
     padding-left: 8%;
 }
 .story-title h1 {
-    border-left: orange 10px solid;
+    border-left: #F79A4E 10px solid;
     padding: 10px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.065);
@@ -1180,9 +1181,9 @@ figcaption {
 
 .contact-list li{
     list-style: none;
-    border-block: 1px solid orange;
-    border-left: 10px solid orange;
-    border-right: 1px solid orange;
+    border-block: 1px solid #F79A4E;
+    border-left: 10px solid #F79A4E;
+    border-right: 1px solid #F79A4E;
     height: 66px;
     border-radius: 10px;
     display: flex;
@@ -1212,7 +1213,7 @@ figcaption {
     display: flex;
     width: 50%;
     gap: 20px;
-    border: orange 1px solid;
+    border: #F79A4E 1px solid;
     margin: auto;
     margin-top: 30px;
 }
@@ -1277,9 +1278,10 @@ figcaption {
     .fixed-image img {
       width: 100%;
       height: auto;
-    }}
+    }
+}
     .about-us-home {
-        margin-top: 0;
+        margin-left: 100px;
         padding-top: 0;
         background: #fff;
       }
@@ -1380,7 +1382,7 @@ figcaption {
       }
       
       .carousel-buttons .btn-filled {
-        background-color: #FFD700;
+        background-color: #f79a4e;
         color: white;
         padding: 10px 20px;
         text-transform: uppercase;
@@ -1391,7 +1393,7 @@ figcaption {
       }
       
       .carousel-buttons .btn-filled:hover {
-        background-color: #FFA500;
+        background-color: #9f6906;
         color: white;
       }
       
