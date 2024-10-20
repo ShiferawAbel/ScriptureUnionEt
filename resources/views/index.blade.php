@@ -1,7 +1,7 @@
 <x-layouts.app>
     <div class="container-fluid carousel-custom p-0 position-relative">
     <div class="fixed-image">
-        <img src="{{ asset('img/New Project.png') }}" alt="Fixed Image" class="img-fluid">
+        <img src="{{ asset('img/New Project11.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
     <!-- Carousel Start -->
     <div class="container-fluid carousel-custom p-0">
@@ -89,61 +89,60 @@
   </div> --}}
 
     <!-- About Start -->
-
-  <div class="container-fluid  about-us-home pt-3 ourvalue-section">
-    <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
-    <div class="row">
-      <div class="col-lg-4 help-section" data-wow-delay="0.3s">
-        <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
-        <p class="mb-5">The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see 
-            middle school and high school students believe in the truth of his word and accept Jesus Christ as 
-            their savior. The young people who have found salvation will be friends of this life-giving word of 
-            God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for 
-            others. Scripture Union works diligently to be a servant to parents, church and society.</p>
+  <div class="container-fluid about-us-home pt-3 ourvalue-section">
+  
+    <div class="back-image">
+        <img src="{{ asset('img/circle.png') }}" alt="Fixed Image" class="img-fluid">
+        <img src="{{ asset('img/download.png') }}" alt="Fixed Image" class="img-fluid">
+    </div>
+  
+  <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
+  <div class="row">
+    <div class="col-lg-4 help-section" data-wow-delay="0.3s">
+      <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
+      <p class="mb-5">
+        The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see middle school and high school students believe in the truth of his word and accept Jesus Christ as their savior. 
+        The young people who have found salvation will be friends of this life-giving word of God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for others. 
+        Scripture Union works diligently to be a servant to parents, church and society.
+      </p>
+    </div>
+    <div class="col-lg-8 features-section">
+      <div class="row">
+        <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+          <i class="fa fa-pray fa-3x text-primary mb-3"></i>
+          <h5>Prayer</h5>
+          <p class="m-0">
+            We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we love our God.
+          </p>
         </div>
-        <div class="col-lg-8 features-section">
-            <div class="row">
-            <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
-          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-            <i class="fa fa-pray fa-3x text-primary mb-3"></i>
-            <h5>Prayer</h5>
-            <p class="m-0">
-                We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we
-                love our God.
-            </p>
-          </div>
-          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-            <i class="fa fa-bible fa-3x text-primary mb-3"></i>
-            <h5>Scripture Reading</h5>
-            <p class="m-0">
-                SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of 
-                our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy 
-                Word. 
-            </p>
-          </div>
-          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-            <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
-            <h5>Serving Sacrificially</h5>
-            <p class="m-0">
-                Serving students is our calling. It is also a steward we received from God. We serve them faithfully 
-                by paying all the costs required to serve them (Mark 10:45).
-            </p>
-          </div>
-          <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-            <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
-            <h5>Serving With Partnership</h5>
-            <p class="m-0">
-                We believe 
-                that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and 
-                individuals who want to partner with Scripture Union in serving students with their money, skills, 
-                grace, etc.
-            </p>
-          </div>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+          <i class="fa fa-bible fa-3x text-primary mb-3"></i>
+          <h5>Scripture Reading</h5>
+          <p class="m-0">
+            SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy Word.
+          </p>
+        </div>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+          <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
+          <h5>Serving Sacrificially</h5>
+          <p class="m-0">
+            Serving students is our calling. It is also a steward we received from God. We serve them faithfully by paying all the costs required to serve them (Mark 10:45).
+          </p>
+        </div>
+        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
+          <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
+          <h5>Serving With Partnership</h5>
+          <p class="m-0">
+            We believe that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and individuals who want to partner with Scripture Union in serving students with their money, skills, grace, etc.
+          </p>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+
+      
   <!-- Service Start -->
   <div class="container-xxl Service py-5">
       <div class="container py-5">
