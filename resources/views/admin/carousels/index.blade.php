@@ -7,7 +7,12 @@
           <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="service-item p-4">
               <div class="overflow-hidden mb-4">
-                  <img class="img-fluid events-banner" src="{{ asset($carousel->image) }}" alt="">
+                @if ($carousel->story)
+                  <img class="img-fluid events-banner" src="{{ asset('storage/'.$carousel->image) }}" alt="">  
+                    
+                @else
+                  <img class="img-fluid events-banner" src="{{ asset('storage/'.$carousel->image) }}" alt="">  
+                @endif
               </div>
               <h4 class="mb-3"><span class="h5">Carousel Header: </span> {{ $carousel->header }}</h4>
               <p><span class="h5">Carousel Body: </span> {{ $carousel->body }}</p>
