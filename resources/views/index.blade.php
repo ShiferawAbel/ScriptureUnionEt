@@ -1,85 +1,90 @@
 <x-layouts.app>
-    <div class="container-fluid carousel-custom p-0 position-relative">
+  <div class="container-fluid carousel-custom p-0 position-relative">
     <div class="fixed-image">
-        <img src="{{ asset('img/New Project11.png') }}" alt="Fixed Image" class="img-fluid">
+      <img src="{{ asset('img/New Project11.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
     <!-- Carousel Start -->
     <div class="container-fluid carousel-custom p-0">
       <div class="row">
-          <div class="">
-              <div class="owl-carousel header-carousel position-relative">
-                  <div class="owl-carousel-item position-relative">
-                      <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="Scripture union of Ethiopia highschool students photo">
-                      <div class="position-absolute">
-                          <div class="container carousel-desc">
-                            <div class="row justify-content-center">
-                                <div class="text-center">
-                                  <h1 class="display-3 text-white animated slideInDown mb-3">
-                                    SCRIPTURE UNION OF ETHIOPIA
-                                  </h1>
-                                  <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">
-                                    Students following Jesus; edified by the word of God; prepared for service.
-                                  </h5>
-                                  <div class="carousel-buttons">
-                                    <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
-                                        Donate
-                                      </a>
-                                      <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">
-                                        About Us
-                                      </a>
-                                  </div>
-                                </div>
-                              </div>
-                              
-                          </div>
+        <div class="">
+          <div class="owl-carousel header-carousel position-relative">
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="Scripture union of Ethiopia highschool students photo">
+              <div class="position-absolute">
+                <div class="container carousel-desc">
+                  <div class="row justify-content-center">
+                    <div class="text-center">
+                      <h1 class="display-3 text-white animated slideInDown mb-3">
+                        SCRIPTURE UNION OF ETHIOPIA
+                      </h1>
+                      <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">
+                        Students following Jesus; edified by the word of God; prepared for service.
+                      </h5>
+                      <div class="carousel-buttons mt-4">
+                        <a href="/donate" class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
+                          Donate
+                        </a>
+                        <a href="/about" class="btn btn-outline py-md-3 px-md-5 animated slideInRight">
+                          About Us
+                        </a>
                       </div>
+                    </div>
                   </div>
-                  @foreach ($carousels as $carousel)
-                  @if ($carousel->story)
-                      
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
-                        <div class="position-absolute">
-                            <div class="container carousel-desc">
-                                <div class="row justify-content-center">
-                                    <div class="text-center">
-                                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
-                                        <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
-                                        <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                        <a href="{{route('stories.show', $carousel->story)}}" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Read Story</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  @else
-                      
-                    <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
-                        <div class="position-absolute">
-                            <div class="container carousel-desc">
-                                <div class="row justify-content-center">
-                                    <div class="text-center">
-                                        <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
-                                        <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
-                                        <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
-                                        <a href="/donate" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Donate</a>
-                                        <a href="/about" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">About Us</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                    @endforeach
                 </div>
+              </div>
+            </div>
+            @foreach ($carousels as $carousel)
+            @if ($carousel->story)
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
+              <div class="position-absolute">
+                <div class="container carousel-desc">
+                  <div class="row justify-content-center">
+                    <div class="text-center">
+                      <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                      <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                      <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                      <div class="carousel-buttons">
+                        <a href="/donate" class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
+                          Donate
+                        </a>                        
+                        <a href="{{ route('stories.show', $carousel->story) }}" class="btn btn-outline py-md-3 px-md-5 animated slideInRight">Read Story</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @else
+            <div class="owl-carousel-item position-relative">
+              <img class="img-fluid" src="{{ asset('storage/'.$carousel->image) }}" alt="">
+              <div class="position-absolute">
+                <div class="container carousel-desc">
+                  <div class="row justify-content-center">
+                    <div class="text-center">
+                      <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                      <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                      <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                      <div class="carousel-buttons">
+                        <a href="/donate" class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
+                          Donate
+                        </a>
+                        <a href="/about" class="btn btn-outline py-md-3 px-md-5 animated slideInRight">
+                          About Us
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endif
+            @endforeach
           </div>
+        </div>
       </div>
+    </div>
   </div>
-  </div>
-
-    
 
   {{-- {{dd($carousels)}} --}}
   <!-- Carousel End -->

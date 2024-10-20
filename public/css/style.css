@@ -1227,33 +1227,45 @@ figcaption {
     width: 100%;
 }
 
-
-
 .carousel-custom {
     position: relative;
   }
   
   .fixed-image {
     position: absolute;
-    bottom: -1px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: auto;
-    z-index: 2;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none; 
   }
   
   .fixed-image img {
     width: 100%;
     height: auto;
+    object-fit: cover;
   }
+  
+  .owl-carousel .owl-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .position-absolute {
+    z-index: 2;
+  }
+  
   .carousel-desc {
-    z-index: 3;
+    z-index: 3; 
     position: relative;
   }
+  
   .carousel-buttons a {
-    z-index: 4; /* Highest z-index for the buttons */
+    z-index: 4;
     position: relative;
   }
+
   @media (max-width: 768px) {
     .fixed-image img {
       width: 100%;
@@ -1350,5 +1362,36 @@ figcaption {
           width: 100%;
           height: auto;
         }
+      }
+      .carousel-buttons .btn-outline {
+        border: 2px solid white;
+        color: white;
+        background-color: transparent;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+        border-radius: 40px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .carousel-buttons .btn-outline:hover {
+        background-color: white;
+        color: black;
+      }
+      
+      .carousel-buttons .btn-filled {
+        background-color: #FFD700;
+        color: white;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        border-radius: 40px;
+      }
+      
+      .carousel-buttons .btn-filled:hover {
+        background-color: #FFA500;
+        color: white;
       }
       
