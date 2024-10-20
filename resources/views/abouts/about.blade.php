@@ -10,7 +10,7 @@
 
     <div class="about-us">
 
-        <div class="who-we-are" id="who-we-are">
+        {{-- <div class="who-we-are" id="who-we-are">
             <h1 class="wow fadeInDown about-us-title" data-wow-delay="0.3">WHO WE ARE</h1>
             <div class="who-we-are-text"> 
                 <div>
@@ -40,8 +40,7 @@
 
                 </div>
             </div
-        </div>
-        </div>
+        </div> --}}
         
 
         <div class="history" id="history">
@@ -94,7 +93,7 @@
             </p>
         </div>
 
-        <div class="why-we-exist" id="why-we-exist">
+        {{-- <div class="why-we-exist" id="why-we-exist">
             <h1 class="wow fadeInDown" data-wow-delay="0.3">WHY WE EXIST</h1>
             
             <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
@@ -141,7 +140,7 @@
                 diligently to help middle and high school students find biblical answers to their age-related 
                 questions.                
             </p>
-        </div>
+        </div> --}}
 
         <section class="mission-vision" id="mission-vision-value">
             <div class="container">

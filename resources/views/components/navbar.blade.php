@@ -22,12 +22,11 @@
             <div class="nav-item dropdown">
                 <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/about" class="dropdown-item">About Us</a>
-                    <a href="/about#who-we-are" class="dropdown-item">Who We Are</a>
-                    <a href="/about#history" class="dropdown-item">History</a>
-                    <a href="/about#why-we-exist" class="dropdown-item">Why We Exist</a>
-                    <a href="/about#mission-vision-value" class="dropdown-item">Missios, Vision and Values</a>
-                    <a href="/about#what-we-believe" class="dropdown-item">What We Believe</a>
+                    {{-- <a href="/about" class="dropdown-item">About Us</a>
+                     --}}
+                    <a href="/history" class="dropdown-item">History</a>
+                    <a href="/vision-mission-values" class="dropdown-item">Missios, Vision and Values</a>
+                    <a href="/what-we-believe" class="dropdown-item">What We Believe</a>
                 </div> 
             </div>
             <div class="nav-item dropdown">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\admin\EventController as AdminEventController;
 use App\Http\Controllers\AnnoucmentController;
 use App\Http\Controllers\ContactController;
@@ -31,6 +32,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::get('/vision-mission-values', [AboutController::class, 'vision_mission_values'])->name('vision_mission_values');
+Route::get('/history', [AboutController::class, 'history'])->name('history');
+Route::get('/what-we-believe', [AboutController::class, 'what_we_believe'])->name('what_we_believe');
+
+
 Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
