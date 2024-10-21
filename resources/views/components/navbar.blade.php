@@ -32,8 +32,9 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Ministries</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="{{ route('highschool-ministry') }}" class="dropdown-item">High-School Students Ministry</a>
+                    <a href="{{ route('highschool-ministry') }}" class="dropdown-item">Students Ministry</a>
                     <a href="{{ route('church-ministry') }}" class="dropdown-item">Church Ministry</a>
+                    <a href="{{ route('church-ministry') }}" class="dropdown-item">Family Ministry</a>
                 </div>
             </div>
             <div class="nav-item dropdown">
