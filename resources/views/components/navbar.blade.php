@@ -18,48 +18,48 @@
             @auth
                 <a href="{{ route('admin.index') }}" class="donate-link" target="_blank">Admin Dashboard</a>
             @endauth
-            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/" class="nav-item nav-link {{ request()->is('home') ? 'active' : '' }}">Home</a>
             <div class="nav-item dropdown">
-                <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                <a href="/" class="nav-link dropdown-toggle {{ request()->is('about*') ? 'active' : '' }}" data-bs-toggle="dropdown">About Us</a>
                 <div class="dropdown-menu fade-up m-0">
                     {{-- <a href="/about" class="dropdown-item">About Us</a>
                      --}}
-                    <a href="/history" class="dropdown-item">History</a>
-                    <a href="/vision-mission-values" class="dropdown-item">Missios, Vision and Values</a>
-                    <a href="/what-we-believe" class="dropdown-item">What We Believe</a>
+                     <a href="{{route('who_we_are')}}" class="dropdown-item {{ request()->is('who_we_are') ? 'active' : '' }}">Who We Are</a>
+                     <a href="{{route('vision_mission_values')}}" class="dropdown-item {{ request()->is('vision_mission_values') ? 'active' : '' }}">Missios, Vision and Values</a>
+                     <a href="{{route('what_we_believe')}}" class="dropdown-item {{ request()->is('what_we_believe') ? 'active' : '' }}">What We Believe</a>
+                     <a href="{{route('history')}}" class="dropdown-item {{ request()->is('history') ? 'active' : '' }}">History</a>
                 </div> 
             </div>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Ministries</a>
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('ministries*') ? 'active' : '' }}" data-bs-toggle="dropdown">Our Ministries</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="{{ route('highschool-ministry') }}" class="dropdown-item">Students Ministry</a>
+                    <a href="{{ route('studets-ministry') }}" class="dropdown-item">Students Ministry</a>
                     <a href="{{ route('church-ministry') }}" class="dropdown-item">Church Ministry</a>
                     <a href="{{ route('church-ministry') }}" class="dropdown-item">Family Ministry</a>
                 </div>
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blogs</a>
+            <a href="{{route('events.index')}}" class="nav-item nav-link {{ request()->is('events*') ? 'active' : '' }}">Events</a>
+            {{-- <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle {" data-bs-toggle="dropdown">Blogs</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="{{ route('events.index') }}" class="dropdown-item">Events</a>
-                    <a href="{{ route('stories.index') }}" class="dropdown-item">Stories</a>
-                    <a href="{{ route('annoucments.index') }}" class="dropdown-item">News/Anoucments</a>
                 </div>
-            </div>
+            </div> --}}
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                <a href="#" class="nav-link dropdown-toggle {{ request()->is('stories*', 'annoucments*', 'videos*', 'newsletters*') ? 'active' : '' }}" data-bs-toggle="dropdown">Resources</a>
                 <div class="dropdown-menu fade-up m-0">
+                    <a href="{{ route('stories.index') }}" class="dropdown-item">Stories</a>
+                    <a href="{{ route('annoucments.index') }}" class="dropdown-item">Annoucments</a>
                     <a href="{{ route('videos.index') }}" class="dropdown-item">Videos</a>
                     <a href="{{ route('newsletters.index') }}" class="dropdown-item">News Letters</a>
                     {{-- <a href="{{ route('videos.index') }}" class="dropdown-item">Salvation Stories</a> --}}
                 </div>
             </div>
-            <a href="{{ route('contacts.create') }}" class="nav-item nav-link">Contact Us</a>
+            <a href="{{ route('contacts.create') }}" class="nav-item nav-link {{ request()->is('contacts*') ? 'active' : '' }}">Contact Us</a>
             <a href="{{ url('donate') }}" class="donate-link">Donate</a>
 
             @auth
                 <form method="POST" class="d-flex align-center" action="{{ route('logout') }}">
                     @csrf
-                    
                     <button type="submit" class="btn btn-danger">Logout</button>
                 </form>   
             @endauth

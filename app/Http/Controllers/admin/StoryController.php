@@ -5,7 +5,9 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
+use App\Models\Image;
 use App\Models\Story;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class StoryController extends Controller
@@ -28,13 +30,15 @@ class StoryController extends Controller
             'title' => ['required'],
             'cover_img' => 'required|image',
             'content' => ['required'],
+            'images.*' => 'required|image|mimes:jpg,jpeg,png'
         ]);
+        // dd($request);
 
         $path = $request->file('cover_img')->store('stories/cover_img', 'public');
         $data['cover_img'] = $path;
 
         
-        $story = Story::create($data);
+        $story = Story::create(Arr::except($data, ['images']));
         if ($request->input('carousel')) {
             $carousel = Carousel::create([
                 'image' => $path,
@@ -42,6 +46,16 @@ class StoryController extends Controller
                 'body' => '',
                 'story_id' => $story->id
             ]);
+        }
+
+        if($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('stories/images', 'public');
+                Image::create([
+                    'image' => $path,
+                    'story_id' => $story->id,
+                ]);
+            }
         }
 
         return redirect(route('admin.stories.show', $story));

@@ -20,4 +20,9 @@ class AboutController extends Controller
     {
         return view('abouts.what-we-believe');
     }
+
+    public function who_we_are()
+    {
+        return view('abouts.who-we-are');
+    }
 }

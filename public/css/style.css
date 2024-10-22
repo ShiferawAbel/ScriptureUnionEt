@@ -1396,4 +1396,47 @@ figcaption {
         background-color: #9f6906;
         color: white;
       }
-      
+      .image-carousel {
+        width: calc(100% + 100px); /* Increase the width by 100px */
+        height: 700px; /* Fixed height */
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .image-carousel img {
+        height: 100%; /* Make the images fill the container */
+        width: 100%; /* Maintain the aspect ratio */
+        object-fit: cover; /* Ensure the image covers the area without overflow */
+    }
+    
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none; /* Allow clicks to pass through to the carousel */
+    }
+    
+    .owl-nav .owl-prev,
+    .owl-nav .owl-next {
+        background: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        width: 60px; /* Keep buttons width */
+        height: 60px; /* Keep buttons height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: auto; /* Enable clicks on the buttons */
+    }
+    
+    .owl-nav .owl-prev:hover,
+    .owl-nav .owl-next:hover {
+        background: #cc5200;
+    }
+    

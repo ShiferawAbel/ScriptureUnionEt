@@ -115,6 +115,18 @@
     <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('lib/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $(".image-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                nav: true,
+                dots: true
+            });
+        });
+    </script>
 
     <!-- Template Javascript -->
 </body>

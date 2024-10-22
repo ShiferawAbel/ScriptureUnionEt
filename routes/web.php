@@ -27,15 +27,16 @@ Route::get('/', function () {
     $newsletters = Newsletter::latest()->take(3)->get();
     $stories = Story::latest()->take(3)->get();
     return view('index', compact('events', 'carousels', 'videos', 'stories', 'newsletters'));
-});
+})->name('home');
 
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/vision-mission-values', [AboutController::class, 'vision_mission_values'])->name('vision_mission_values');
-Route::get('/history', [AboutController::class, 'history'])->name('history');
-Route::get('/what-we-believe', [AboutController::class, 'what_we_believe'])->name('what_we_believe');
+Route::get('about/vision-mission-values', [AboutController::class, 'vision_mission_values'])->name('vision_mission_values');
+Route::get('about/history', [AboutController::class, 'history'])->name('history');
+Route::get('about/what-we-believe', [AboutController::class, 'what_we_believe'])->name('what_we_believe');
+Route::get('about/who-we-are', [AboutController::class, 'who_we_are'])->name('who_we_are');
 
 
 Route::get('/donate', function () {
@@ -50,8 +51,9 @@ Route::get('/events', [EventController::class, 'index'])->name('events.index');
 Route::get('/annoucments', [AnnoucmentController::class, 'index'])->name('annoucments.index');
 Route::get('/annoucments/{annoucment}', [AnnoucmentController::class, 'show'])->name('annoucments.show');
 
-Route::get('/ministries/highschool-ministry', [MinistryController::class, 'highschool'])->name('highschool-ministry');
+Route::get('/ministries/studets-ministry', [MinistryController::class, 'highschool'])->name('studets-ministry');
 Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])->name('church-ministry');
+Route::get('/ministries/family-ministry', [MinistryController::class, 'highschool'])->name('family-ministry');
 
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
 Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');

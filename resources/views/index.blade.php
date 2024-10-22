@@ -241,7 +241,7 @@
     <div class="container py-5">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
             <h6 class="text-secondary text-uppercase">News Letter</h6>
-            <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS PAPER</h1>
+            <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
         </div>
         <div class="row g-5 align-center">
             @foreach ($newsletters as $newsletter)

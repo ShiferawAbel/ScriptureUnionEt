@@ -28,6 +28,15 @@
             </div>   
             
             <textarea name="content" id="editor"></textarea>
+            
+            <div class="form-group mb-3" id="bannerBox">
+              <input id="file-input" name="images[]" type="file" multiple>
+              @error('images[]')
+                <p>{{ $message }}</p>
+              @enderror
+            </div>   
+            
+
             <button type="submit">Submit</button>
           </form>
         </div>

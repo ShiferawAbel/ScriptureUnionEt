@@ -15,4 +15,9 @@ class Story extends Model
     {
         return $this->hasMany(Carousel::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
 }
