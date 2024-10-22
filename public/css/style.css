@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #F79A4E;
+    --primary: #ff8b32;
     --secondary: #51CFED;
     --light: #F8F2F0;
     --dark: #060315;
@@ -1008,7 +1008,7 @@ text-decoration: none;
     padding-left: 8%;
 }
 .story-title h1 {
-    border-left: #F79A4E 10px solid;
+    border-left: #ff8b32 10px solid;
     padding: 10px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.065);
@@ -1181,9 +1181,9 @@ figcaption {
 
 .contact-list li{
     list-style: none;
-    border-block: 1px solid #F79A4E;
-    border-left: 10px solid #F79A4E;
-    border-right: 1px solid #F79A4E;
+    border-block: 1px solid #ff8b32;
+    border-left: 10px solid #ff8b32;
+    border-right: 1px solid #ff8b32;
     height: 66px;
     border-radius: 10px;
     display: flex;
@@ -1213,7 +1213,7 @@ figcaption {
     display: flex;
     width: 50%;
     gap: 20px;
-    border: #F79A4E 1px solid;
+    border: #ff8b32 1px solid;
     margin: auto;
     margin-top: 30px;
 }
@@ -1234,23 +1234,18 @@ figcaption {
   
   .fixed-image {
     position: absolute;
-    top: 0;
+    top: 3px;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
-    pointer-events: none; 
-  }
+    pointer-events: none;
+}
   
   .fixed-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-  }
-  
-  .owl-carousel .owl-item img {
-    width: 100%;
-    height: auto;
   }
   
   .position-absolute {
@@ -1258,7 +1253,7 @@ figcaption {
   }
   
   .carousel-desc {
-    z-index: 3; 
+    z-index: 3;
     position: relative;
   }
   
@@ -1266,73 +1261,87 @@ figcaption {
     z-index: 4;
     position: relative;
   }
-
-  @media (max-width: 768px) {
+  
+  @media (max-width: 908px) {
     .fixed-image img {
       width: 100%;
-      height: auto;
+      height: 100%;
     }
   }
   
   @media (max-width: 480px) {
     .fixed-image img {
       width: 100%;
+      height: 100%;
+    }
+  }
+  .about-us-home {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+  
+  .back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Position the image behind the content */
+  }
+  
+  .back-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+  }
+  
+  .help-section, .features-section {
+    position: relative;
+    z-index: 2; /* Ensure content stays above the background image */
+  }
+    .feature-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .feature-box i {
+    color: #007bff;
+    margin-bottom: 10px;
+    }
+
+    .feature-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    }
+
+    .feature-box p {
+    font-size: 1rem;
+    color: #6c757d;
+    }
+  @media (max-width: 768px) {
+    .back-image img {
+      width: 100%;
       height: auto;
     }
-}
-    .about-us-home {
-        margin-left: 100px;
-        padding-top: 0;
-        background: #fff;
-      }
-      .ourvalue-section {
-        padding: 20px;
-      }
+  }
+  
+  @media (max-width: 480px) {
+    .back-image img {
+      width: 100%;
+      height: auto;
+    }
+  }
+    
       
-      .help-section {
-        background-color: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      
-      .features-section {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      
-      .feature-box {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 10px;
-        margin: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-      
-      .feature-box i {
-        color: #007bff;
-        margin-bottom: 10px;
-      }
-      
-      .feature-box h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
-      
-      .feature-box p {
-        font-size: 1rem;
-        color: #6c757d;
-      }
-      
-      @media (max-width: 768px) {
-        .feature-box {
-          flex: 0 0 100%;
-          max-width: 100%;
-        }
-      }
       .Service{
-        background: #F79A4E;
+        background: #ff8b32;
       }
       .about-us-home {
         position: relative;
@@ -1382,7 +1391,7 @@ figcaption {
       }
       
       .carousel-buttons .btn-filled {
-        background-color: #f79a4e;
+        background-color: #ff8b32;
         color: white;
         padding: 10px 20px;
         text-transform: uppercase;
@@ -1396,47 +1405,74 @@ figcaption {
         background-color: #9f6906;
         color: white;
       }
-      .image-carousel {
-        width: calc(100% + 100px); /* Increase the width by 100px */
-        height: 700px; /* Fixed height */
-        margin: 0 auto;
-        position: relative;
-    }
-    
-    .image-carousel img {
-        height: 100%; /* Make the images fill the container */
-        width: 100%; /* Maintain the aspect ratio */
-        object-fit: cover; /* Ensure the image covers the area without overflow */
-    }
-    
-    .owl-nav {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-        pointer-events: none; /* Allow clicks to pass through to the carousel */
-    }
-    
-    .owl-nav .owl-prev,
-    .owl-nav .owl-next {
-        background: #ff6600;
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 20px;
-        cursor: pointer;
-        width: 60px; /* Keep buttons width */
-        height: 60px; /* Keep buttons height */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        pointer-events: auto; /* Enable clicks on the buttons */
-    }
-    
     .owl-nav .owl-prev:hover,
     .owl-nav .owl-next:hover {
         background: #cc5200;
     }
-    
+
+  .service-carousel {
+    position: relative;
+  }
+  
+  .fixed2-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .fixed2-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-caption {
+    z-index: 3;
+    position: absolute;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+  }
+  .events-header{
+    position: relative;
+    z-index: 3;
+  }
+  .carousel-buttons a {
+    z-index: 4;
+    position: relative;
+    border-radius: 25px; /* Make the buttons rounded */
+  }
+  
+  .carousel-indicators li {
+    background-color: #000;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #000;
+  }
+  
+  @media (max-width: 768px) {
+    .fixed2-image img {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-caption {
+      top: 10px; /* Adjust for smaller screens */
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fixed2-image img {
+      width: 100%;
+      height: auto;
+    }
+    .carousel-caption {
+      top: 5px; 
+      width: 55%;
+    }
+  }
+  

@@ -110,7 +110,7 @@
         Scripture Union works diligently to be a servant to parents, church and society.
       </p>
     </div>
-    <div class="col-lg-8 features-section">
+    <div class="col-lg-8 features-section container">
       <div class="row">
         <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
         <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
@@ -148,9 +148,12 @@
 
       
   <!-- Service Start -->
-  <div class="container-xxl Service py-5">
+  <div class="container-xxl Service py-5 position-relative">
+    <div class="fixed2-image">
+      <img src="{{ asset('img/lg14.c6fcdbf66538541802cc.png') }}" alt="Fixed Image" class="img-fluid">
+    </div>
       <div class="container py-5">
-          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
               <h6 class="text-secondary text-uppercase">Events</h6>
               <h1 class="mb-5">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
           </div>
@@ -182,7 +185,7 @@
   </div>
   <!-- Service End -->
 
-  <div class="container row m-auto">
+  <div class="container row m-auto postion-relative">
       <div class="container py-5">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
               <h6 class="text-secondary text-uppercase">VIDEOS</h6>
