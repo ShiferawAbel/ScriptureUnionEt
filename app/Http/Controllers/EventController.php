@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Intervention\Image\Laravel\Facades\Image;
 class EventController extends Controller
 {
     public function index() 

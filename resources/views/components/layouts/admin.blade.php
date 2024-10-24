@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="img/logo/logo.png" rel="icon">
-  <title>RuangAdmin - Dashboard</title>
+  <title>SUETHIOPIA - Dashboard</title>
   <link href="img/favicon.ico" rel="icon">
 
   <!-- Google Web Fonts -->

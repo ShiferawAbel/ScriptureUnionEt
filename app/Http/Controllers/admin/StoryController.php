@@ -4,11 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ImageController;
 use App\Models\Carousel;
-use App\Models\Image;
+use App\Models\Image as ImageModel;
 use App\Models\Story;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class StoryController extends Controller
 {
@@ -33,10 +36,15 @@ class StoryController extends Controller
             'images.*' => 'required|image|mimes:jpg,jpeg,png'
         ]);
         // dd($request);
-
-        $path = $request->file('cover_img')->store('stories/cover_img', 'public');
+        $file = $request->file('cover_img');
+        $image_manager = new ImageManager(new Driver());
+        $img  = $image_manager->read($file);
+        $resized = $img->resize(1154, 487);
+        $path = 'stories/cover_img'.$file->hashName();
+        $resized->save(public_path('storage/'.$path));
         $data['cover_img'] = $path;
 
+        
         
         $story = Story::create(Arr::except($data, ['images']));
         if ($request->input('carousel')) {
@@ -51,7 +59,7 @@ class StoryController extends Controller
         if($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $path = $image->store('stories/images', 'public');
-                Image::create([
+                ImageModel::create([
                     'image' => $path,
                     'story_id' => $story->id,
                 ]);
