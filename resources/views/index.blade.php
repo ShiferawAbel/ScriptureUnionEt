@@ -88,115 +88,155 @@
 
   {{-- {{dd($carousels)}} --}}
   <!-- Carousel End -->
-
-  {{-- <div>
-      <p class="mottoish wow fadeInLeft" data-wow-delay="0.1s"> Serving God’s Vision for high school </p> 
-  </div> --}}
-
-    <!-- About Start -->
-  <div class="container-fluid about-us-home p-3 ourvalue-section">
   
-    <div class="back-image">
-        <img src="{{ asset('img/circle.png') }}" alt="Fixed Image" class="img-fluid">
-    </div>
-  
-  <h4 class="text-secondary text-uppercase mb-3">About Us</h4>
-  <div class="row">
-    <div class="col-lg-4 help-section" data-wow-delay="0.3s">
-      <h1 class="mb-5">SCRIPTURE UNION ETHIOPIA</h1>
-      <p class="mb-5">
-        The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see middle school and high school students believe in the truth of his word and accept Jesus Christ as their savior. 
-        The young people who have found salvation will be friends of this life-giving word of God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for others. 
-        Scripture Union works diligently to be a servant to parents, church and society.
-      </p>
-    </div>
-    <div class="col-lg-8 features-section container">
-      <div class="row">
-        <h6 class="text-secondary text-uppercase mb-3">Our Values</h6>
-        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-          <i class="fa fa-pray fa-3x text-primary mb-3"></i>
-          <h5>Prayer</h5>
-          <p class="m-0">
-            We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we love our God.
-          </p>
-        </div>
-        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-          <i class="fa fa-bible fa-3x text-primary mb-3"></i>
-          <h5>Scripture Reading</h5>
-          <p class="m-0">
-            SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy Word.
-          </p>
-        </div>
-        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-          <i class="fa fa-hand-holding-heart fa-3x text-primary mb-3"></i>
-          <h5>Serving Sacrificially</h5>
-          <p class="m-0">
-            Serving students is our calling. It is also a steward we received from God. We serve them faithfully by paying all the costs required to serve them (Mark 10:45).
-          </p>
-        </div>
-        <div class="col-md-4 feature-box wow fadeIn" data-wow-delay="0.5s">
-          <i class="fa fa-handshake fa-3x text-primary mb-3"></i>
-          <h5>Serving With Partnership</h5>
-          <p class="m-0">
-            We believe that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and individuals who want to partner with Scripture Union in serving students with their money, skills, grace, etc.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+  <!-- About Section -->
+   <section id="about" class="about section">
+    <div class="container wow fadeIn" data-wow-delay="0.5s">
+      <div class="row align-items-xl-center gy-5">
 
-      
-  <!-- Service Start -->
-  <div class="container-xxl Service py-5 position-relative">
-    <div class="fixed2-image">
-      <img src="{{ asset('img/lg14.c6fcdbf66538541802cc.png') }}" alt="Fixed Image" class="img-fluid">
-    </div>
-      <div class="container py-5">
-          <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-secondary text-uppercase">Events</h6>
-              <h1 class="mb-5">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
+        <div class="col-xl-5 content">
+          <h2 class="text-primary">About Us</h2>
+          <h2>SCRIPTURE UNION ETHIOPIA</h2>
+          <p>
+            The Scripture Union of Ethiopia serves God's heart's desire for high school. It is eager to see middle school and high school students believe in the truth of his word and accept Jesus Christ as their savior. 
+            The young people who have found salvation will be friends of this life-giving word of God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for others. 
+            Scripture Union works diligently to be a servant to parents, church and society.
+          </p>
+          <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <div class="col-xl-7">
+          <div class="row gy-4 icon-boxes">
+
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+              <div class="icon-box">
+                <i class="fa fa-pray fa-5x text-primary"></i>
+                <h3>Prayer</h3>
+                <p>
+                  We put prayer first (Philippians 4:6). We strive to know God's will through prayer. In prayer we come before God for thanksgiving. In prayer, we show that we love our God.
+                </p>              
+              </div>
+            </div> <!-- End Icon Box -->
+            
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.9s">
+              <div class="icon-box">
+                <i class="fa fa-bible fa-3x text-primary"></i>
+                <h3>Scripture Reading</h3>
+                <p>
+                  SU is a word-reading ministry. Reading the life-changing Word of God is the primary practice of our ministry. We believe that the change in people's lives is linked to reading and obeying the Holy Word.
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.11s">
+              <div class="icon-box">
+                <i class="fa fa-hand-holding-heart fa-3x text-primary"></i>
+                <h3>Serving Sacrificially</h3>
+                <p>
+                  Serving students is our calling. It is also a steward we received from God. We serve them faithfully by paying all the costs required to serve them (Mark 10:45).
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.13s">
+              <div class="icon-box">
+                <i class="fa fa-handshake fa-3x text-primary"></i>
+                <h3>Serving With Partnership</h3>
+                <p>
+                  We believe that the ministry of God's kingdom is not a solitary race. We work together with all the institutions and individuals who want to partner with Scripture Union in serving students with their money, skills, grace, etc.
+                </p>
+              </div>
+            </div> <!-- End Icon Box -->
+
           </div>
-          <div class="row g-4">
-              @foreach ($events as $event)
-                  @php
-                    $start_date_time = str_replace('T', ' @ ', $event->start_date_time);
-                    $end_date_time = str_replace('T', ' @ ', $event->end_date_time);
-                    $description = substr($event->description, 0, 100).'...'
-                  @endphp
-                  <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                      <div class="service-item">
-                          <div class="overflow-hidden mb-4">
-                              <img class="img-fluid events-banner" src="{{ asset('storage/'.$event->banner_img) }}" alt="">
-                          </div>
-                          <div class="p-4">
-                              <h4 class="mb-3">{{ $event->event_name }}</h4>
-                              <p><span class="h5">Start Date:</span> {{ $start_date_time }}</p>
-                              <p><span class="h5">End Date:</span> {{ $end_date_time }}</p>
-                              <p><span class="h5">Description:</span> {{ $description }}</p>
-                              <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
-                          </div>
-                      </div>
-                  </div>
-              @endforeach
-      
-            </div>
+        </div>
+
       </div>
+    </div>
+    
+  </section>
+  <!-- /About Section -->
+  
+  
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action section dark-background my-5">
+
+          <img src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="">
+    
+          <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+              <div class="col-xl-10">
+                <div class="text-center">
+                  <h3>Scripture Union Ethiopia</h3>
+                  <p>Your generous donation will help us continue this vital work, reaching more students with the transformative power of God’s Word. Join us in making a difference today.</p>
+                  <a class="cta-btn" href="#">Donate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        </section><!-- /Call To Action Section -->
+    
+  
+  
+  <!-- Events Start -->
+  <div class="container">
+
+    <div class="row gy-5">
+      <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="text-primary text-uppercase">Events</h6>
+        <h1 class="mb-2">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
+      </div>
+      @foreach ($events as $event)
+      <div class="col-xl-4 col-md-6">
+        <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+          @php
+          $description = substr($event->description, 0, 100).'...';
+          @endphp
+          <div class="post-img position-relative overflow-hidden">
+            <img src="{{ asset('storage/'.$event->banner_img) }}" class="img-fluid" alt="">
+            <span class="post-date">December 12</span>
+          </div>
+
+          <div class="post-content d-flex flex-column">
+
+            <h3 class="post-title">{{ $event->event_name }}</h3>
+
+            <div class="meta d-flex align-items-center">
+               <span class="ps-2">{{ $description }}</span>
+              <span class="px-3 text-black-50"></span>
+            </div>
+
+            <hr>
+
+            <a href="" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+          </div>
+
+        </div>
+      </div>
+      @endforeach
+    </div>
+
   </div>
-  <!-- Service End -->
+
+</section>
+<!-- Events End -->
+
 
   <div class="container row m-auto postion-relative">
       <div class="container py-5">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-secondary text-uppercase">VIDEOS</h6>
+              <h6 class="text-primary text-uppercase">VIDEOS</h6>
               <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
           </div>
+         <div class="row">
           @foreach ($videos as $video)
           <div class="col-md-4 upcoming-event">
               <a href="{{ route('videos.show', $video) }}">
                   <div class="card upcoming-event">
                       <div class="card-image">
-                          <img class="card-img-top image-behind" src="{{ asset($video->thumbnail) }}">
+                          <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
                           <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
                       </div>
                       <div class="card-body watch-video-desc">
@@ -209,6 +249,7 @@
               </a>
           </div>  
           @endforeach
+         </div>
       </div>
   </div>
 
@@ -216,7 +257,7 @@
   <div class="container-xxl py-5">
       <div class="container py-5">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-secondary text-uppercase">STORIES</h6>
+              <h6 class="text-primary text-uppercase">STORIES</h6>
               <h1 class="mb-5">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
           </div>
           <div class="row g-4">
@@ -243,7 +284,7 @@
   <div class="container-xxl py-5">
     <div class="container py-5">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="text-secondary text-uppercase">News Letter</h6>
+            <h6 class="text-primary text-uppercase">News Letter</h6>
             <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
         </div>
         <div class="row g-5 align-center">

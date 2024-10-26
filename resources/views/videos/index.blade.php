@@ -10,7 +10,7 @@
       <a href="{{ route('videos.show', $video) }}">
         <div class="card upcoming-event">
           <div class="card-image">
-            <img class="card-img-top image-behind" src="{{ asset($video->thumbnail) }}">
+            <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
             <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
           </div>
           <div class="card-body">

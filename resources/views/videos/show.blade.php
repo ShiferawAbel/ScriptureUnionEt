@@ -13,7 +13,7 @@
                   <a class="cardhover" href="{{ route('videos.show', $video) }}">
                       <div class="recommendation-video">
                           <div class="youtubecard-image">
-                              <img class="youtube-img-top image-behind" src="{{ asset($video->thumbnail) }}">
+                              <img class="youtube-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
                               <img class="imagevideo-in-front" src="{{ asset('img/play.png') }}" alt="Overlay image">
                           </div>
                           <p class="recommendation-video-title">{{ $video->title }}</p>

@@ -10,7 +10,7 @@
         <a href="{{ route('admin.videos.show', $video) }}">
               <div class="card upcoming-event">
                 <div class="card-image">
-                  <img class="card-img-top" src="{{ asset($video->thumbnail) }}">
+                  <img class="card-img-top" src="{{ asset('storage/'.$video->thumbnail) }}">
                 </div>
                 <div class="card-body">
                   <div class="card-content">
