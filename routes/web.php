@@ -47,6 +47,7 @@ Route::get('/contacts/create', [ContactController::class, 'create'])->name('cont
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
+Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
 
 Route::get('/annoucments', [AnnoucmentController::class, 'index'])->name('annoucments.index');
 Route::get('/annoucments/{annoucment}', [AnnoucmentController::class, 'show'])->name('annoucments.show');

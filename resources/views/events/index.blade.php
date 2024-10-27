@@ -23,7 +23,7 @@
               </div>
               <div class="card-action">
                 <p class="card-text"><i class="fas fa-map-marker-alt"></i>{{ $next_event->location }}</p>
-                <a href="#">Read More</a>
+                <a href="{{route('events.show', $next_event)}}">Read More</a>
                 <span class="released-date">9min ago</span>
               </div>
             </div>
@@ -51,7 +51,7 @@
                           <p><span class="h5">Start Date:</span> {{ $start_date_time }}</p>
                           <p><span class="h5">End Date:</span> {{ $end_date_time }}</p>
                           <p><span class="h5">Description:</span> {{ $description }}</p>
-                          <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                          <a class="btn-slide mt-2" href="{{route('events.show', $event)}}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
                       </div>
                   </div>
               </div>
