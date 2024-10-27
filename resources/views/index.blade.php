@@ -86,7 +86,6 @@
     </div>
   </div>
 
-  {{-- {{dd($carousels)}} --}}
   <!-- Carousel End -->
   
   <!-- About Section -->
@@ -195,7 +194,7 @@
           @endphp
           <div class="post-img position-relative overflow-hidden">
             <img src="{{ asset('storage/'.$event->banner_img) }}" class="img-fluid" alt="">
-            <span class="post-date">December 12</span>
+            <span class="post-date">{{ $event->month_day_start }}</span>
           </div>
 
           <div class="post-content d-flex flex-column">
@@ -209,7 +208,7 @@
 
             <hr>
 
-            <a href="" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            <a href="{{ route('events.show', $event) }}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
           </div>
 
@@ -223,35 +222,55 @@
 </section>
 <!-- Events End -->
 
-
-  <div class="container row m-auto postion-relative">
-      <div class="container py-5">
-          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-primary text-uppercase">VIDEOS</h6>
-              <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
-          </div>
-         <div class="row">
-          @foreach ($videos as $video)
-          <div class="col-md-4 upcoming-event">
-              <a href="{{ route('videos.show', $video) }}">
-                  <div class="card upcoming-event">
-                      <div class="card-image">
-                          <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
-                          <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
-                      </div>
-                      <div class="card-body watch-video-desc">
-                          <div class="card-content">
-                          <p class="text-dark">{{ $video->title }}</p>
-                          <p>Watch Now</p>
-                          </div>
-                      </div>
-                  </div>
-              </a>
-          </div>  
-          @endforeach
-         </div>
-      </div>
+<div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
+  <div class="content text-center">
+    <h1>Subscribe to Our YouTube Channel</h1>
+    <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
+    <div class="mb-4">
+      <a href="https://www.youtube.com/your-channel-link" class="btn btn-danger btn-lg">
+        <i class="fab fa-youtube"></i> Subscribe Now
+      </a>
+    </div>
+    <div>
+      <a href="https://www.youtube.com/your-channel-link" class="social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+    </div>
   </div>
+</div>
+ 
+  @if (count($videos) !== 0)
+    <div class="container row m-auto postion-relative">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">VIDEOS</h6>
+                <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
+            </div>
+          <div class="row">
+            @foreach ($videos as $video)
+            <div class="col-md-4 upcoming-event">
+                <a href="{{ route('videos.show', $video) }}">
+                    <div class="card upcoming-event">
+                        <div class="card-image">
+                            <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
+                            <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
+                        </div>
+                        <div class="card-body watch-video-desc">
+                            <div class="card-content">
+                            <p class="text-dark">{{ $video->title }}</p>
+                            <p>Watch Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>  
+            @endforeach
+          </div>
+        </div>
+    </div>
+  @endif
+
 
 
   <div class="container-xxl py-5">

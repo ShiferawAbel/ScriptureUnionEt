@@ -17,11 +17,16 @@ use App\Models\Event;
 use App\Models\Newsletter;
 use App\Models\Story;
 use App\Models\Video;
+use Carbon\Carbon;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $events = Event::all();
+    $events = Event::orderBy('start_date_time', 'asc')->get()->map(function ($event) {
+        $event->month_day_start = Carbon::parse($event->start_date_time)->format('F j');
+        return $event;
+    });
+    
     $carousels = Carousel::all();
     $videos = Video::latest()->take(3)->get();
     $newsletters = Newsletter::latest()->take(3)->get();

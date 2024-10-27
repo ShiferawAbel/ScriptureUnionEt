@@ -1820,3 +1820,30 @@ margin-left: 10px;
     border: 2px solid var(--accent-color);
   }
   
+  
+  .background {
+    background: url('your-thumbnail-image.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    overflow: hidden; /* Ensure content does not overflow */
+  }
+  
+  .content {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .content h1 {
+    color: white;
+  }
+  .social-icon {
+    color: #ff0000; /* YouTube Red */
+    font-size: 48px;
+    margin-right: 15px;
+  }
