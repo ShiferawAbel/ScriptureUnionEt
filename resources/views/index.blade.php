@@ -223,11 +223,11 @@
 <!-- Events End -->
 
 <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
-  <div class="content text-center">
+  <div class="content-youtube text-center">
     <h1>Subscribe to Our YouTube Channel</h1>
     <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
     <div class="mb-4">
-      <a href="https://www.youtube.com/your-channel-link" class="btn btn-danger btn-lg">
+      <a disabled class="btn btn-danger btn-lg">
         <i class="fab fa-youtube"></i> Subscribe Now
       </a>
     </div>
@@ -272,61 +272,62 @@
   @endif
 
 
+  @if (count($stories) !== 0)
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-primary text-uppercase">STORIES</h6>
+                <h1 class="mb-5">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
+            </div>
+            <div class="row g-4">
+                @foreach ($stories as $story)
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item">
+                            <div class="overflow-hidden mb-4">
+                                <img class="img-fluid stories-banner" src="{{ asset('storage/'.$story->cover_img) }}" alt="">
+                            </div>
+                            <div class="p-4">
+                                <h4 class="mb-3">{{ $story->title }}</h4>
+                                {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
+                                <a class="btn-slide mt-2" href="{{route('stories.show', $story)}}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+        
+              </div>
+        </div>
+    </div>
+  @endif
 
-  <div class="container-xxl py-5">
+  @if (count($newsletters) !== 0)
+    <div class="container-xxl py-5">
       <div class="container py-5">
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-primary text-uppercase">STORIES</h6>
-              <h1 class="mb-5">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
+              <h6 class="text-primary text-uppercase">News Letter</h6>
+              <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
           </div>
-          <div class="row g-4">
-              @foreach ($stories as $story)
-                  <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="row g-5 align-center">
+              @foreach ($newsletters as $newsletter)
+                  <div class="newsletter-card wow fadeInUp" data-wow-delay="0.3s">
                       <div class="service-item">
                           <div class="overflow-hidden mb-4">
-                              <img class="img-fluid stories-banner" src="{{ asset('storage/'.$story->cover_img) }}" alt="">
+                              <img class="img-fluid events-banner" src="{{ asset('storage/'.$newsletter->cover_img) }}" alt="">
                           </div>
-                          <div class="p-4">
-                              <h4 class="mb-3">{{ $story->title }}</h4>
-                              {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
-                              <a class="btn-slide mt-2" href="{{route('stories.show', $story)}}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                          <div class="p-4 pt-0">
+                              <h4 class="mb-3">{{ $newsletter->title }}</h4>
+                              <div class="text-center">
+                                  <a href="{{'storage/'.$newsletter->pdf_file}}" class="btn btn-primary py-md-2 px-md-2 me-3 animated slideInLeft">Download</a>
+                                  <a href="{{route('newsletters.show', $newsletter)}}" class="btn btn-secondary py-md-2 px-md-2 animated slideInRight">Description</a>
+                              </div>
                           </div>
                       </div>
                   </div>
               @endforeach
-      
+              <a href="{{route('newsletters.index')}}" class="btn btn-primary py-md-2 px-md-2">All Newsletters>></a>
             </div>
       </div>
-  </div>
-
-
-  <div class="container-xxl py-5">
-    <div class="container py-5">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="text-primary text-uppercase">News Letter</h6>
-            <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
-        </div>
-        <div class="row g-5 align-center">
-            @foreach ($newsletters as $newsletter)
-                <div class="newsletter-card wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden mb-4">
-                            <img class="img-fluid events-banner" src="{{ asset('storage/'.$newsletter->cover_img) }}" alt="">
-                        </div>
-                        <div class="p-4 pt-0">
-                            <h4 class="mb-3">{{ $newsletter->title }}</h4>
-                            <div class="text-center">
-                                <a href="{{'storage/'.$newsletter->pdf_file}}" class="btn btn-primary py-md-2 px-md-2 me-3 animated slideInLeft">Download</a>
-                                <a href="{{route('newsletters.show', $newsletter)}}" class="btn btn-secondary py-md-2 px-md-2 animated slideInRight">Description</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-            <a href="{{route('newsletters.index')}}" class="btn btn-primary py-md-2 px-md-2">All Newsletters>></a>
-          </div>
     </div>
-    </div>
-      </script>
+  @endif
       
 </x-layouts.app>

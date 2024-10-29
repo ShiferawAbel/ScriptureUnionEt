@@ -1822,24 +1822,30 @@ margin-left: 10px;
   
   
   .background {
-    background: url('your-thumbnail-image.jpg') no-repeat center center;
-    background-size: cover;
-    height: 100vh;
+    /* background: url('your-thumbnail-image.jpg') no-repeat center center; */
+    background-size:contain;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
+    margin-top: 30px;
+    padding: 30px 80px;
+    height: 90vh;
     justify-content: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
     overflow: hidden; /* Ensure content does not overflow */
   }
   
-  .content {
+  .content-youtube {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
+    padding-top: 90px;
+    height: 100%;
     border-radius: 10px;
+    width: 100%;
   }
 
-  .content h1 {
+  .content-youtube h1 {
     color: white;
   }
   .social-icon {
