@@ -1,7 +1,7 @@
 <x-layouts.admin>
   <div>
     <div class="container  d-flex justify-content-center">
-        <div class="card w-50 mt-3">
+        <div class="card w-75 mt-3">
             <div class="card-body">
               <form action="{{route('admin.newsletters.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -17,6 +17,7 @@
                 <div class="form-group mb-3" id="bannerBox">
                   <div class="file-upload">
                     <label for="cover-img">
+                      Choose Thubmnail: 
                       <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
                     </label>
                   </div>
@@ -25,6 +26,8 @@
                     <p>{{ $message }}</p>
                   @enderror
                 </div>   
+
+                <label for="pdf-file">Add The Pdf FIle Here: </label>
                 <input id="pdf-file" name="pdf_file" type="file">
                 <button class="submit">Submit</button>
               </form>

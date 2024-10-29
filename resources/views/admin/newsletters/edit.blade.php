@@ -18,6 +18,7 @@
                 <div class="form-group mb-3" id="bannerBox">
                   <div class="file-upload">
                     <label for="cover-img">
+                      Choose Thubmnail: 
                       <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
                     </label>
                   </div>

@@ -28,7 +28,7 @@
     
     <!-- Template Stylesheet -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{asset('img/su-logo.png')}}" type="image/icon type">
+    <link rel="icon" href="{{asset('img/web-icon.png')}}" type="image/icon type">
 </head>
 
 <body>

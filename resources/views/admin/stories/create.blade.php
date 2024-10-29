@@ -18,6 +18,7 @@
             <div class="form-group mb-3" id="bannerBox">
               <div class="file-upload">
                 <label for="file-input">
+                Choose Cover Image For The Story: 
                 <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
                 </label>
               </div>
@@ -29,15 +30,16 @@
             
             <textarea name="content" id="editor"></textarea>
             
-            <div class="form-group mb-3" id="bannerBox">
-              <input id="file-input" name="images[]" type="file" multiple>
+            <div class="form-group mb-3 mt-4" id="bannerBox">
+              <label for="images-related">Insert Images Related To Your Story Here: </label>
+              <input id="images-related" name="images[]" type="file" multiple>
               @error('images[]')
                 <p>{{ $message }}</p>
               @enderror
             </div>   
             
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
