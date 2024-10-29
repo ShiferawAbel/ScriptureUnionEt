@@ -222,23 +222,17 @@
 </section>
 <!-- Events End -->
 
-<div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
-  <div class="content-youtube text-center">
-    <h1>Subscribe to Our YouTube Channel</h1>
-    <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
-    <div class="mb-4">
-      <a disabled class="btn btn-danger btn-lg">
-        <i class="fab fa-youtube"></i> Subscribe Now
-      </a>
-    </div>
-    <div>
-      <a href="https://www.youtube.com/your-channel-link" class="social-icon"><i class="fab fa-youtube"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+  <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
+    <div class="content-youtube text-center">
+      <h1>Subscribe to Our YouTube Channel</h1>
+      <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
+      <div class="mb-4">
+        <a disabled class="btn btn-danger btn-lg">
+          <i class="fab fa-youtube"></i> Subscribe Now
+        </a>
+      </div>
     </div>
   </div>
-</div>
  
   @if (count($videos) !== 0)
     <div class="container row m-auto postion-relative">
