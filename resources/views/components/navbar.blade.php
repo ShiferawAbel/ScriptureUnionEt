@@ -33,7 +33,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('ministries*') ? 'active' : '' }}" data-bs-toggle="dropdown">Our Ministries</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="{{ route('studets-ministry') }}" class="dropdown-item">Students Ministry</a>
+                    <a href="{{ route('studets-ministry') }}" class="dropdown-item">School Ministry</a>
                     <a href="{{ route('church-ministry') }}" class="dropdown-item">Church Ministry</a>
                     <a href="{{ route('church-ministry') }}" class="dropdown-item">Family Ministry</a>
                 </div>
