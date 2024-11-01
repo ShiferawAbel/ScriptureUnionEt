@@ -535,16 +535,16 @@ html{
 }
 /* Donate Button */
 .donate-link {
-    background-color: #ff8b32;
+    background-color: rgb(226, 176, 10);
     padding: 9px;
-    border-radius: 20px;
+    border-radius: 7px;
     color: white;
     max-height: 50px;
     align-self: center;
     margin-right: 15px;
 }
 .donate-link:hover {
-    background-color: #ed9552;
+    background-color: rgb(238, 197, 63);
     color: white;
 }
 /*End Donate Button */
@@ -1299,24 +1299,27 @@ figcaption {
       height: 100%;
     }
   }
-
-.ontheTop{
-    z-index: 3;
+  .about-us-home {
     position: relative;
-}
-.back-image {
-  position: absolute;
-  margin-top: 100px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-
-}
-.back-image img{
-  width: 100%;
-  height: 100%;
-}
+    overflow: hidden;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+  
+  .back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Position the image behind the content */
+  }
+  
+  .back-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+  }
   
   .help-section, .features-section {
     position: relative;
