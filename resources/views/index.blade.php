@@ -103,7 +103,7 @@
           </p>
           <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
         </div>
-
+        
         <div class="col-xl-7">
           <div class="row gy-4 icon-boxes">
 
@@ -157,8 +157,8 @@
   <!-- /About Section -->
   
   
-        <!-- Call To Action Section -->
-        <section id="call-to-action" class="call-to-action section dark-background my-5">
+  <!-- Call To Action Section -->
+  <section id="call-to-action" class="call-to-action section dark-background my-5">
 
           <img src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="">
     
@@ -173,55 +173,58 @@
               </div>
             </div>
           </div>
-    
+          
         </section><!-- /Call To Action Section -->
-    
+        
+        
   
-  
-  <!-- Events Start -->
+   <!-- Events Start -->
+<div class=" evets-show  position-relative">
+  <div class="back-image wow fadeInUp" data-wow-delay="0.5s">
+    <img src="{{ asset('img/videoBg2.png') }}" alt="Fixed Image" class="img-fluid">
+  </div>
   <div class="container">
-
-    <div class="row gy-5">
+    <div class="row gy-5 ontheTop">
       <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
         <h6 class="text-primary text-uppercase">Events</h6>
         <h1 class="mb-2">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
       </div>
       @foreach ($events as $event)
+      @php
+      $description = substr($event->description, 0, 100) . '...';
+      @endphp
       <div class="col-xl-4 col-md-6">
         <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
-          @php
-          $description = substr($event->description, 0, 100).'...';
-          @endphp
-          <div class="post-img position-relative overflow-hidden">
+          <div class="post-img position-relative overflow-hidden event-banner">
             <img src="{{ asset('storage/'.$event->banner_img) }}" class="img-fluid" alt="">
             <span class="post-date">{{ $event->month_day_start }}</span>
           </div>
-
           <div class="post-content d-flex flex-column">
-
             <h3 class="post-title">{{ $event->event_name }}</h3>
-
             <div class="meta d-flex align-items-center">
-               <span class="ps-2">{{ $description }}</span>
-              <span class="px-3 text-black-50"></span>
+              <span class="ps-2">{{ $description }}</span>
             </div>
-
             <hr>
+<<<<<<< Updated upstream
 
             <a href="{{ route('events.show', $event) }}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
+=======
+            <a href="" class="readmore stretched-link">
+              <span>Read More</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+>>>>>>> Stashed changes
           </div>
-
         </div>
       </div>
       @endforeach
     </div>
-
   </div>
-
-</section>
+</div>
 <!-- Events End -->
 
+<<<<<<< Updated upstream
   <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
     <div class="content-youtube text-center">
       <h1>Subscribe to Our YouTube Channel</h1>
@@ -230,6 +233,36 @@
         <a disabled class="btn btn-danger btn-lg">
           <i class="fab fa-youtube"></i> Subscribe Now
         </a>
+=======
+
+
+<div class="container row m-auto postion-relative">
+  <div class="container py-5 ontheTop">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+              <h6 class="text-primary text-uppercase">VIDEOS</h6>
+              <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
+          </div>
+         <div class="row">
+          @foreach ($videos as $video)
+          <div class="col-md-4 upcoming-event">
+              <a href="{{ route('videos.show', $video) }}">
+                  <div class="card upcoming-event">
+                      <div class="card-image">
+                          <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
+                          <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
+                      </div>
+                      <div class="card-body watch-video-desc">
+                          <div class="card-content">
+                          <p class="text-dark">{{ $video->title }}</p>
+                          <p>Watch Now</p>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </div>  
+          @endforeach
+         </div>
+>>>>>>> Stashed changes
       </div>
     </div>
   </div>
@@ -266,6 +299,7 @@
   @endif
 
 
+<<<<<<< Updated upstream
   @if (count($stories) !== 0)
     <div class="container-xxl py-5">
         <div class="container py-5">
@@ -297,6 +331,10 @@
   @if (count($newsletters) !== 0)
     <div class="container-xxl py-5">
       <div class="container py-5">
+=======
+  <div class="container-xxl py-5">
+      <div class="container py-5 ontheTop">
+>>>>>>> Stashed changes
           <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
               <h6 class="text-primary text-uppercase">News Letter</h6>
               <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
@@ -321,7 +359,40 @@
               <a href="{{route('newsletters.index')}}" class="btn btn-primary py-md-2 px-md-2">All Newsletters>></a>
             </div>
       </div>
+<<<<<<< Updated upstream
     </div>
   @endif
+=======
+  </div>
+
+
+  {{-- <div class="container-xxl py-5">
+    <div class="container py-5 ontheTop">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">News Letter</h6>
+            <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
+        </div>
+        <div class="row g-5 align-center">
+            @foreach ($newsletters as $newsletter)
+                <div class="newsletter-card wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid events-banner" src="{{ asset('storage/'.$newsletter->cover_img) }}" alt="">
+                        </div>
+                        <div class="p-4 pt-0">
+                            <h4 class="mb-3">{{ $newsletter->title }}</h4>
+                            <div class="text-center">
+                                <a href="{{'storage/'.$newsletter->pdf_file}}" class="btn btn-primary py-md-2 px-md-2 me-3 animated slideInLeft">Download</a>
+                                <a href="{{route('newsletters.show', $newsletter)}}" class="btn btn-secondary py-md-2 px-md-2 animated slideInRight">Description</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            <a href="{{route('newsletters.index')}}" class="btn btn-primary py-md-2 px-md-2">All Newsletters>></a>
+          </div>
+    </div>
+    </div> --}}
+>>>>>>> Stashed changes
       
 </x-layouts.app>

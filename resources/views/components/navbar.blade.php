@@ -55,7 +55,7 @@
                 </div>
             </div>
             <a href="{{ route('contacts.create') }}" class="nav-item nav-link {{ request()->is('contacts*') ? 'active' : '' }}">Contact Us</a>
-            <a href="{{ url('donate') }}" class="donate-link">Donate</a>
+            <a href="{{ url('donate') }}" class="donate-link px-5">Donate</a>
 
             @auth
                 <form method="POST" class="d-flex align-center" action="{{ route('logout') }}">
