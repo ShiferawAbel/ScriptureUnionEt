@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\admin\EventController as AdminEventController;
+use App\Http\Controllers\admin\RequestIdController;
 use App\Http\Controllers\AnnoucmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\VideoController;
 use App\Models\Carousel;
 use App\Models\Event;
 use App\Models\Newsletter;
+use App\Models\RequestId;
 use App\Models\Story;
 use App\Models\Video;
 use Carbon\Carbon;
@@ -70,7 +72,7 @@ Route::get('/newsletters/{newsletter}', [NewsletterController::class, 'show'])->
 Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
 
-Route::get('/staffs/{staff}', [StaffController::class, 'show'])->name('staffs.show');
+Route::get('/id/{request_id}', [RequestIdController::class, 'show'])->name('id.show');
 
 Route::post('/subscibe', [SubscriptionController::class, 'store'])->name('subscribe');
 
@@ -141,6 +143,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::delete('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'destroy'])->name('admin.stories.destroy');
     Route::post('/ckfinder-upload', [App\Http\Controllers\admin\StoryController::class, 'upload'])->name('ckeditor.upload');
 
+    Route::get('/downloadId/{request_id}', function(RequestId $request_id){
+        $filePath = public_path('id_cards/'. str_replace('/', '_', $request_id->uuid) .'.png');
+        return response()->download($filePath);
+    })->name('downloadId');
 });
 
 Route::get('/dashboard', function () {

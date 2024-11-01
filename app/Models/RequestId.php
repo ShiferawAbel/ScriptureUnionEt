@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RequestId extends Model
 {
-    //
+    protected $guarded = [];
 }

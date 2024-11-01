@@ -40,7 +40,7 @@
                   <img id="preview" src="{{asset('img/avatar.png')}}" alt="Choose File">
               </label>
               <input id="file-input" name="profile" type="file">
-              @error('banner_img')
+              @error('profile')
                 <p>{{ $message }}</p>
               @enderror
             </div>  
