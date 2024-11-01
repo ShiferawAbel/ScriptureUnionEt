@@ -177,15 +177,19 @@
         </section><!-- /Call To Action Section -->
     
   
+   <!-- Events Start -->
+   <div class=" evets-show  position-relative">
+    <div class="back-image wow fadeInUp" data-wow-delay="0.5s">
+      <img src="{{ asset('img/videoBg2.png') }}" alt="Fixed Image" class="img-fluid">
+    </div>
+    <div class="container">
   
-  <!-- Events Start -->
-  <div class="container">
-
-    <div class="row gy-5">
-      <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
-        <h6 class="text-primary text-uppercase">Events</h6>
-        <h1 class="mb-2">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
-      </div>
+      <div class="row gy-5">
+      <div class="row gy-5 ontheTop">
+        <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="text-primary text-uppercase">Events</h6>
+          <h1 class="mb-2">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
+        </div>
       @foreach ($events as $event)
       <div class="col-xl-4 col-md-6">
         <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
@@ -215,11 +219,13 @@
         </div>
       </div>
       @endforeach
+
     </div>
 
   </div>
 
 </section>
+</div>
 <!-- Events End -->
 
   <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
