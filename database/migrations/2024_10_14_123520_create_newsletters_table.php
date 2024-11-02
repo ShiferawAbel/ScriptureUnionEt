@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->string('cover_img');
             $table->string('pdf_file');

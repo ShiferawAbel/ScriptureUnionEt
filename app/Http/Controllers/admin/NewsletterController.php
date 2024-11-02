@@ -9,7 +9,7 @@ use App\Models\Newsletter;
 use App\Mail\NewsletterPosted;
 use App\Models\Subscription;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Support\Str;
 
 class NewsletterController extends Controller
 {
@@ -37,11 +37,12 @@ class NewsletterController extends Controller
 
         $data['cover_img'] = $cover_path;
         $data['pdf_file'] = $pdf_path;
+
+        $data['slug'] = Str::slug($request->title);
         $newsletter = Newsletter::create($data);
 
         $subscribers = Subscription::all();
         foreach ($subscribers as $subscriber) {
-            # code...
             Mail::to($subscriber->email)->send(new NewsletterPosted($newsletter));
         }
         return redirect(route('admin.newsletters.show', $newsletter));

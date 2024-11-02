@@ -12,6 +12,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
+use Illuminate\Support\Str;
 
 class StoryController extends Controller
 {
@@ -21,12 +22,12 @@ class StoryController extends Controller
         return view('admin.stories.index', compact('stories'));
     }
 
-    public function create(Request $request) 
+    public function create(Request $request)
     {
         return view('admin.stories.create');
     }
 
-    public function store (Request $request)
+    public function store(Request $request)
     {
         // dd($request->input('carousel'));
         $data = $request->validate([
@@ -40,12 +41,12 @@ class StoryController extends Controller
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);
         $resized = $img->resize(1154, 487);
-        $path = 'stories/cover_img'.$file->hashName();
-        $resized->save(public_path('storage/'.$path));
+        $path = 'stories/cover_img' . $file->hashName();
+        $resized->save(public_path('storage/' . $path));
         $data['cover_img'] = $path;
 
-        
-        
+
+        $data['slug'] = Str::slug($request->title);
         $story = Story::create(Arr::except($data, ['images']));
         if ($request->input('carousel')) {
             $carousel = Carousel::create([
@@ -56,7 +57,7 @@ class StoryController extends Controller
             ]);
         }
 
-        if($request->hasFile('images')) {
+        if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $path = $image->store('stories/images', 'public');
                 ImageModel::create([
@@ -66,14 +67,14 @@ class StoryController extends Controller
             }
         }
 
-        return redirect(route('admin.stories.show', $story));
+        return redirect(route('admin.stories.show', $story->slug));
     }
 
-    public function show (Request $request, Story $story)
+    public function show(Request $request, Story $story)
     {
         return view('admin.stories.show', compact('story'));
     }
-    
+
     public function upload(Request $request)
     {
         $path = $request->file('upload')->store('stories/key_images', 'public');
@@ -95,7 +96,7 @@ class StoryController extends Controller
             'content' => 'required',
         ]);
         if ($request->hasFile('cover_img')) {
-            File::delete(public_path('storage/'.$story->cover_img));
+            File::delete(public_path('storage/' . $story->cover_img));
             $file_name = $request->file('cover_img')->store('stories/cover_img', 'public');
         } else {
             $file_name = $story->cover_img;
@@ -103,15 +104,15 @@ class StoryController extends Controller
 
         $story->update($data);
         $story->cover_img = $file_name;
-        
+
         $story->save();
-        
-        return redirect(route('admin.stories.show', $story));
+
+        return redirect(route('admin.stories.show', $story->slug));
     }
-    
+
     public function destroy(Story $story)
     {
-        File::delete(public_path('storage/'.$story->cover_img));
+        File::delete(public_path('storage/' . $story->cover_img));
         $story->delete();
         return redirect(route('admin.carousels.index'));
     }
