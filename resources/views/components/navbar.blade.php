@@ -22,8 +22,7 @@
             <div class="nav-item dropdown">
                 <a href="/" class="nav-link dropdown-toggle {{ request()->is('about*') ? 'active' : '' }}" data-bs-toggle="dropdown">About Us</a>
                 <div class="dropdown-menu fade-up m-0">
-                    {{-- <a href="/about" class="dropdown-item">About Us</a>
-                     --}}
+                    <a href="{{route('about.index')}}" class="dropdown-item">About Us</a>
                      <a href="{{route('who_we_are')}}" class="dropdown-item {{ request()->is('who_we_are') ? 'active' : '' }}">Who We Are</a>
                      <a href="{{route('vision_mission_values')}}" class="dropdown-item {{ request()->is('vision_mission_values') ? 'active' : '' }}">Missios, Vision and Values</a>
                      <a href="{{route('what_we_believe')}}" class="dropdown-item {{ request()->is('what_we_believe') ? 'active' : '' }}">What We Believe</a>

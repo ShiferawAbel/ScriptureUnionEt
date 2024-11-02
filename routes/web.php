@@ -43,6 +43,7 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('about', [AboutController::class, 'index'])->name('about.index');
 Route::get('about/vision-mission-values', [AboutController::class, 'vision_mission_values'])->name('vision_mission_values');
 Route::get('about/history', [AboutController::class, 'history'])->name('history');
 Route::get('about/what-we-believe', [AboutController::class, 'what_we_believe'])->name('what_we_believe');
