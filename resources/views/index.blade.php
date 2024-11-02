@@ -158,7 +158,7 @@
   
   
         <!-- Call To Action Section -->
-        <section id="call-to-action" class="call-to-action section dark-background my-5">
+        <section id="call-to-action" class="call-to-action  section dark-background">
 
           <img src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="">
     
@@ -228,26 +228,14 @@
 </div>
 <!-- Events End -->
 
-  {{-- <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
-    <div class="content-youtube text-center">
-      <h1>Subscribe to Our YouTube Channel</h1>
-      <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
-      <div class="mb-4">
-        <a disabled class="btn btn-danger btn-lg">
-          <i class="fab fa-youtube"></i> Subscribe Now
-        </a>
-      </div>
-    </div>
-  </div> --}}
- 
   <!-- video start -->
-  <div class="container row m-auto postion-relative">
+  <div class="container videos row mx-auto postion-relative">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="text-primary text-uppercase">VIDEOS</h6>
-      <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
+      <h1 class="">CHECK OUT OUR LATEST VIDEOS</h1>
     </div>
   </div>
-    <div class="banner mb-5 wow fadeInUp" data-wow-delay="0.5s"> 
+    <div class="banner wow fadeInUp" data-wow-delay="0.5s"> 
       <div class="left"> 
         <h1>Subscribe Our Youtube Channel</h1> 
         <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring messages, and opportunities to connect with other believers.</p> 
@@ -289,7 +277,7 @@
   <!-- video End -->
 
   <!-- story start -->
-  <div class="container py-5">
+  <div class="container story py-5">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
         <h6 class="text-primary text-uppercase">STORIES</h6>
         <h1 class="mb-3">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>

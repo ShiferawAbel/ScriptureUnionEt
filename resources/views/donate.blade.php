@@ -22,15 +22,15 @@
                             C109,34.5,107,36.6,104.4,36.6z"></path><path fill="#7dc400" d="M64.7,35.8c-3.9,0-7-3.2-7-7c0-3.9,3.2-7,7-7c1.9,0,3.6,0.8,4.9,2.1l4.1-4c-4.9-5-13-5.1-18-0.2s-5.1,13-0.2,18
                             s13,5.1,18,0.2c0,0,0.1-0.1,0.1-0.1l-4-4C68.4,35.1,66.6,35.8,64.7,35.8z"></path></svg>
             <p class="text-center">Donate using Chapa.</p>
-            <button class="btn btn-primary btn-block">Donate with Chapa</button>
+            <button class="btn btn-filled btn-block" disabled>Donate with Chapa</button>
           </div>
         </div>
         <div class="col-md-6">
           <div class="donation-option">
-              <img src="{{ asset('img/cbe.png')}}" alt="Cbe">
+              <img src="{{ asset('img/Commercial BankofEthiopiaLogo.png')}}" alt="Cbe">
               <h4 class="text-center">Commercial Bank of Ethiopia</h4>
               <p class="text-center">Donate using CBE. 1000010818207</p>
-              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#cbeModal">Donate with CBE</button>
+              <button class="btn btn-filled btn-block" data-toggle="modal" data-target="#cbeModal">Donate with CBE</button>
             </div>
         </div>
   
@@ -56,12 +56,104 @@
             </div>
           </div>
         </div>
-          <div class="col-md-6 mt-4">
+        <div class="col-md-6">
+          <div class="donation-option">
+              <img src="{{ asset('img/BankofAbyssiniaLogo.png')}}" style="width: 70%;margin-bottom: 45px;" alt=">Abyssinia">
+              <p class="text-center">Donate using Abyssinia Bank. 166974828</p>
+              <button class="btn btn-filled btn-block" data-toggle="modal" data-target="#abyssinia">Donate with Abyssinia Bank</button>
+            </div>
+        </div>
+  
+        <!-- Modal -->
+        <div class="modal fade" id="abyssinia" tabindex="-1" role="dialog" aria-labelledby="abyssiniaLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="abyssiniaLabel">Donate with Abyssinia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Thank you for choosing to donate using the Abyssinia Bank.</p>
+                <h5>SCRIPTURE UNION OF ETHIOPA</h5>
+                <h5>Account: 166974828</h5>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="donation-option">
+              <img src="{{ asset('img/berhan.png')}}" alt="Cbe">
+              <h4 class="text-center">Berhan Bank</h4>
+              <p class="text-center">Donate using Berhan Bank. 1600550085720</p>
+              <button class="btn btn-filled btn-block" data-toggle="modal" data-target="#berhan">Donate with Berhan Bank</button>
+            </div>
+        </div>
+  
+        <!-- Modal -->
+        <div class="modal fade" id="berhan" tabindex="-1" role="dialog" aria-labelledby="berhanLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="berhanLabel">Donate with Berhan Bank</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Thank you for choosing to donate using the Berhan Bank.</p>
+                <h5>SCRIPTURE UNION OF ETHIOPA</h5>
+                <h5>Account: 1600550085720</h5>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="donation-option">
+              <img src="{{ asset('img/DashenBankLogo.png')}}" alt="Dashen">
+              <h4 class="text-center">Dashen Bank</h4>
+              <p class="text-center">Donate using Dashen Bank. 0088550600011</p>
+              <button class="btn btn-filled btn-block" data-toggle="modal" data-target="#dashen">Donate with Dashen Bank</button>
+            </div>
+        </div>
+  
+        <!-- Modal -->
+        <div class="modal fade" id="dashen" tabindex="-1" role="dialog" aria-labelledby="dashenLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="dashenLabel">Donate with Dashen Bank</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Thank you for choosing to donate using the Dashen Bank.</p>
+                <h5>SCRIPTURE UNION OF ETHIOPA</h5>
+                <h5>Account: 0088550600011</h5>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-6">
             <div class="donation-option">
               <img src="{{ asset('img/paypal-logo.png')}}" alt="PayPal Logo">
               <h4 class="text-center">PayPal</h4>
               <p class="text-center">Donate using PayPal.</p>
-              <button class="btn btn-primary btn-block">Donate with PayPal</button>
+              <button class="btn btn-filled btn-block" disabled>Donate with PayPal</button>
             </div>
           </div>
 </section>

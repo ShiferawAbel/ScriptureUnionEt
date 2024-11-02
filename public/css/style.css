@@ -756,7 +756,9 @@ text-decoration: none;
   
   .donation-option {
     text-align: center;
+    margin-top: 30px;
     padding: 20px;
+    height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -1746,7 +1748,9 @@ margin-left: 10px;
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-    padding: 80px 0;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    padding: 80px;
     position: relative;
     clip-path: inset(0);
   }
@@ -1838,6 +1842,13 @@ margin-left: 10px;
     font-size: 48px;
     margin-right: 15px;
   }
+    .videos{
+        margin-top: 100px;
+    }
+    .story{
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
   .ontheTop{
     z-index: 3;
     position: relative;
@@ -1911,6 +1922,8 @@ margin-left: 10px;
         justify-content: space-between;
         background: #333;
         color: white;
+        margin-top: 70px;
+        margin-bottom: 70px;
         padding: 20px;
     }
     
@@ -2009,6 +2022,22 @@ margin-left: 10px;
       .card-overlay .btn {
         margin-top: 10px;
       }
+
+      .donation .btn-filled {
+        background-color: #ff8b32   ;
+        color: white;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        border-radius: 40px;
+        }
+      .donation .btn-filled:hover {
+        background-color: #1186b8;
+        color: white;
+        }
+
       .btn-filled {
         background-color: #d34040;
         color: white;
@@ -2028,6 +2057,7 @@ margin-left: 10px;
             color: white;
             padding: 30px;
             margin-top: 200px;
+            padding-left: 90px;
         }
         .btn-newsletter {
           background-color: #2e97c4;
