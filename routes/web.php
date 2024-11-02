@@ -32,7 +32,10 @@ Route::get('/', function () {
     $carousels = Carousel::all();
     $videos = Video::latest()->take(3)->get();
     $newsletters = Newsletter::latest()->take(3)->get();
-    $stories = Story::latest()->take(3)->get();
+    $stories = Story::latest()->orderBy('created_at', 'asc')->take(3)->get()->map(function ($story) {
+        $story->month_day_start = Carbon::parse($story->created_at)->format('F j');
+        return $story;
+    });;
     return view('index', compact('events', 'carousels', 'videos', 'stories', 'newsletters'));
 })->name('home');
 
