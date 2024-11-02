@@ -247,7 +247,7 @@
       <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
     </div>
   </div>
-    <div class="banner "> 
+    <div class="banner mb-5 wow fadeInUp" data-wow-delay="0.5s"> 
       <div class="left"> 
         <h1>Subscribe Our Youtube Channel</h1> 
         <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring messages, and opportunities to connect with other believers.</p> 
