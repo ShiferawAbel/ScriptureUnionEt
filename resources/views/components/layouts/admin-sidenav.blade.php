@@ -87,6 +87,22 @@
   </li>
 
   <li class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRequestId"
+      aria-expanded="true" aria-controls="collapseRequestId">
+      <img src="{{ asset('img/avatar.png') }}" alt="" class="sidebar-icon">
+      <span>Request Ids</span>
+    </a>
+    <div id="collapseRequestId" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Request Id</h6>
+        <a class="collapse-item" href="{{ route('admin.requestIds.create') }}">Request New Id</a>
+        <a class="collapse-item" href="{{ route('admin.requestIds.index') }}">All Requested Ids</a>
+      </div>
+    </div>
+  </li>
+
+
+  <li class="nav-item">
     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#contentManagement"
       aria-expanded="true" aria-controls="contentManagement">
       <img src="{{ asset('img/content-management-icon.png') }}" alt="" class="sidebar-icon">

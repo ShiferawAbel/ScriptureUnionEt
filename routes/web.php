@@ -133,10 +133,10 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/requestIds', [App\Http\Controllers\admin\RequestIdController::class, 'index'])->name('admin.requestIds.index');
     Route::get('/requestIds/create', [App\Http\Controllers\admin\RequestIdController::class, 'create'])->name('admin.requestIds.create');
     Route::post('/requestIds/store', [App\Http\Controllers\admin\RequestIdController::class, 'store'])->name('admin.requestIds.store');
-    Route::get('/requestIds/{requestId}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
-    Route::get('/requestIds/{requestId}/edit', [App\Http\Controllers\admin\RequestIdController::class, 'edit'])->name('admin.requestIds.edit');
-    Route::patch('/requestIds/{requestId}', [App\Http\Controllers\admin\RequestIdController::class, 'update'])->name('admin.requestIds.update');
-    Route::delete('/requestIds/{requestId}', [App\Http\Controllers\admin\RequestIdController::class, 'destroy'])->name('admin.requestIds.destroy');
+    Route::get('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
+    Route::get('/requestIds/{request_id}/edit', [App\Http\Controllers\admin\RequestIdController::class, 'edit'])->name('admin.requestIds.edit');
+    Route::patch('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'update'])->name('admin.requestIds.update');
+    Route::delete('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'destroy'])->name('admin.requestIds.destroy');
 
     Route::get('/stories', [App\Http\Controllers\admin\StoryController::class, 'index'])->name('admin.stories.index');
     Route::get('/stories/create', [App\Http\Controllers\admin\StoryController::class, 'create'])->name('admin.stories.create');
