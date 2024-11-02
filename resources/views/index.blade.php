@@ -241,15 +241,15 @@
         <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring messages, and opportunities to connect with other believers.</p> 
         <button class="Subscribe_Youtube btn ">Visit</button> 
       </div> 
-      <div class="right"> 
+      <div class="right mt-4"> 
         <img src="{{ asset('img/about-us-header.jpg') }}" alt="Promotional Image"> 
-        <div class="video-icon"> 
+        {{-- <div class="video-icon"> 
           <!-- youtube logo image -->
           <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
             <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M43.2,33.9c-0.4,2.1 -2.1,3.7 -4.2,4c-3.3,0.5 -8.8,1.1 -15,1.1c-6.1,0 -11.6,-0.6 -15,-1.1c-2.1,-0.3 -3.8,-1.9 -4.2,-4c-0.4,-2.3 -0.8,-5.7 -0.8,-9.9c0,-4.2 0.4,-7.6 0.8,-9.9c0.4,-2.1 2.1,-3.7 4.2,-4c3.3,-0.5 8.8,-1.1 15,-1.1c6.2,0 11.6,0.6 15,1.1c2.1,0.3 3.8,1.9 4.2,4c0.4,2.3 0.9,5.7 0.9,9.9c-0.1,4.2 -0.5,7.6 -0.9,9.9z" fill="#ff0000"></path><path d="M20,31v-14l12,7z" fill="#ffffff"></path></g></g>
           </svg>
           <!-- youtube logo image -->
-        </div> 
+        </div>  --}}
       </div>
     </div>
 

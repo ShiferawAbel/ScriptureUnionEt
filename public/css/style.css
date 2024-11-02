@@ -1917,19 +1917,18 @@ margin-left: 10px;
      color: gray; 
     }
     .banner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         background: #333;
         color: white;
         margin-top: 70px;
         margin-bottom: 70px;
         padding: 20px;
+        display: flex;  
+        flex-wrap: wrap;
     }
     
     .banner .left {
-        max-width: 50%;
-        margin-left: 90px;
+        flex: 1 1 60%;
+        padding: 50px;
     }
     
     .banner .left h1 {
@@ -1957,8 +1956,9 @@ margin-left: 10px;
     }
     
     .banner .right {
+        flex: 1 1 40%;
+        padding-left: 40px;
         position: relative;
-        margin-right: 40px;
     }
     
     .banner .right img {
@@ -1978,10 +1978,6 @@ margin-left: 10px;
     }
     .banner .right .video-icon:hover {
         background: rgba(255, 255, 255, 0.824);
-    }
-    @media (max-width: 600px) 
-    { 
-     .banner .right { display: block; margin: 20px auto; } 
     }
 
     .card {
