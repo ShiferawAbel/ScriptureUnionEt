@@ -25,3 +25,5 @@
 /.vscode/
 /.DS_Store
 Thumbs.db
+/public/id_cards
+/public/qr_codes
