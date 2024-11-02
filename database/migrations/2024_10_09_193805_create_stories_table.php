@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('cover_img');
             $table->text('content');
+            $table->dateTime('start_date_time');
+            $table->dateTime('end_date_time');
             $table->timestamps();
         });
     }

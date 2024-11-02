@@ -535,16 +535,18 @@ html{
 }
 /* Donate Button */
 .donate-link {
-    background-color: rgb(226, 176, 10);
-    padding: 9px;
-    border-radius: 7px;
+    background-color: #ff8b32;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
     color: white;
     max-height: 50px;
     align-self: center;
     margin-right: 15px;
 }
 .donate-link:hover {
-    background-color: rgb(238, 197, 63);
+    background-color: #ec914b;
     color: white;
 }
 /*End Donate Button */
@@ -1458,12 +1460,12 @@ color: white;
     }
     
     .carousel-buttons .btn-filled:hover {
-    background-color: #9f6906;
+    background-color: #ec934f;
     color: white;
     }
 .owl-nav .owl-prev:hover,
 .owl-nav .owl-next:hover {
-    background: #cc5200;
+    background: #f09249;
 }
 
 .service-carousel {
@@ -1683,7 +1685,7 @@ margin-left: 10px;
     position: absolute;
     right: 0;
     bottom: 0;
-    background-color: #2e97c4;
+    background-color: #ff8b32;
     color: #fff;
     text-transform: uppercase;
     font-size: 13px;
@@ -1851,5 +1853,120 @@ margin-left: 10px;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Position the image behind the content */
+    z-index: -1; 
   }
+  .container-custom { 
+    display: flex; 
+    background: #eae6e679;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex-wrap: wrap; 
+} 
+  .image-section { 
+    flex: 1; 
+    min-width: 300px; 
+    margin-right: 15px; 
+} 
+  .image-section img { 
+    width: 100%; 
+    height: auto; } 
+  .articles-section { 
+    flex: 1; 
+    min-width: 300px; 
+    padding: 20px; 
+} 
+  .article { 
+    display: flex; 
+    align-items: 
+    center; 
+    margin-bottom: 20px; 
+} 
+  .article img { 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
+    margin-right: 15px; 
+} 
+  .article .text { 
+    flex: 1; 
+} .article .text .date { 
+    font-size: 0.9em; 
+    color: gray; 
+} 
+.article .text .title {
+      color: #ff8b32;
+     font-size: 1.2em; 
+     font-weight: bold; 
+    } 
+.article .text .title:hover {
+      color: #d34040;
+    } 
+  .article .text .category {
+     font-size: 0.9em; 
+     color: gray; 
+    }
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #333;
+        color: white;
+        padding: 20px;
+    }
+    
+    .banner .left {
+        max-width: 50%;
+        margin-left: 90px;
+    }
+    
+    .banner .left h1 {
+        font-size: 3rem;
+        color: #ff8b32;
+    }
+    
+    .banner .left p {
+        margin: 20px 0;
+    }
+    
+    .banner .left .Subscribe_Youtube {
+        background: #d34040;
+        padding-left: 90px;
+        padding-right: 90px;
+        margin-right: 100px;
+        color: #fff;
+        outline: none;
+        border-radius: 20px;
+    }
+    
+    .banner .left .Subscribe_Youtube:hover {
+        background: #de6262;
+        border-radius: 20px;
+    }
+    
+    .banner .right {
+        position: relative;
+        margin-right: 40px;
+    }
+    
+    .banner .right img {
+        max-width: 300px;
+        height: 300px;
+        cursor: pointer;
+    }
+    
+    .banner .right .video-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.411);
+        border-radius: 50%;
+        padding: 10px;
+    }
+    .banner .right .video-icon:hover {
+        background: rgba(255, 255, 255, 0.824);
+    }
+    @media (max-width: 600px) 
+    { 
+     .banner .right { display: block; margin: 20px auto; } 
+    }

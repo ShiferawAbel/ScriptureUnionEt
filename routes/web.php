@@ -28,6 +28,10 @@ Route::get('/', function () {
         $event->month_day_start = Carbon::parse($event->start_date_time)->format('F j');
         return $event;
     });
+    $stories = Story::orderBy('start_date_time', 'asc')->get()->map(function ($storie) {
+        $storie->month_day_start = Carbon::parse($storie->start_date_time)->format('F j');
+        return $storie;
+    });
     
     $carousels = Carousel::all();
     $videos = Video::latest()->take(3)->get();

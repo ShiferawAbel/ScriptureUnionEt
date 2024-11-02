@@ -228,7 +228,7 @@
 </div>
 <!-- Events End -->
 
-  <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
+  {{-- <div class="background" style="background: url('img/scripture-union-ethiopia-highschool-students-photo.png') no-repeat center center;">
     <div class="content-youtube text-center">
       <h1>Subscribe to Our YouTube Channel</h1>
       <p>Stay updated with our latest videos, tutorials, and more. Don't forget to hit the bell icon to get notified!</p>
@@ -238,96 +238,127 @@
         </a>
       </div>
     </div>
-  </div>
+  </div> --}}
  
-  @if (count($videos) !== 0)
-    <div class="container row m-auto postion-relative">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">VIDEOS</h6>
-                <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
-            </div>
-          <div class="row">
-            @foreach ($videos as $video)
-            <div class="col-md-4 upcoming-event">
-                <a href="{{ route('videos.show', $video) }}">
-                    <div class="card upcoming-event">
-                        <div class="card-image">
-                            <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
-                            <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
-                        </div>
-                        <div class="card-body watch-video-desc">
-                            <div class="card-content">
-                            <p class="text-dark">{{ $video->title }}</p>
-                            <p>Watch Now</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>  
-            @endforeach
-          </div>
-        </div>
+  <!-- video start -->
+  <div class="container row m-auto postion-relative">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="text-primary text-uppercase">VIDEOS</h6>
+      <h1 class="mb-5">CHECK OUT OUR LATEST VIDEOS</h1>
     </div>
-  @endif
-
-
-  @if (count($stories) !== 0)
-    <div class="container-xxl py-5">
-        <div class="container py-5">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-primary text-uppercase">STORIES</h6>
-                <h1 class="mb-5">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
-            </div>
-            <div class="row g-4">
-                @foreach ($stories as $story)
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item">
-                            <div class="overflow-hidden mb-4">
-                                <img class="img-fluid stories-banner" src="{{ asset('storage/'.$story->cover_img) }}" alt="">
-                            </div>
-                            <div class="p-4">
-                                <h4 class="mb-3">{{ $story->title }}</h4>
-                                {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
-                                <a class="btn-slide mt-2" href="{{route('stories.show', $story)}}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-        
-              </div>
-        </div>
+  </div>
+    <div class="banner "> 
+      <div class="left"> 
+        <h1>Subscribe Our Youtube Channel</h1> 
+        <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring messages, and opportunities to connect with other believers.</p> 
+        <button class="Subscribe_Youtube btn ">Visit</button> 
+      </div> 
+      <div class="right"> 
+        <img src="{{ asset('img/about-us-header.jpg') }}" alt="Promotional Image"> 
+        <div class="video-icon"> 
+          <!-- youtube logo image -->
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.33333,5.33333)"><path d="M43.2,33.9c-0.4,2.1 -2.1,3.7 -4.2,4c-3.3,0.5 -8.8,1.1 -15,1.1c-6.1,0 -11.6,-0.6 -15,-1.1c-2.1,-0.3 -3.8,-1.9 -4.2,-4c-0.4,-2.3 -0.8,-5.7 -0.8,-9.9c0,-4.2 0.4,-7.6 0.8,-9.9c0.4,-2.1 2.1,-3.7 4.2,-4c3.3,-0.5 8.8,-1.1 15,-1.1c6.2,0 11.6,0.6 15,1.1c2.1,0.3 3.8,1.9 4.2,4c0.4,2.3 0.9,5.7 0.9,9.9c-0.1,4.2 -0.5,7.6 -0.9,9.9z" fill="#ff0000"></path><path d="M20,31v-14l12,7z" fill="#ffffff"></path></g></g>
+          </svg>
+          <!-- youtube logo image -->
+        </div> 
+      </div>
     </div>
-  @endif
 
-  @if (count($newsletters) !== 0)
-    <div class="container-xxl py-5">
-      <div class="container py-5">
-          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h6 class="text-primary text-uppercase">News Letter</h6>
-              <h1 class="mb-5">KEEP IN TOUCH WITH OUR NEWS LETTER</h1>
-          </div>
-          <div class="row g-5 align-center">
-              @foreach ($newsletters as $newsletter)
-                  <div class="newsletter-card wow fadeInUp" data-wow-delay="0.3s">
-                      <div class="service-item">
-                          <div class="overflow-hidden mb-4">
-                              <img class="img-fluid events-banner" src="{{ asset('storage/'.$newsletter->cover_img) }}" alt="">
-                          </div>
-                          <div class="p-4 pt-0">
-                              <h4 class="mb-3">{{ $newsletter->title }}</h4>
-                              <div class="text-center">
-                                  <a href="{{'storage/'.$newsletter->pdf_file}}" class="btn btn-primary py-md-2 px-md-2 me-3 animated slideInLeft">Download</a>
-                                  <a href="{{route('newsletters.show', $newsletter)}}" class="btn btn-secondary py-md-2 px-md-2 animated slideInRight">Description</a>
-                              </div>
-                          </div>
+
+    <div class="row container">
+      @foreach ($videos as $video)
+      <div class="col-md-4 upcoming-event">
+          <a href="{{ route('videos.show', $video) }}">
+              <div class="card upcoming-event">
+                  <div class="card-image">
+                      <img class="card-img-top image-behind" src="{{ asset('storage/'.$video->thumbnail) }}">
+                      <img class="image-in-front" src="{{asset('img/play.png')}}" alt="Overlay image">
+                  </div>
+                  <div class="card-body watch-video-desc">
+                      <div class="card-content">
+                      <p class="text-dark">{{ $video->title }}</p>
+                      <p>Watch Now</p>
                       </div>
                   </div>
-              @endforeach
-              <a href="{{route('newsletters.index')}}" class="btn btn-primary py-md-2 px-md-2">All Newsletters>></a>
-            </div>
-      </div>
+              </div>
+          </a>
+      </div>  
+      @endforeach
+    </div>
+  <!-- video End -->
+
+  <!-- story start -->
+  <div class="container py-5">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="text-primary text-uppercase">STORIES</h6>
+        <h1 class="mb-3">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
+    </div>
+  </div>
+  <div class="container container-custom  wow fadeInUp" data-wow-delay="0.3s"> 
+    <div class="image-section"> 
+      <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
+    </div> 
+
+    @if (count($stories) !== 0)
+
+    <div class="articles-section">
+      @foreach ($stories as $story)
+       <a href="{{route('stories.show', $story)}}">
+        <div class="article wow fadeInUp" data-wow-delay="0.5s"> 
+          <img src="{{ asset('storage/'.$story->cover_img) }}" alt="Article Image"> 
+          <div class="text"> 
+            <div class="date">
+              {{ $story->month_day_start }}
+            </div> 
+            <div class="title">
+              {{ $story->title }}
+            </div> 
+            <div class="category">
+              Activities
+            </div> 
+          </div> 
+        </div>
+       </a>
+      @endforeach
+    </div>
+    @else
+    <div class="articles-section">
+       <a href="">
+        <div class="article wow fadeInUp" data-wow-delay="0.5s"> 
+          <img src="{{ asset('img/about-us-header.jpg') }}" alt="Article Image"> 
+          <div class="text"> 
+            <div class="date">
+              Feb 22, 2018
+            </div> 
+            <div class="title">
+              A Definitive Guide to the Best Dining
+            </div> 
+            <div class="category">
+              Activities
+            </div> 
+          </div> 
+        </div>
+       </a>
+       <a href="">
+        <div class="article wow fadeInUp" data-wow-delay="0.5s"> 
+          <img src="{{ asset('img/about-us-header.jpg') }}" alt="Article Image"> 
+          <div class="text"> 
+            <div class="date">
+              Feb 22, 2018
+            </div> 
+            <div class="title">
+              A Definitive Guide to the Best Dining
+            </div> 
+            <div class="category">
+              Activities
+            </div> 
+          </div> 
+        </div>
+       </a>
     </div>
   @endif
       
+  </div>
+  <!-- story End -->
 </x-layouts.app>
