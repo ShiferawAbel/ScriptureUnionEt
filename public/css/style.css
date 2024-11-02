@@ -608,7 +608,6 @@ margin-top: 10px;
 box-sizing: border-box;
 border-radius: 2px;
 background-clip: padding-box;
-min-height:400px;
 }
 
 .card span.card-title {
@@ -1970,3 +1969,57 @@ margin-left: 10px;
     { 
      .banner .right { display: block; margin: 20px auto; } 
     }
+
+    .card {
+        position: relative;
+        border: none;
+        border-radius: 0;
+        overflow: hidden;
+      }
+      
+      .card-image {
+        position: relative;
+      }
+      
+      .card-img-top {
+        width: 100%;
+        height: 300px;
+      }
+      .card-img-top:hover {
+        scale: 1.2;
+      }
+      
+      .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        text-align: center;
+      }
+      
+      .card-overlay p {
+        margin: 0;
+        color: #fff;
+        font-size: 1.2rem;
+      }
+      
+      .card-overlay .btn {
+        margin-top: 10px;
+      }
+      .btn-filled {
+        background-color: #d34040;
+        color: white;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        border-radius: 40px;
+        }
+      .btn-filled:hover {
+        background-color: #ec6c6c;
+        color: white;
+        }
+        
