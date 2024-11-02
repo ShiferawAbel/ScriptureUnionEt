@@ -34,18 +34,25 @@
 <body>
     <x-navbar />
     {{ $slot }}
-    <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Stay in the loop! Subscribe to our newsletter for the latest updates and exclusive content.</p>
-                    <div class="mx-auto" style="max-width: 400px;">
-                        <form action="{{ route('subscribe') }}" method="post">
-                            @csrf
-                            <input name="email" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="submit" class="btn btn-primary py-2 mt-2 me-2">SignUp</button>
-                        </form>
-                    </div>
+    <div class="newsletter wow fadeIn" data-wow-delay="0.5s">
+        <h1 class="text-light">Newsletter</h1>
+        <div class="fotter_back">
+            <div class="newsletter_text">
+                <p>Be part of our vibrant community by subscribing to the Scripture Union Ethiopia newsletter. Receive the latest updates, inspiring stories, and exclusive content straight to your inbox.</p>
+            </div>
+            <div class="newsletter_input">
+                <form action="{{ route('subscribe') }}" method="post">
+                    @csrf
+                    <input name="email" class="form-control border-0 w-75 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="submit" class="btn-newsletter py-2 px-5 mt-3 me-2">SignUp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     @if (request()->route()->getName() !== 'videos.show')
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -69,7 +76,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="/">Home</a>
-                    <a class="btn btn-link" href="{{route('about')}}">About Us</a>
+                    <a class="btn btn-link" href="{{route('about.index')}}">About Us</a>
                     <a class="btn btn-link" href="{{route('contacts.create')}}">Contact Us</a>
                     <a class="btn btn-link" href="{{route('events.index')}}">Events</a>
                     <a class="btn btn-link" href="{{route('annoucments.index')}}">Annoucements</a>

@@ -2023,3 +2023,42 @@ margin-left: 10px;
         background-color: #ec6c6c;
         color: white;
         }
+        .newsletter{
+            background: #ff8b32;
+            color: white;
+            padding: 30px;
+            margin-top: 200px;
+        }
+        .btn-newsletter {
+          background-color: #2e97c4;
+          color: white;
+          padding: 10px 20px;
+          font-size: 16px;
+          transition: background-color 0.3s, color 0.3s;
+          border: none;
+          float: right;
+          border-radius: 40px;
+          }
+        .btn-newsletter:hover {
+          background-color: #076e9a;
+          color: white;
+          }
+.fotter_back{
+    align-items: center;
+    background: #ff8b32;
+    color: white;
+    padding: 20px;
+    display: flex; 
+    align-items: center; 
+    flex-wrap: wrap;
+}
+.newsletter_text{
+    flex: 1 1 50%; min-width: 250px;
+}
+.newsletter_input{
+    flex: 1 1 50%; min-width: 250px;
+}
+.newsletter_input input{
+    float: right;
+    border-radius: 20px;
+}
