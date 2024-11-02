@@ -34,6 +34,15 @@
 <body>
     <x-navbar />
     {{ $slot }}
+    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Stay in the loop! Subscribe to our newsletter for the latest updates and exclusive content.</p>
+                    <div class="mx-auto" style="max-width: 400px;">
+                        <form action="{{ route('subscribe') }}" method="post">
+                            @csrf
+                            <input name="email" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary py-2 mt-2 me-2">SignUp</button>
+                        </form>
+                    </div>
     @if (request()->route()->getName() !== 'videos.show')
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
@@ -67,16 +76,19 @@
                     {{-- <a class="btn btn-link" href="">Support</a> --}}
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <img width="300px" src="{{ asset('img/Asset 3.png') }}" alt="" srcset="">
+                </div>
+                {{-- <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Newsletter</h4>
                     <p>Stay in the loop! Subscribe to our newsletter for the latest updates and exclusive content.</p>
-                    <div class="ምx-auto" style="max-width: 400px;">
+                    <div class="mx-auto" style="max-width: 400px;">
                         <form action="{{ route('subscribe') }}" method="post">
                             @csrf
                             <input name="email" class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                             <button type="submit" class="btn btn-primary py-2 mt-2 me-2">SignUp</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="container">
@@ -87,7 +99,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">AEZ</a>
                     </div>
                 </div>
             </div>

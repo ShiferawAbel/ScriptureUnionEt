@@ -299,7 +299,7 @@
     <div class="image-section"> 
       <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
     </div> 
-    
+
     <div class="articles-section">
       @foreach ($stories as $story)
        <a href="{{route('stories.show', $story)}}">
@@ -313,7 +313,7 @@
               {{ $story->title }}
             </div> 
             <div class="category">
-              Activities
+              Read More
             </div> 
           </div> 
         </div>
