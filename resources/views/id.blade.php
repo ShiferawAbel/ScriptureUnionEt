@@ -4,6 +4,6 @@
     <img width="100px" style="border-radius: 100%" src="{{asset('storage/'.$request_id->profile)}}" alt="">
     <p>First Name: {{$request_id->full_name}}</p>
     <p>Role At SU: {{$request_id->role}}</p>
-    <img src="{{ asset('id_cards/' . str_replace('/', '_' , $request_id->uuid)) }}" alt="QR Code">
+    <img src="{{ asset('qr_codes/' . str_replace('/', '_' , $request_id->uuid)) }}" alt="QR Code">
   </div>
-</x-layouts.app>
+</x-layouts.app>q
