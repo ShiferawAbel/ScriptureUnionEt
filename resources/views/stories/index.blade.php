@@ -16,7 +16,7 @@
                       <div class="p-4">
                           <h4 class="mb-3">{{ $story->title }}</h4>
                           {{-- <p><span class="h5">Description:</span> {{ $description }}</p> --}}
-                          <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                          <a class="btn-slide mt-2" href="{{ route('stories.show', $story->slug) }}"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
                       </div>
                   </div>
               </div>

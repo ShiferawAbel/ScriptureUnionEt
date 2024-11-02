@@ -5,21 +5,21 @@
         </div>
     </div>
     <div class="container row">
-    @foreach ($videos as $video)
-    <div class="col-md-4 upcoming-event">
-        <a href="{{ route('admin.videos.show', $video) }}">
-              <div class="card upcoming-event">
-                <div class="card-image">
-                  <img class="card-img-top" src="{{ asset('storage/'.$video->thumbnail) }}">
-                </div>
-                <div class="card-body">
-                  <div class="card-content">
-                    <p class="text-dark">{{ $video->title }}</p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>  
-    @endforeach
+        @foreach ($videos as $video)
+            <div class="col-md-4 upcoming-event">
+                <a href="{{ route('admin.videos.show', $video->slug) }}">
+                    <div class="card upcoming-event">
+                        <div class="card-image">
+                            <img class="card-img-top" src="{{ asset('storage/' . $video->thumbnail) }}">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-content">
+                                <p class="text-dark">{{ $video->title }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        @endforeach
     </div>
 </x-layouts.admin>

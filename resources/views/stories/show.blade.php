@@ -2,7 +2,7 @@
   <!-- Page Header Start -->
   <div class="story-header">
     <img class="cover-img" src="{{asset('storage/'.$story->cover_img)}}" alt="">
-    <img class="suLogo" src="{{asset('img/SuLogo.png')}}" alt="">
+    <img class="suLogo" src="{{asset('img/su-logo.png')}}" alt="">
     <div class="story-title">
       <h1>{{ $story->title }}</h1>
     </div>
@@ -10,9 +10,7 @@
   <!-- Page Header End -->
 
   <div class="container service-carousel p-5 position-relative">
-    <div class="fixed2-image">
-      <img src="{{ asset('img/lg14.c6fcdbf66538541802cc.png') }}" alt="Fixed Image" class="img-fluid">
-    </div>
+    {!! $story->content !!}
     <!-- Carousel Start -->
     <div class="container Service py-5">
       <div id="serviceCarousel" class="carousel slide" data-ride="carousel">

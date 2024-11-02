@@ -58,7 +58,7 @@ Route::get('/contacts/create', [ContactController::class, 'create'])->name('cont
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
-Route::get('/events/{event}', [EventController::class, 'show'])->name('events.show');
+Route::get('/events/{event:slug}', [EventController::class, 'show'])->name('events.show');
 
 Route::get('/annoucments', [AnnoucmentController::class, 'index'])->name('annoucments.index');
 Route::get('/annoucments/{annoucment}', [AnnoucmentController::class, 'show'])->name('annoucments.show');
@@ -68,13 +68,13 @@ Route::get('/ministries/church-ministry', [MinistryController::class, 'church'])
 Route::get('/ministries/family-ministry', [MinistryController::class, 'highschool'])->name('family-ministry');
 
 Route::get('/videos', [VideoController::class, 'index'])->name('videos.index');
-Route::get('/videos/{video}', [VideoController::class, 'show'])->name('videos.show');
+Route::get('/videos/{video:slug}', [VideoController::class, 'show'])->name('videos.show');
 
 Route::get('/newsletters', [NewsletterController::class, 'index'])->name('newsletters.index');
-Route::get('/newsletters/{newsletter}', [NewsletterController::class, 'show'])->name('newsletters.show');
+Route::get('/newsletters/{newsletter:slug}', [NewsletterController::class, 'show'])->name('newsletters.show');
 
 Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
-Route::get('/stories/{story}', [StoryController::class, 'show'])->name('stories.show');
+Route::get('/stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
 
 Route::get('/id/{request_id}', [RequestIdController::class, 'show'])->name('id.show');
 
