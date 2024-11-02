@@ -299,9 +299,7 @@
     <div class="image-section"> 
       <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
     </div> 
-
-    @if (count($stories) !== 0)
-
+    
     <div class="articles-section">
       @foreach ($stories as $story)
        <a href="{{route('stories.show', $story)}}">
@@ -322,42 +320,6 @@
        </a>
       @endforeach
     </div>
-    @else
-    <div class="articles-section">
-       <a href="">
-        <div class="article wow fadeInUp" data-wow-delay="0.5s"> 
-          <img src="{{ asset('img/about-us-header.jpg') }}" alt="Article Image"> 
-          <div class="text"> 
-            <div class="date">
-              Feb 22, 2018
-            </div> 
-            <div class="title">
-              A Definitive Guide to the Best Dining
-            </div> 
-            <div class="category">
-              Activities
-            </div> 
-          </div> 
-        </div>
-       </a>
-       <a href="">
-        <div class="article wow fadeInUp" data-wow-delay="0.5s"> 
-          <img src="{{ asset('img/about-us-header.jpg') }}" alt="Article Image"> 
-          <div class="text"> 
-            <div class="date">
-              Feb 22, 2018
-            </div> 
-            <div class="title">
-              A Definitive Guide to the Best Dining
-            </div> 
-            <div class="category">
-              Activities
-            </div> 
-          </div> 
-        </div>
-       </a>
-    </div>
-  @endif
       
   </div>
   <!-- story End -->
