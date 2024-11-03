@@ -1,4 +1,8 @@
 <x-layouts.app>
+
+  <!-- Modal --> <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="donationModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-body"> <h2 class="modal-title" id="donationModalLabel">Give to EvaSUE</h2> <p>EvaSUE is primarily a donor-supported organization that relies on the generosity of people like you. Working with EvaSUE gives the opportunity to participate in a ministry that is a blessing to shape generations who are going to be leaders of the future church and the nation. Hence, we kindly request you to be with us in shaping the next generation!! EvaSUE manages donor funds in a trustworthy manner in keeping with our core values. We will readily make organizational and/or staff financial reports available as requested. Financial integrity is of utmost importance to us.</p> <button type="button" class="btn btn-donate">Donate</button> </div> </div> </div> </div>
+
+  
   <div class="container-fluid carousel-custom p-0 position-relative">
     <div class="fixed-image">
       <img src="{{ asset('img/New Project11.png') }}" alt="Fixed Image" class="img-fluid">
