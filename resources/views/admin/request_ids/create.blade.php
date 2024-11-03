@@ -5,12 +5,53 @@
           <form autocomplete="off" action="{{ route('admin.requestIds.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-              <label for="full_name">Full Name</label>
-              <input type="text" name="full_name" value="{{old('full_name')}}" class="form-control" id="full_name" placeholder="Full Name">
-              @error('full_name')
+              <label for="full_name_amh">Full Name In Amharic</label>
+              <input type="text" name="full_name_amh" value="{{old('full_name_amh')}}" class="form-control" id="full_name_amh" placeholder="Full Name In Amharic">
+              @error('full_name_amh')
                   <p>{{ $message }}</p>
               @enderror
             </div>
+            
+            <div class="form-group">
+              <label for="role_amh">Job Title In Amharic</label>
+              <input type="text" name="role_amh" value="{{old('role_amh')}}" class="form-control" id="role_amh" placeholder="Job Title In Amharic">
+              @error('role_amh')
+                  <p>{{ $message }}</p>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="address_amh">Address In Amharic</label>
+              <input type="text" name="address_amh" value="{{old('address_amh')}}" class="form-control" id="address_amh" placeholder="Address In Amharic">
+              @error('address_amh')
+                  <p>{{ $message }}</p>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="full_name_eng">Full Name In English</label>
+              <input type="text" name="full_name_eng" value="{{old('full_name_eng')}}" class="form-control" id="full_name_eng" placeholder="Full Name In English">
+              @error('full_name_eng')
+              <p>{{ $message }}</p>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="role_eng">Job Title In English</label>
+              <input type="text" name="role_eng" value="{{old('role_eng')}}" class="form-control" id="role_eng" placeholder="Job Title In English">
+              @error('role_eng')
+                  <p>{{ $message }}</p>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="address_eng">Address In English</label>
+              <input type="text" name="address_eng" value="{{old('address_eng')}}" class="form-control" id="address_eng" placeholder="Address In English">
+              @error('address_eng')
+                  <p>{{ $message }}</p>
+              @enderror
+            </div>
+
             <div class="form-group">
               <label for="phone">Phone Number</label>
               <input type="text" name="phone" value="{{old('phone')}}" class="form-control" id="phone" placeholder="Phone NUmber">
@@ -18,17 +59,12 @@
                   <p>{{ $message }}</p>
               @enderror
             </div>
+
+
             <div class="form-group">
-              <label for="role">Role</label>
-              <input type="text" name="role" value="{{old('role')}}" class="form-control" id="role" placeholder="Role">
-              @error('role')
-                  <p>{{ $message }}</p>
-              @enderror
-            </div>
-            <div class="form-group">
-              <label for="address">Address</label>
-              <input type="text" name="address" value="{{old('address')}}" class="form-control" id="address" placeholder="Address">
-              @error('address')
+              <label for="prefix">ID NUMBER PREFIX</label>
+              <input type="text" name="prefix" value="{{old('prefix')}}" class="form-control" id="prefix" placeholder="ID CARD PREFIX">
+              @error('prefix')
                   <p>{{ $message }}</p>
               @enderror
             </div>

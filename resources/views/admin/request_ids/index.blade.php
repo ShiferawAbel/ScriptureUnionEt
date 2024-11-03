@@ -5,9 +5,9 @@
         <div class="card">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h4 class="m-0 font-weight-bold text-primary">ID's</h4>
-                <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('admin.requestIds.create') }}">Make And Id Request</a>
+                <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('admin.requestIds.create') }}">Make An Id Request</a>
 
-                <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('admin.requestIds.create') }}">Download All Ids As Pdf</a>
+                <a class="m-0 float-right btn btn-primary btn-sm" href="{{ route('admin.requestIds.export') }}" target="_blank">Download All Ids As Pdf</a>
             </div>
             <div class="table-responsive row">
                 <form action="{{ route('admin.requestIds.index') }}" method="get">

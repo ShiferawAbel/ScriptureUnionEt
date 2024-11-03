@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('request_ids', function (Blueprint $table) {
             $table->id();
             $table->string('uuid')->unique();
-            $table->string('full_name');
+            $table->string('full_name_eng');
+            $table->string('full_name_amh');
+            $table->string('role_eng');
+            $table->string('role_amh');
+            $table->string('address_eng');
+            $table->string('address_amh');
             $table->string('phone');
-            $table->string('role');
-            $table->string('address');
             $table->string('profile');
             $table->string('qr_code')->nullable()->default(null);
             $table->timestamps();

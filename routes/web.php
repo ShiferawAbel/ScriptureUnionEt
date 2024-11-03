@@ -19,6 +19,7 @@ use App\Models\Newsletter;
 use App\Models\RequestId;
 use App\Models\Story;
 use App\Models\Video;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Route;
@@ -131,6 +132,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::delete('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'destroy'])->name('admin.staffs.destroy');
 
     Route::get('/requestIds', [App\Http\Controllers\admin\RequestIdController::class, 'index'])->name('admin.requestIds.index');
+    Route::get('/export', function() {
+        $request_ids = RequestId::all();
+        // $pdf = PDF::loadView('id_cards_export', ['request_ids' => $request_ids]); 
+        // return $pdf->download('IdCardsList.pdf');
+        return view('id_cards_export', compact('request_ids'));
+    })->name('admin.requestIds.export');
     Route::get('/requestIds/create', [App\Http\Controllers\admin\RequestIdController::class, 'create'])->name('admin.requestIds.create');
     Route::post('/requestIds/store', [App\Http\Controllers\admin\RequestIdController::class, 'store'])->name('admin.requestIds.store');
     Route::get('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
