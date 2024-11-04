@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('profile_img')->nullable();
             $table->string('phone')->nullable();
-            $table->string('social_media')->nullable();
+            $table->string('role')->default('EDITOR');
         });
     }
 
