@@ -5,7 +5,7 @@
   
   <div class="container-fluid carousel-custom p-0 position-relative">
     <div class="fixed-image">
-      <img src="{{ asset('img/New Project11.png') }}" alt="Fixed Image" class="img-fluid">
+      <img src="{{ asset('img/carousel-graphics.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
     <!-- Carousel Start -->
     <div class="container-fluid carousel-custom p-0">
@@ -105,13 +105,13 @@
             The young people who have found salvation will be friends of this life-giving word of God to have an edified life. Those who believe in Jesus and follow him be the cause of salvation for others. 
             Scripture Union works diligently to be a servant to parents, church and society.
           </p>
-          <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          <a href="{{ route('about.index') }}" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
         </div>
 
         <div class="col-xl-7">
           <div class="row gy-4 icon-boxes">
 
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
               <div class="icon-box">
                 <i class="fa fa-pray fa-5x text-primary"></i>
                 <h3>Prayer</h3>
@@ -121,7 +121,7 @@
               </div>
             </div> <!-- End Icon Box -->
             
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.9s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
               <div class="icon-box">
                 <i class="fa fa-bible fa-3x text-primary"></i>
                 <h3>Scripture Reading</h3>
@@ -131,7 +131,7 @@
               </div>
             </div> <!-- End Icon Box -->
 
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.11s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.9s">
               <div class="icon-box">
                 <i class="fa fa-hand-holding-heart fa-3x text-primary"></i>
                 <h3>Serving Sacrificially</h3>
@@ -141,7 +141,7 @@
               </div>
             </div> <!-- End Icon Box -->
 
-            <div class="col-md-6 wow fadeIn" data-wow-delay="0.13s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.11s">
               <div class="icon-box">
                 <i class="fa fa-handshake fa-3x text-primary"></i>
                 <h3>Serving With Partnership</h3>
@@ -183,8 +183,8 @@
   
    <!-- Events Start -->
    <div class=" evets-show  position-relative">
-    <div class="back-image wow fadeInUp" data-wow-delay="0.5s">
-      <img src="{{ asset('img/videoBg2.png') }}" alt="Fixed Image" class="img-fluid">
+    <div class="back-image wow fadeIn" data-wow-delay="0.1s">
+      <img src="{{ asset('img/videobg2.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
     <div class="container">
   

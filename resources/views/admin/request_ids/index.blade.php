@@ -34,9 +34,9 @@
                             @foreach ($request_ids as $request_id)
                             <tr>
                                 <td class="col-3"> <a href="{{ route('id.show', $request_id) }}" > <h3 style="">{{$request_id->uuid }} </h3> </a> </td>
-                                <td class="col-3"> <h5 style="">{{$request_id->full_name }} </h5></td>
+                                <td class="col-3"> <h5 style="">{{$request_id->full_name_eng }} </h5></td>
                                 <td class="col-1"> <img width="100px" src="{{ asset('storage/'.$request_id->profile) }}" alt=""> </td>
-                                <td class="col-2"> <h5 style="">{{$request_id->role }} </h5></td>
+                                <td class="col-2"> <h5 style="">{{$request_id->role_eng }} </h5></td>
                                 <td class="col-1"> 
                                     <form action="{{ route('admin.requestIds.destroy', $request_id ) }}" method="post">
                                         @csrf

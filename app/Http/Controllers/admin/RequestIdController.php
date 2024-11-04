@@ -171,10 +171,13 @@ class RequestIdController extends Controller
     public function update(RequestId $request_id, Request $request)
     {
         $data = $request->validate([
-            'full_name' => 'required|string',
+            'full_name_amh' => 'required|string',
+            'full_name_eng' => 'required|string',
             'phone' => 'required|string',
-            'role' => 'required|string',
-            'address' => 'required|string',
+            'role_amh' => 'required|string',
+            'role_eng' => 'required|string',
+            'address_amh' => 'required|string',
+            'address_eng' => 'required|string',
             'profile' => 'image|mimes:jpeg,png,jpg',
         ]);
 
@@ -184,7 +187,15 @@ class RequestIdController extends Controller
 
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
-        $sample->text($request->full_name, 350, 180, function($font) {
+        $sample->text($request->full_name_amh, 350, 165, function($font) {
+            $font->file(public_path('\admin-resources\font\yebse.ttf'));
+            $font->size(25);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->full_name_eng), 350, 190, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -193,7 +204,15 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->phone, 350, 270, function($font) {
+        $sample->text($request->role_amh, 350, 242, function($font) {
+            $font->file(public_path('\admin-resources\font\yebse.ttf'));
+            $font->size(25);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->role_eng), 350, 268, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -202,7 +221,15 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->role, 350, 360, function($font) {
+        $sample->text($request->address_amh, 350, 320, function($font) {
+            $font->file(public_path('\admin-resources\font\yebse.ttf'));
+            $font->size(25);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->address_eng), 350, 346, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -211,7 +238,7 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->address, 350, 450, function($font) {
+        $sample->text($request->phone, 350, 390, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -219,8 +246,8 @@ class RequestIdController extends Controller
             $font->valign('top');
             
         });
-        
-        $sample->text($request_id->uuid, 170, 570, function($font) {
+
+        $sample->text($request_id->uuid, 140 , 106, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -236,8 +263,8 @@ class RequestIdController extends Controller
             $path = $request_id->profile;
         }
         
-        $profile = $manager->read('storage/'.$path)->resize(300, 400);
-        $sample->place($profile, 'top-left', 30, 150);
+        $profile = $manager->read('storage/'.$path)->resize(300, 303);
+        $sample->place($profile, 'top-left', 16, 144);
         
         
         $request_id->update($data);
@@ -246,7 +273,7 @@ class RequestIdController extends Controller
         $qr_code = $manager->read($qr_code_path);
         $request_id->qr_code = $qr_code_path;
         $request_id->save();
-        $sample->place($qr_code, 'top-right', 30, 150);
+        $sample->place($qr_code, 'top-left', 68, 460);
         $sample->save(public_path('id_cards/' . str_replace('/', '_' , $request_id->uuid) . '.png'));
         return redirect(route('admin.requestIds.index'));
     }

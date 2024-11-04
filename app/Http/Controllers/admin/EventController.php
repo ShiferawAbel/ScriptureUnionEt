@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class EventController extends Controller
 {
@@ -33,13 +35,16 @@ class EventController extends Controller
             'banner_img' => 'required|image',
         ]);
         // dd($request);
-        if ($request->file('banner_img')) {
-            $full_path = $request->file('banner_img')->store('events', 'public');
-        }
+        $file = $request->file('banner_img');
+        $image_manager = new ImageManager(new Driver());
+        $img  = $image_manager->read($file);
+        $resized = $img->resize(508, 422);
+        $full_path = 'events/' . $file->hashName();
+        $resized->save(public_path('storage/' . $full_path));
+        $data['banner_img'] = $full_path;
+        // $full_path = $request->file('banner_img')->store('events', 'public');
         $data['slug'] = Str::slug($request->event_name);
         $event = Event::create($data);
-        $event['banner_img'] = $full_path;
-        $event->save();
         return redirect(route('admin.events.show', $event->slug));
     }
     public function show(Event $event)
@@ -65,8 +70,14 @@ class EventController extends Controller
         $event->update($request->except('banner_img'));
         if ($request->file('banner_img')) {
             File::delete(public_path('storage/' . $event->banner_img));
-            $file_name = $request->file('banner_img')->store('events', 'public');
-            $event['banner_img'] = $file_name;
+            $file = $request->file('banner_img');
+            $image_manager = new ImageManager(new Driver());
+            $img  = $image_manager->read($file);
+            $resized = $img->resize(508, 422);
+            $full_path = 'events/' . $file->hashName();
+            $resized->save(public_path('storage/' . $full_path));
+            $event['banner_img'] = $full_path;
+    
         }
         $event->save();
         return redirect(route('admin.events.show', $event->slug));

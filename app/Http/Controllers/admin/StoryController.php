@@ -97,7 +97,13 @@ class StoryController extends Controller
         ]);
         if ($request->hasFile('cover_img')) {
             File::delete(public_path('storage/' . $story->cover_img));
-            $file_name = $request->file('cover_img')->store('stories/cover_img', 'public');
+            $file = $request->file('cover_img');
+            $image_manager = new ImageManager(new Driver());
+            $img  = $image_manager->read($file);
+            $resized = $img->resize(1154, 487);
+            $path = 'stories/cover_img' . $file->hashName();
+            $resized->save(public_path('storage/' . $path));
+            $data['cover_img'] = $path;
         } else {
             $file_name = $story->cover_img;
         }

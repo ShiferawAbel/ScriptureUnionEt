@@ -25,7 +25,7 @@ use Illuminate\Container\Attributes\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $events = Event::orderBy('start_date_time', 'asc')->get()->map(function ($event) {
+    $events = Event::orderBy('start_date_time', 'asc')->take(3)->get()->map(function ($event) {
         $event->month_day_start = Carbon::parse($event->start_date_time)->format('F j');
         return $event;
     });
@@ -87,7 +87,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/events', [App\Http\Controllers\admin\EventController::class, 'index'])->name('admin.events.index');
     Route::get('/events/create', [App\Http\Controllers\admin\EventController::class, 'create'])->name('admin.events.create');
     Route::post('/events/store', [App\Http\Controllers\admin\EventController::class, 'store'])->name('admin.events.store');
-    Route::get('/events/{event}', [App\Http\Controllers\admin\EventController::class, 'show'])->name('admin.events.show');
+    Route::get('/events/{event:slug}', [App\Http\Controllers\admin\EventController::class, 'show'])->name('admin.events.show');
     Route::get('/events/{event}/edit', [App\Http\Controllers\admin\EventController::class, 'edit'])->name('admin.events.edit');
     Route::patch('/events/{event}', [App\Http\Controllers\admin\EventController::class, 'update'])->name('admin.events.update');
     Route::delete('/events/{event}', [App\Http\Controllers\admin\EventController::class, 'destroy'])->name('admin.events.destroy');
@@ -95,7 +95,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/annoucments', [App\Http\Controllers\admin\AnnoucmentController::class, 'index'])->name('admin.annoucments.index');
     Route::get('/annoucments/create', [App\Http\Controllers\admin\AnnoucmentController::class, 'create'])->name('admin.annoucments.create');
     Route::post('/annoucments/store', [App\Http\Controllers\admin\AnnoucmentController::class, 'store'])->name('admin.annoucments.store');
-    Route::get('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'show'])->name('admin.annoucments.show');
+    Route::get('/annoucments/{annoucment:slug}', [App\Http\Controllers\admin\AnnoucmentController::class, 'show'])->name('admin.annoucments.show');
     Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
     Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
     Route::delete('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');
@@ -103,7 +103,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/videos', [App\Http\Controllers\admin\VideoController::class, 'index'])->name('admin.videos.index');
     Route::get('/videos/create', [App\Http\Controllers\admin\VideoController::class, 'create'])->name('admin.videos.create');
     Route::post('/videos/store', [App\Http\Controllers\admin\VideoController::class, 'store'])->name('admin.videos.store');
-    Route::get('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'show'])->name('admin.videos.show');
+    Route::get('/videos/{video:slug}', [App\Http\Controllers\admin\VideoController::class, 'show'])->name('admin.videos.show');
     Route::get('/videos/{video}/edit', [App\Http\Controllers\admin\VideoController::class, 'edit'])->name('admin.videos.edit');
     Route::patch('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'update'])->name('admin.videos.update');
     Route::delete('/videos/{video}', [App\Http\Controllers\admin\VideoController::class, 'destroy'])->name('admin.videos.destroy');
@@ -118,7 +118,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/newsletters', [App\Http\Controllers\admin\NewsletterController::class, 'index'])->name('admin.newsletters.index');
     Route::get('/newsletters/create', [App\Http\Controllers\admin\NewsletterController::class, 'create'])->name('admin.newsletters.create');
     Route::post('/newsletters/store', [App\Http\Controllers\admin\NewsletterController::class, 'store'])->name('admin.newsletters.store');
-    Route::get('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'show'])->name('admin.newsletters.show');
+    Route::get('/newsletters/{newsletter:slug}', [App\Http\Controllers\admin\NewsletterController::class, 'show'])->name('admin.newsletters.show');
     Route::get('/newsletters/{newsletter}/edit', [App\Http\Controllers\admin\NewsletterController::class, 'edit'])->name('admin.newsletters.edit');
     Route::patch('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'update'])->name('admin.newsletters.update');
     Route::delete('/newsletters/{newsletter}', [App\Http\Controllers\admin\NewsletterController::class, 'destroy'])->name('admin.newsletters.destroy');
@@ -126,7 +126,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/staffs', [App\Http\Controllers\admin\StaffController::class, 'index'])->name('admin.staffs.index');
     Route::get('/staffs/create', [App\Http\Controllers\admin\StaffController::class, 'create'])->name('admin.staffs.create');
     Route::post('/staffs/store', [App\Http\Controllers\admin\StaffController::class, 'store'])->name('admin.staffs.store');
-    Route::get('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'show'])->name('admin.staffs.show');
+    Route::get('/staffs/{staff:slug}', [App\Http\Controllers\admin\StaffController::class, 'show'])->name('admin.staffs.show');
     Route::get('/staffs/{staff}/edit', [App\Http\Controllers\admin\StaffController::class, 'edit'])->name('admin.staffs.edit');
     Route::patch('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'update'])->name('admin.staffs.update');
     Route::delete('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'destroy'])->name('admin.staffs.destroy');
@@ -140,7 +140,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     })->name('admin.requestIds.export');
     Route::get('/requestIds/create', [App\Http\Controllers\admin\RequestIdController::class, 'create'])->name('admin.requestIds.create');
     Route::post('/requestIds/store', [App\Http\Controllers\admin\RequestIdController::class, 'store'])->name('admin.requestIds.store');
-    Route::get('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
+    Route::get('/requestIds/{request_id:slug}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
     Route::get('/requestIds/{request_id}/edit', [App\Http\Controllers\admin\RequestIdController::class, 'edit'])->name('admin.requestIds.edit');
     Route::patch('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'update'])->name('admin.requestIds.update');
     Route::delete('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'destroy'])->name('admin.requestIds.destroy');
@@ -149,7 +149,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/stories/create', [App\Http\Controllers\admin\StoryController::class, 'create'])->name('admin.stories.create');
     Route::post('/stories/store', [App\Http\Controllers\admin\StoryController::class, 'store'])->name('admin.stories.store');
     Route::get('/stories/{story}/edit', [App\Http\Controllers\admin\StoryController::class, 'edit'])->name('admin.stories.edit');
-    Route::get('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'show'])->name('admin.stories.show');
+    Route::get('/stories/{story:slug}', [App\Http\Controllers\admin\StoryController::class, 'show'])->name('admin.stories.show');
     Route::patch('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'update'])->name('admin.stories.update');
     Route::delete('/stories/{story}', [App\Http\Controllers\admin\StoryController::class, 'destroy'])->name('admin.stories.destroy');
     Route::post('/ckfinder-upload', [App\Http\Controllers\admin\StoryController::class, 'upload'])->name('ckeditor.upload');
