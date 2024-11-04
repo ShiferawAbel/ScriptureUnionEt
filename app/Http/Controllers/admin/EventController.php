@@ -34,7 +34,6 @@ class EventController extends Controller
             'location' => 'required',
             'banner_img' => 'required|image',
         ]);
-        // dd($request);
         $file = $request->file('banner_img');
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);

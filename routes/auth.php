@@ -9,12 +9,20 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])
-                ->name('register');
-                // ->middleware('auth');
+    if (count(User::all()) === 0) {
+        Route::get('register', [RegisteredUserController::class, 'create'])
+                    ->name('register');
+                    
+    } else {
+        Route::get('register', [RegisteredUserController::class, 'create'])
+                    ->name('register')
+                    ->middleware('auth');
+    }
+    
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 

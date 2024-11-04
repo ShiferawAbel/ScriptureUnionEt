@@ -30,4 +30,9 @@ class AboutController extends Controller
     {
         return view('abouts.who-we-are');
     }
+
+    public function leadership()
+    {
+        return view('abouts.leadership');
+    }
 }

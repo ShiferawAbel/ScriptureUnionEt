@@ -49,6 +49,7 @@ Route::get('about/vision-mission-values', [AboutController::class, 'vision_missi
 Route::get('about/history', [AboutController::class, 'history'])->name('history');
 Route::get('about/what-we-believe', [AboutController::class, 'what_we_believe'])->name('what_we_believe');
 Route::get('about/who-we-are', [AboutController::class, 'who_we_are'])->name('who_we_are');
+Route::get('about/leadership', [AboutController::class, 'leadership'])->name('leadership');
 
 
 Route::get('/donate', function () {

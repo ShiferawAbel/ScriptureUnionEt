@@ -27,6 +27,7 @@
                      <a href="{{route('vision_mission_values')}}" class="dropdown-item {{ request()->is('vision_mission_values') ? 'active' : '' }}">Missios, Vision and Values</a>
                      <a href="{{route('what_we_believe')}}" class="dropdown-item {{ request()->is('what_we_believe') ? 'active' : '' }}">What We Believe</a>
                      <a href="{{route('history')}}" class="dropdown-item {{ request()->is('history') ? 'active' : '' }}">History</a>
+                     <a href="{{route('leadership')}}" class="dropdown-item {{ request()->is('leadership') ? 'active' : '' }}">Leadership</a>
                 </div> 
             </div>
             {{-- <div class="nav-item dropdown">
