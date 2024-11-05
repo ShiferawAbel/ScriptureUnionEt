@@ -2121,3 +2121,22 @@ margin-left: 10px;
         gap: 0;
     }
 }
+    .leadership-section {
+      padding: 50px 0;
+      display: grid;
+    }
+    .leadership-title {
+      margin-bottom: 30px;
+    }
+    .leader-card {
+      margin-bottom: 30px;
+    }
+    .leader-card img {
+      border-radius: 100%;
+      width: 60%;
+      height: 60%;
+      margin-bottom: 10px;
+    }
+    .leader-info {
+      text-align: center;
+    }

@@ -1,4 +1,40 @@
 <x-layouts.app>
+
+<section class="leadership-section">
+  <div class="container">
+    <div class="leadership-title">
+      <h2>Leadership</h2>
+      <p>Meet Our Staff Who Are Team Leaders at Our Scripture Union Service Center</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 leader-card">
+        <img src="{{asset('img/nigusie.jpg')}}" alt="Mr. Negussie Bulcha" class="img-fluid">
+        <div class="leader-info">
+          <h4>Mr. Negussie Bulcha</h4>
+          <p>General Secretary</p>
+          <a href="">NegussieBulcha@suethiopia.org</a>
+        </div>
+      </div>
+      <div class="col-md-4 leader-card">
+        <img src="{{asset('img/wendemu.jpg')}}" alt="Dr. Wendmu Kena" class="img-fluid">
+        <div class="leader-info">
+          <h4>Dr. Wendmu Kena</h4>
+          <p>Student Ministry Director</p>
+          <a href="">WendmuKena@suethiopia.org</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+{{-- 
+
+
   <h1 class="text-center mb-5 mt-5">Board Memmbers</h1>
   <section class="container board-memmbers">
     <div class="board-memmber-box">
@@ -73,5 +109,5 @@
         <h4 class="text-center">Pastor Aframe Mola</h4>
       </div>
     </div>
-  </section >
+  </section > --}}
 </x-layouts.app>
