@@ -133,7 +133,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'update'])->name('admin.staffs.update');
     Route::delete('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'destroy'])->name('admin.staffs.destroy');
 
-    Route::middleware([RoleMiddleware::class.':SADMIN'])->group(function () {
+    Route::middleware([RoleMiddleware::class.':ADMIN,SADMIN'])->group(function () {
         Route::get('/requestIds', [App\Http\Controllers\admin\RequestIdController::class, 'index'])->name('admin.requestIds.index');
         Route::get('/export', function() {
             $request_ids = RequestId::all();
