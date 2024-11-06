@@ -34,15 +34,28 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="address_amh">Address In Amharic</label>
-                                    <input type="text" name="address_amh"
-                                        value="{{ old('address_amh', $request_id->address_amh) }}" class="form-control"
-                                        id="address_amh" placeholder="Address In Amharic">
-                                    @error('address_amh')
+                                    <label for="office_address_amh">Office Address In Amharic</label>
+                                    <input type="text" name="office_address_amh"
+                                        value="{{ old('office_address_amh', $request_id->office_address_amh) }}" class="form-control"
+                                        id="office_address_amh" placeholder="Office Address In Amharic">
+                                    @error('office_address_amh')
                                         <p>{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nationality_amh">Nationality In Amharic</label>
+                                    <input type="text" name="nationality_amh"
+                                        value="{{ old('nationality_amh', $request_id->nationality_amh) }}" class="form-control"
+                                        id="nationality_amh" placeholder="Nationality In Amharic">
+                                    @error('nationality_amh')
+                                        <p>{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="full_name_eng">Full Name In English</label>
@@ -54,8 +67,6 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="role_eng">Job Title In English</label>
@@ -67,19 +78,30 @@
                                     @enderror
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="address_eng">Address In English</label>
-                                    <input type="text" name="address_eng"
-                                        value="{{ old('address_eng', $request_id->address_eng) }}" class="form-control"
-                                        id="address_eng" placeholder="Address In English">
-                                    @error('address_eng')
+                                    <label for="office_address_eng">Office Address In English</label>
+                                    <input type="text" name="office_address_eng"
+                                        value="{{ old('office_address_eng', $request_id->office_address_eng) }}" class="form-control"
+                                        id="office_address_eng" placeholder="Office Address In English">
+                                    @error('office_address_eng')
                                         <p>{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="nationality_eng">Nationality In English</label>
+                                    <input type="text" name="nationality_eng"
+                                        value="{{ old('nationality_eng', $request_id->nationality_eng) }}" class="form-control"
+                                        id="nationality_eng" placeholder="Nationality In English">
+                                    @error('nationality_eng')
+                                        <p>{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="phone">Phone Number</label>

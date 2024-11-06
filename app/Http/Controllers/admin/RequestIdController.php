@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Drivers\Gd\Driver;
 use Intervention\Image\ImageManager;
+use Picqer\Barcode\BarcodeGeneratorPNG;
 use SimpleSoftwareIO\QrCode\Facades\QrCode as FacadesQrCode;
 
 class RequestIdController extends Controller
@@ -24,8 +25,8 @@ class RequestIdController extends Controller
                                     ->orwhere('full_name_eng', 'LIKE', "%{$s}%")
                                     ->orwhere('full_name_amh', 'LIKE', "%{$s}%")
                                     ->orwhere('phone', 'LIKE', "%{$s}%")
-                                    ->orwhere('address_eng', 'LIKE', "%{$s}%")
-                                    ->orwhere('address_amh', 'LIKE', "%{$s}%")
+                                    ->orwhere('office_address_eng', 'LIKE', "%{$s}%")
+                                    ->orwhere('office_address_amh', 'LIKE', "%{$s}%")
                                     ->orwhere('role_eng', 'LIKE', "%{$s}%")
                                     ->orwhere('role_amh', 'LIKE', "%{$s}%")->get();
             $compact[1] = 's';
@@ -49,21 +50,23 @@ class RequestIdController extends Controller
             'phone' => 'required|string',
             'role_amh' => 'required|string',
             'role_eng' => 'required|string',
-            'address_amh' => 'required|string',
-            'address_eng' => 'required|string',
+            'office_address_amh' => 'required|string',
+            'office_address_eng' => 'required|string',
+            'nationality_amh' => 'required|string',
+            'nationality_eng' => 'required|string',
             'profile' => 'required|image|mimes:jpeg,png,jpg',
         ]);
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
-        $sample->text($request->full_name_amh, 350, 165, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
-            $font->size(25);
+        $sample->text($request->full_name_amh, 350, 160, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
         });
 
-        $sample->text(strtoupper($request->full_name_eng), 350, 190, function($font) {
+        $sample->text(strtoupper($request->full_name_eng), 350, 185, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -72,15 +75,31 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->role_amh, 350, 242, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
+        $sample->text($request->role_amh, 350, 235, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->role_eng), 350, 261, function($font) {
+            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
         });
 
-        $sample->text(strtoupper($request->role_eng), 350, 268, function($font) {
+        $sample->text($request->office_address_amh, 350, 315, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->office_address_eng), 350, 341, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -89,15 +108,16 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->address_amh, 350, 320, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
-            $font->size(25);
+        $sample->text($request->nationality_amh, 350, 395, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
+            
         });
 
-        $sample->text(strtoupper($request->address_eng), 350, 346, function($font) {
+        $sample->text(strtoupper($request->nationality_eng), 350, 425, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -106,14 +126,14 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->phone, 350, 390, function($font) {
+        $sample->text($request->phone, 350, 474, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
-            
         });
+
         function generateRandomId($prefix = 'SUE', $length = 3) { 
             $randomNumber = str_pad(mt_rand(1, 999), $length, '0', STR_PAD_LEFT); 
             if (count(RequestId::where('uuid', $prefix. '/' .$randomNumber)->get()) > 0) {
@@ -128,32 +148,38 @@ class RequestIdController extends Controller
         
         
         $randomId = generateRandomId($prefix = $request->prefix);
-        $sample->text($randomId, 140 , 106, function($font) {
+        $sample->text($randomId, 40 , 490, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
-            $font->size(30);
+            $font->size('25');
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
             
         });
+
+        $generator = new BarcodeGeneratorPNG();
+        $barcode = $generator->getBarcode($randomId, $generator::TYPE_CODE_128, 1.5, 30);
+        $sample->place($barcode, 'top-left', 40, 520);
+
         $path = $request->file('profile')->store('id_profiles', 'public');
-        $profile = $manager->read('storage/'.$path)->resize(300, 303);
-        $sample->place($profile, 'top-left', 16, 144);
+        $profile = $manager->read('storage/'.$path)->resize(322, 320);
+        $sample->place($profile, 'top-left', 5, 139);
         
         
         
         $data['uuid'] = $randomId;
         $data['profile'] = $path;
         $data['qr_code'] = null;
+        $data['slug'] = str_replace('/', '_' , $randomId);
         
         $requestId = RequestId::create($data);
 
         $qr_code_path = public_path('qr_codes/'.str_replace('/', '_' , $requestId->uuid) . '.png');
-        FacadesQrCode::format('png')->size(165)->generate(route('id.show', $requestId->id), $qr_code_path);
+        FacadesQrCode::format('png')->size(165)->generate(route('id.show', $requestId->slug), $qr_code_path);
         $qr_code = $manager->read($qr_code_path);
         $requestId->qr_code = $qr_code_path;
         $requestId->save();
-        $sample->place($qr_code, 'top-left', 68, 460);
+        $sample->place($qr_code, 'top-left', 820, 390);
         $sample->save(public_path('id_cards/' . str_replace('/', '_' , $requestId->uuid) . '.png'));
         return redirect(route('admin.requestIds.index'));
     }
@@ -176,26 +202,23 @@ class RequestIdController extends Controller
             'phone' => 'required|string',
             'role_amh' => 'required|string',
             'role_eng' => 'required|string',
-            'address_amh' => 'required|string',
-            'address_eng' => 'required|string',
+            'office_address_amh' => 'required|string',
+            'office_address_eng' => 'required|string',
+            'nationality_amh' => 'required|string',
+            'nationality_eng' => 'required|string',
             'profile' => 'image|mimes:jpeg,png,jpg',
         ]);
-
-        if (File::exists(public_path('id_cards/' . str_replace('/', '_' , $request_id->uuid) . '.png'))) {
-            File::delete(public_path('id_cards/' . str_replace('/', '_' , $request_id->uuid) . '.png'));
-        }
-
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
-        $sample->text($request->full_name_amh, 350, 165, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
-            $font->size(25);
+        $sample->text($request->full_name_amh, 350, 160, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
         });
 
-        $sample->text(strtoupper($request->full_name_eng), 350, 190, function($font) {
+        $sample->text(strtoupper($request->full_name_eng), 350, 185, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -204,15 +227,31 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->role_amh, 350, 242, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
+        $sample->text($request->role_amh, 350, 235, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->role_eng), 350, 261, function($font) {
+            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
         });
 
-        $sample->text(strtoupper($request->role_eng), 350, 268, function($font) {
+        $sample->text($request->office_address_amh, 350, 315, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+        });
+
+        $sample->text(strtoupper($request->office_address_eng), 350, 341, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -221,15 +260,16 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->address_amh, 350, 320, function($font) {
-            $font->file(public_path('\admin-resources\font\yebse.ttf'));
-            $font->size(25);
+        $sample->text($request->nationality_amh, 350, 395, function($font) {
+            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->size(30);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
+            
         });
 
-        $sample->text(strtoupper($request->address_eng), 350, 346, function($font) {
+        $sample->text(strtoupper($request->nationality_eng), 350, 425, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
@@ -238,13 +278,12 @@ class RequestIdController extends Controller
             
         });
 
-        $sample->text($request->phone, 350, 390, function($font) {
+        $sample->text($request->phone, 350, 474, function($font) {
             $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
             $font->valign('top');
-            
         });
 
         $sample->text($request_id->uuid, 140 , 106, function($font) {
@@ -263,9 +302,21 @@ class RequestIdController extends Controller
             $path = $request_id->profile;
         }
         
-        $profile = $manager->read('storage/'.$path)->resize(300, 303);
-        $sample->place($profile, 'top-left', 16, 144);
-        
+        $sample->text($request_id->uuid, 40 , 490, function($font) {
+            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->size('25');
+            $font->color('#000');
+            $font->align('start');
+            $font->valign('top');
+            
+        });
+
+        $generator = new BarcodeGeneratorPNG();
+        $barcode = $generator->getBarcode($request_id, $generator::TYPE_CODE_128, 1.5, 30);
+        $sample->place($barcode, 'top-left', 40, 520);
+
+        $profile = $manager->read('storage/'.$path)->resize(322, 320);
+        $sample->place($profile, 'top-left', 5, 139);
         
         $request_id->update($data);
 
@@ -273,7 +324,7 @@ class RequestIdController extends Controller
         $qr_code = $manager->read($qr_code_path);
         $request_id->qr_code = $qr_code_path;
         $request_id->save();
-        $sample->place($qr_code, 'top-left', 68, 460);
+        $sample->place($qr_code, 'top-left', 820, 390);
         $sample->save(public_path('id_cards/' . str_replace('/', '_' , $request_id->uuid) . '.png'));
         return redirect(route('admin.requestIds.index'));
     }

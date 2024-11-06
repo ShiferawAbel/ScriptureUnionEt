@@ -18,10 +18,13 @@ return new class extends Migration
             $table->string('full_name_amh');
             $table->string('role_eng');
             $table->string('role_amh');
-            $table->string('address_eng');
-            $table->string('address_amh');
+            $table->string('office_address_eng');
+            $table->string('office_address_amh');
+            $table->string('nationality_eng');
+            $table->string('nationality_amh');
             $table->string('phone');
             $table->string('profile');
+            $table->string('slug')->uniqid();;
             $table->string('qr_code')->nullable()->default(null);
             $table->timestamps();
         });

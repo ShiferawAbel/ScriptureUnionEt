@@ -3,6 +3,8 @@
 /node_modules
 /public/storage
 /public/hot
+/public/id_cards/*
+/public/qr_codes/*
 /public/storage
 /storage/*.key
 /storage/logs

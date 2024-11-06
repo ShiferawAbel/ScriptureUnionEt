@@ -13,6 +13,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StoryController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\VideoController;
+use App\Http\Middleware\RoleMiddleware;
 use App\Models\Carousel;
 use App\Models\Event;
 use App\Models\Newsletter;
@@ -56,7 +57,7 @@ Route::get('/donate', function () {
     return view('donate');
 })->name('donate');
 
-Route::get('/contacts/create', [ContactController::class, 'create'])->name('contacts.create');
+Route::get('/contact-us', [ContactController::class, 'create'])->name('contacts.create');
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::get('/events', [EventController::class, 'index'])->name('events.index');
@@ -78,7 +79,7 @@ Route::get('/newsletters/{newsletter:slug}', [NewsletterController::class, 'show
 Route::get('/stories', [StoryController::class, 'index'])->name('stories.index');
 Route::get('/stories/{story:slug}', [StoryController::class, 'show'])->name('stories.show');
 
-Route::get('/id/{request_id}', [RequestIdController::class, 'show'])->name('id.show');
+Route::get('/id/{request_id:slug}', [RequestIdController::class, 'show'])->name('id.show');
 
 Route::post('/subscibe', [SubscriptionController::class, 'store'])->name('subscribe');
 
@@ -132,19 +133,21 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'update'])->name('admin.staffs.update');
     Route::delete('/staffs/{staff}', [App\Http\Controllers\admin\StaffController::class, 'destroy'])->name('admin.staffs.destroy');
 
-    Route::get('/requestIds', [App\Http\Controllers\admin\RequestIdController::class, 'index'])->name('admin.requestIds.index');
-    Route::get('/export', function() {
-        $request_ids = RequestId::all();
-        // $pdf = PDF::loadView('id_cards_export', ['request_ids' => $request_ids]); 
-        // return $pdf->download('IdCardsList.pdf');
-        return view('id_cards_export', compact('request_ids'));
-    })->name('admin.requestIds.export');
-    Route::get('/requestIds/create', [App\Http\Controllers\admin\RequestIdController::class, 'create'])->name('admin.requestIds.create');
-    Route::post('/requestIds/store', [App\Http\Controllers\admin\RequestIdController::class, 'store'])->name('admin.requestIds.store');
-    Route::get('/requestIds/{request_id:slug}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
-    Route::get('/requestIds/{request_id}/edit', [App\Http\Controllers\admin\RequestIdController::class, 'edit'])->name('admin.requestIds.edit');
-    Route::patch('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'update'])->name('admin.requestIds.update');
-    Route::delete('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'destroy'])->name('admin.requestIds.destroy');
+    Route::middleware([RoleMiddleware::class.':SADMIN'])->group(function () {
+        Route::get('/requestIds', [App\Http\Controllers\admin\RequestIdController::class, 'index'])->name('admin.requestIds.index');
+        Route::get('/export', function() {
+            $request_ids = RequestId::all();
+            // $pdf = PDF::loadView('id_cards_export', ['request_ids' => $request_ids]); 
+            // return $pdf->download('IdCardsList.pdf');
+            return view('id_cards_export', compact('request_ids'));
+        })->name('admin.requestIds.export');
+        Route::get('/requestIds/create', [App\Http\Controllers\admin\RequestIdController::class, 'create'])->name('admin.requestIds.create');
+        Route::post('/requestIds/store', [App\Http\Controllers\admin\RequestIdController::class, 'store'])->name('admin.requestIds.store');
+        Route::get('/requestIds/{request_id:slug}', [App\Http\Controllers\admin\RequestIdController::class, 'show'])->name('admin.requestIds.show');
+        Route::get('/requestIds/{request_id}/edit', [App\Http\Controllers\admin\RequestIdController::class, 'edit'])->name('admin.requestIds.edit');
+        Route::patch('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'update'])->name('admin.requestIds.update');
+        Route::delete('/requestIds/{request_id}', [App\Http\Controllers\admin\RequestIdController::class, 'destroy'])->name('admin.requestIds.destroy');
+    });
 
     Route::get('/stories', [App\Http\Controllers\admin\StoryController::class, 'index'])->name('admin.stories.index');
     Route::get('/stories/create', [App\Http\Controllers\admin\StoryController::class, 'create'])->name('admin.stories.create');

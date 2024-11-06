@@ -9,22 +9,22 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Middleware\RoleMiddleware;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware('guest')->group(function () {
-    if (count(User::all()) === 0) {
-        Route::get('register', [RegisteredUserController::class, 'create'])
-                    ->name('register');
-                    
-    } else {
-        Route::get('register', [RegisteredUserController::class, 'create'])
-                    ->name('register')
-                    ->middleware('auth');
-    }
-    
-
+if (count(User::all()) === 0) {
+    Route::get('register', [RegisteredUserController::class, 'create'])
+                ->name('register')
+                ->middleware('guest');
     Route::post('register', [RegisteredUserController::class, 'store']);
+} else {
+    Route::get('register', [RegisteredUserController::class, 'create'])
+                ->name('register')
+                ->middleware(RoleMiddleware::class.':SADMIN');
+    Route::post('register', [RegisteredUserController::class, 'store'])->middleware(RoleMiddleware::class.':SADMIN');
+}
+Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
