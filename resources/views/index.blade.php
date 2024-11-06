@@ -184,7 +184,7 @@
    <!-- Events Start -->
    <div class=" evets-show  position-relative">
     <div class="back-image wow fadeIn" data-wow-delay="0.1s">
-      <img src="{{ asset('img/videobg2.png') }}" alt="Fixed Image" class="img-fluid">
+      <img src="{{ asset('img/videobg.png') }}" alt="Fixed Image" class="img-fluid">
     </div>
     <div class="container">
   
