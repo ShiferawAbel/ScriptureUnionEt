@@ -108,6 +108,8 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="file-input">Choose Profile Picture</label>
+                  <img id="preview" src="{{ asset('img/avatar.png') }}"
+                  alt="Choose File" class="img-thumbnail">
                   <input id="file-input" name="profile" type="file" class="form-control">
                   @error('profile')
                     <p>{{ $message }}</p>
