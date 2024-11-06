@@ -59,7 +59,7 @@ class RequestIdController extends Controller
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
         $sample->text($request->full_name_amh, 350, 160, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -67,7 +67,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->full_name_eng), 350, 185, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -76,7 +76,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->role_amh, 350, 235, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -84,7 +84,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->role_eng), 350, 261, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -92,7 +92,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->office_address_amh, 350, 315, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -100,7 +100,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->office_address_eng), 350, 341, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -109,7 +109,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->nationality_amh, 350, 395, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -118,7 +118,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->nationality_eng), 350, 425, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -127,7 +127,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->phone, 350, 474, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -149,7 +149,7 @@ class RequestIdController extends Controller
         
         $randomId = generateRandomId($prefix = $request->prefix);
         $sample->text($randomId, 40 , 490, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size('25');
             $font->color('#000');
             $font->align('start');
@@ -211,7 +211,7 @@ class RequestIdController extends Controller
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
         $sample->text($request->full_name_amh, 350, 160, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -219,7 +219,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->full_name_eng), 350, 185, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -228,7 +228,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->role_amh, 350, 235, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -236,7 +236,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->role_eng), 350, 261, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -244,7 +244,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->office_address_amh, 350, 315, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -252,7 +252,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->office_address_eng), 350, 341, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -261,7 +261,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->nationality_amh, 350, 395, function($font) {
-            $font->file(public_path('\admin-resources\font\AbyssinicaSIL-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/AbyssinicaSIL-Regular.ttf'));
             $font->size(30);
             $font->color('#000');
             $font->align('start');
@@ -270,7 +270,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text(strtoupper($request->nationality_eng), 350, 425, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -279,7 +279,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request->phone, 350, 474, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -287,7 +287,7 @@ class RequestIdController extends Controller
         });
 
         $sample->text($request_id->uuid, 140 , 106, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size(25);
             $font->color('#000');
             $font->align('start');
@@ -303,7 +303,7 @@ class RequestIdController extends Controller
         }
         
         $sample->text($request_id->uuid, 40 , 490, function($font) {
-            $font->file(public_path('\admin-resources\font\Nunito-Regular.ttf'));
+            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
             $font->size('25');
             $font->color('#000');
             $font->align('start');
