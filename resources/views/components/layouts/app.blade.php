@@ -92,8 +92,9 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="text-light mb-4">Our Ministries</h4>
-                        <a class="btn btn-link" href="">High-Shool and Students Ministry</a>
-                        <a class="btn btn-link" href="">Church Ministry</a>
+                        <a class="btn btn-link" href="#">School Ministry</a>
+                        <a class="btn btn-link" href="#">Church Engagement</a>
+                        <a class="btn btn-link" href="#">Family Engagement</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="text-light mb-4">Quick Links</h4>
@@ -104,8 +105,8 @@
                         <a class="btn btn-link" href="{{ route('annoucments.index') }}">Annoucements</a>
                         {{-- <a class="btn btn-link" href="">Support</a> --}}
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <img width="300px" src="{{ asset('img/Asset 3.png') }}" alt="" srcset="">
+                    <div class="col-lg-3 col-md-6 pt-5">
+                        <img width="200px" src="{{ asset('img/Asset 3.png') }}" alt="" srcset="">
                     </div>
                     {{-- <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Newsletter</h4>
@@ -128,7 +129,7 @@
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://htmlcodex.com">AEZ</a>
+                            Designed By <a class="border-bottom" href="#">AEZ Technologies</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +137,7 @@
         </div>
         <!-- Footer End -->
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i
+        <a href="#" class="btn btn-lg btn-filled btn-lg-square rounded-0 back-to-top"><i
                 class="bi bi-arrow-up"></i></a>
     @endif
 

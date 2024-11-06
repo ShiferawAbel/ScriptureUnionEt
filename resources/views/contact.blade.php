@@ -55,18 +55,29 @@
                     <ul class="contact-list">
                         <h5>CONTACT US THROUGH OUR ADDRESSES</h5>
                         <li>
-                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank"><img class="contact-icon" src="{{asset('img/facebook-con.png')}}"> Face Book</a>
+                            <a class="btn btn-social" href="https://facebook.com/61558550014957" target="_blank">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png " class="m-3" width="40" height="40" alt="" title="" class="img-small">
+                                Face Book
+                            </a>
                         </li>
                         <li>
-                            <a class="btn btn-social" href="https://www.instagram.com/su.ethiopia57?igsh=d2MwNWdieGx2bWhv&utm_source=qr" target="_blank"><img class="contact-icon" src="{{asset('img/instagram-icon.png')}}"> Instagram</a>
+                            <a class="btn btn-social" href="https://www.instagram.com/su.ethiopia57?igsh=d2MwNWdieGx2bWhv&utm_source=qr" target="_blank">
+                                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png " class="m-3" width="40" height="40" alt="" title="" class="img-small">
+                                Instagram
+                            </a>
                         </li>
                         <li>
-                            <a class="btn btn-social" href="https://t.me/su_ethiopia" target="_blank"><img class="contact-icon" src="{{asset('img/telegram-icon.png')}}"> Telegram</a>
+                            <a class="btn btn-social" href="https://t.me/su_ethiopia" target="_blank">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png " class="m-3" width="40" height="40" alt="" title="" class="img-small">
+                                Telegram
+                            </a>
                         </li>
                         <li class="ps-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png " class="m-3" width="40" height="40" alt="" title="" class="img-small">
                             <p>Phone Number: +251-11-56-27-86</p>
                         </li>
                         <li class="ps-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png " class="m-3" width="40" height="40" alt="" title="" class="img-small">
                             <p class="mb-2">Email Addres: info@suethiopia.org</p>
                         </li>
                     </ul>

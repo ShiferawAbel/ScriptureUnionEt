@@ -1,130 +1,68 @@
 <x-layouts.app>
-
-    <!-- Modal -->
-    <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="donationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h2 class="modal-title" id="donationModalLabel">Give to EvaSUE</h2>
-                    <p>EvaSUE is primarily a donor-supported organization that relies on the generosity of people like
-                        you. Working with EvaSUE gives the opportunity to participate in a ministry that is a blessing
-                        to shape generations who are going to be leaders of the future church and the nation. Hence, we
-                        kindly request you to be with us in shaping the next generation!! EvaSUE manages donor funds in
-                        a trustworthy manner in keeping with our core values. We will readily make organizational and/or
-                        staff financial reports available as requested. Financial integrity is of utmost importance to
-                        us.</p> <button type="button" class="btn btn-donate">Donate</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <!-- Carousel Section -->
     <div class="container-fluid carousel-custom p-0 position-relative">
-        <div class="fixed-image">
-            <img src="{{ asset('img/carousel-graphics.png') }}" alt="Fixed Image" class="img-fluid">
-        </div>
-        <!-- Carousel Start -->
-        <div class="container-fluid carousel-custom p-0">
-            <div class="row">
-                <div class="">
-                    <div class="owl-carousel header-carousel position-relative">
-                        <div class="owl-carousel-item position-relative">
-                            <img class="img-fluid"
-                                src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}"
-                                alt="Scripture union of Ethiopia highschool students photo">
-                            <div class="position-absolute">
-                                <div class="container carousel-desc">
-                                    <div class="row justify-content-center">
-                                        <div class="text-center">
-                                            <h1 class="display-3 text-white animated slideInDown mb-3">
-                                                SCRIPTURE UNION OF ETHIOPIA
-                                            </h1>
-                                            <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn"
-                                                data-wow-delay="0.1s">
-                                                Students following Jesus; edified by the word of God; prepared for
-                                                service.
-                                            </h5>
-                                            <div class="carousel-buttons mt-4">
-                                                <a href="/donate"
-                                                    class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
-                                                    Donate
-                                                </a>
-                                                <a href="/about"
-                                                    class="btn btn-outline py-md-3 px-md-5 animated slideInRight">
-                                                    About Us
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @foreach ($carousels as $carousel)
-                            @if ($carousel->story)
-                                <div class="owl-carousel-item position-relative">
-                                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->image) }}"
-                                        alt="">
-                                    <div class="position-absolute">
-                                        <div class="container carousel-desc">
-                                            <div class="row justify-content-center">
-                                                <div class="text-center">
-                                                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">
-                                                        Scripture Union Ethiopia</h5>
-                                                    <h1 class="display-3 text-white animated slideInDown mb-4">
-                                                        {{ $carousel->header }}</h1>
-                                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}
-                                                    </p>
-                                                    <div class="carousel-buttons">
-                                                        <a href="/donate"
-                                                            class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
-                                                            Donate
-                                                        </a>
-                                                        <a href="{{ route('stories.show', $carousel->story) }}"
-                                                            class="btn btn-outline py-md-3 px-md-5 animated slideInRight">Read
-                                                            Story</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @else
-                                <div class="owl-carousel-item position-relative">
-                                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->image) }}"
-                                        alt="">
-                                    <div class="position-absolute">
-                                        <div class="container carousel-desc">
-                                            <div class="row justify-content-center">
-                                                <div class="text-center">
-                                                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">
-                                                        Scripture Union Ethiopia</h5>
-                                                    <h1 class="display-3 text-white animated slideInDown mb-4">
-                                                        {{ $carousel->header }}</h1>
-                                                    <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}
-                                                    </p>
-                                                    <div class="carousel-buttons">
-                                                        <a href="/donate"
-                                                            class="btn btn-filled py-md-3 px-md-5 me-3 animated slideInLeft">
-                                                            Donate
-                                                        </a>
-                                                        <a href="/about"
-                                                            class="btn btn-outline py-md-3 px-md-5 animated slideInRight">
-                                                            About Us
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
+      <div class="fixed-image">
+        <img src="{{ asset('img/carousel-graphics.png') }}" alt="Fixed Image" class="img-fluid">
+      </div>
+      <div class="container-fluid carousel-custom p-0">
+            <div class="owl-carousel header-carousel position-relative">
+              <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="{{ asset('img/scripture-union-ethiopia-highschool-students-photo.png') }}" alt="Scripture union of Ethiopia highschool students photo">
+                <div class="position-absolute">
+                  <div class="carousel-desc">
+                    <div class="row justify-content-center">
+                      <div class="text-center">
+                        <h1 class="display-3 text-white animatedslideInDown mb-3">SCRIPTURE UNION OF ETHIOPIA</h1>
+                        <h5 class="fs-5 fw-medium text-white mb-0 pb-2 wow fadeIn" data-wow-delay="0.1s">Serving God’s Vision for highschool.</h5>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+              @foreach ($carousels as $carousel)
+                @if ($carousel->story)
+                  <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->image) }}" alt="">
+                    <div class="position-absolute">
+                      <div class="container carousel-desc">
+                        <div class="row justify-content-center">
+                          <div class="text-center">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                            <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                            <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                            <div class="carousel-buttons">
+                              <a href="/donate" class="btn btn-filled py-md-2 px-md-4 me-3 animated slideInLeft">Donate</a>
+                              <a href="{{ route('stories.show', $carousel->story) }}" class="btn btn-outline py-md-2 px-md-4 animated slideInRight">Read Story</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                @else
+                  <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->image) }}" alt="">
+                    <div class="position-absolute">
+                      <div class="container carousel-desc">
+                        <div class="row justify-content-center">
+                          <div class="text-center">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Scripture Union Ethiopia</h5>
+                            <h1 class="display-3 text-white animated slideInDown mb-4">{{ $carousel->header }}</h1>
+                            <p class="fs-5 fw-medium text-white mb-4 pb-2">{{ $carousel->body }}</p>
+                            <div class="carousel-buttons">
+                              <a href="/donate" class="btn btn-filled py-md-2 px-md-4 me-3 animated slideInLeft">Donate</a>
+                              <a href="/about" class="btn btn-outline py-md-2 px-md-4 animated slideInRight">About Us</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                @endif
+              @endforeach
         </div>
-    </div>
+      </div>
+    </div> 
 
     <!-- Carousel End -->
 
@@ -155,7 +93,7 @@
                         <div class="col-md-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="icon-box">
                                 <i class="fa fa-pray fa-5x text-primary"></i>
-                                <h3>Prayer</h3>
+                                <h3>Prayer First</h3>
                                 <p>
                                     We put prayer first (Philippians 4:6). We strive to know God's will through prayer.
                                     In prayer we come before God for thanksgiving. In prayer, we show that we love our
@@ -167,7 +105,7 @@
                         <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
                             <div class="icon-box">
                                 <i class="fa fa-bible fa-3x text-primary"></i>
-                                <h3>Scripture Reading</h3>
+                                <h3>Scripture Reading First</h3>
                                 <p>
                                     SU is a word-reading ministry. Reading the life-changing Word of God is the primary
                                     practice of our ministry. We believe that the change in people's lives is linked to
@@ -187,8 +125,8 @@
                             </div>
                         </div> <!-- End Icon Box -->
 
-                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.11s">
-                            <div class="icon-box">
+                        <div class="col-md-6 wow fadeIn " data-wow-delay="0.11s">
+                            <div class="icon-box mt-1">
                                 <i class="fa fa-handshake fa-3x text-primary"></i>
                                 <h3>Serving With Partnership</h3>
                                 <p>
@@ -209,6 +147,7 @@
     <!-- /About Section -->
 
 
+    
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action  section dark-background">
 
@@ -218,10 +157,10 @@
             <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-xl-10">
                     <div class="text-center">
-                        <h3>Scripture Union Ethiopia</h3>
+                        <h3>Scripture Union Of Ethiopia</h3>
                         <p>Your generous donation will help us continue this vital work, reaching more students with the
                             transformative power of God’s Word. Join us in making a difference today.</p>
-                        <a class="cta-btn" href="#">Donate</a>
+                        <a class="cta-btn" href="{{ url('donate') }}">Donate</a>
                     </div>
                 </div>
             </div>
@@ -229,16 +168,13 @@
 
     </section><!-- /Call To Action Section -->
 
-
     <!-- Events Start -->
     <div class=" evets-show  position-relative">
-        <div class="back-image wow fadeIn" data-wow-delay="0.1s">
-            <img src="{{ asset('img/videobg.png') }}" alt="Fixed Image" class="img-fluid">
-        </div>
         <div class="container">
-
-            <div class="row gy-5">
-                <div class="row gy-5 ontheTop">
+            <div class="back-image wow fadeIn" data-wow-delay="0.1s">
+                <img src="{{ asset('img/videobg.png') }}" alt="Fixed Image" class="img-fluid">
+            </div>
+                <div class="row ontheTop">
                     <div class="text-center events-header wow fadeInUp" data-wow-delay="0.1s">
                         <h6 class="text-primary text-uppercase">Events</h6>
                         <h1 class="mb-2">UPCOMING EVENTS YOU DON'T WANT TO MISS</h1>
@@ -265,24 +201,18 @@
                                     </div>
 
                                     <hr>
-
                                     <a href="{{ route('events.show', $event) }}"
                                         class="readmore stretched-link"><span>Read More</span><i
                                             class="bi bi-arrow-right"></i></a>
-
                                 </div>
-
                             </div>
                         </div>
                     @endforeach
-
                 </div>
-
             </div>
-
             </section>
         </div>
-        <!-- Events End -->
+        <!-- Events End --> 
 
         <!-- video start -->
         <div class="container videos row mx-auto postion-relative">
@@ -297,7 +227,7 @@
                 <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth
                     resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring
                     messages, and opportunities to connect with other believers.</p>
-                <button class="Subscribe_Youtube btn ">Visit</button>
+                <button class="Subscribe_Youtube btn " disabled>Visit</button>
             </div>
             <div class="right mt-4">
                 <img src="{{ asset('img/about-us-header.jpg') }}" alt="Promotional Image">
@@ -337,38 +267,38 @@
         <!-- video End -->
 
         <!-- story start -->
-        <div class="container story py-5">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container home-story">
+            <div class="text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-primary text-uppercase">STORIES</h6>
                 <h1 class="mb-3">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
             </div>
-        </div>
-        <div class="container container-custom  wow fadeInUp" data-wow-delay="0.3s">
-            <div class="image-section">
-                <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
-            </div>
-
-            <div class="articles-section">
-                @foreach ($stories as $story)
-                    <a href="{{ route('stories.show', $story) }}">
-                        <div class="article wow fadeInUp" data-wow-delay="0.5s">
-                            <img src="{{ asset('storage/' . $story->cover_img) }}" alt="Article Image">
-                            <div class="text">
-                                <div class="date">
-                                    {{ $story->month_day_start }}
-                                </div>
-                                <div class="title">
-                                    {{ $story->title }}
-                                </div>
-                                <div class="category">
-                                    Read More
+            <div class="container-custom wow fadeInUp" data-wow-delay="0.3s">
+                <div class="image-section">
+                    <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
+                </div>
+                <div class="articles-section">
+                    @foreach ($stories as $story)
+                        <a href="{{ route('stories.show', $story) }}">
+                            <div class="article wow fadeInUp" data-wow-delay="0.5s">
+                                <img src="{{ asset('storage/' . $story->cover_img) }}" alt="Article Image">
+                                <div class="text">
+                                    <div class="date">
+                                        {{ $story->month_day_start }}
+                                    </div>
+                                    <div class="title">
+                                        {{ $story->title }}
+                                    </div>
+                                    <div class="category">
+                                        Read More
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                @endforeach
+                        </a>
+                    @endforeach
+                </div>
             </div>
-
         </div>
+            
+        
         <!-- story End -->
 </x-layouts.app>
