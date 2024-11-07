@@ -104,12 +104,8 @@ class StoryController extends Controller
             $path = 'stories/cover_img' . $file->hashName();
             $resized->save(public_path('storage/' . $path));
             $data['cover_img'] = $path;
-        } else {
-            $file_name = $story->cover_img;
         }
-
         $story->update($data);
-        $story->cover_img = $file_name;
 
         $story->save();
 
