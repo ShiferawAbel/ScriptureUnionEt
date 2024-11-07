@@ -312,7 +312,7 @@ class RequestIdController extends Controller
         });
 
         $generator = new BarcodeGeneratorPNG();
-        $barcode = $generator->getBarcode($request_id, $generator::TYPE_CODE_128, 1.5, 30);
+        $barcode = $generator->getBarcode($request_id->uuid, $generator::TYPE_CODE_128, 1.5, 30);
         $sample->place($barcode, 'top-left', 40, 520);
 
         $profile = $manager->read('storage/'.$path)->resize(322, 320);
