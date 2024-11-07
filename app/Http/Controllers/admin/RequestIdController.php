@@ -208,7 +208,7 @@ class RequestIdController extends Controller
             'nationality_eng' => 'required|string',
             'profile' => 'image|mimes:jpeg,png,jpg',
         ]);
-        File::delete(public_path('id_cards/'.$request_id->uuid));
+        File::delete(public_path('id_cards/'.$request_id->uuid.'.png'));
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
         $sample->text($request->full_name_amh, 350, 160, function($font) {
