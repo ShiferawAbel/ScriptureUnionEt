@@ -37,7 +37,7 @@ class EventController extends Controller
         $file = $request->file('banner_img');
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);
-        $resized = $img->resize(508, 422);
+        $resized = $img->cover(508, 422);
         $full_path = 'events/' . $file->hashName();
         $resized->save(public_path('storage/' . $full_path));
         $data['banner_img'] = $full_path;
@@ -72,11 +72,10 @@ class EventController extends Controller
             $file = $request->file('banner_img');
             $image_manager = new ImageManager(new Driver());
             $img  = $image_manager->read($file);
-            $resized = $img->resize(508, 422);
+            $resized = $img->cover(508, 422);
             $full_path = 'events/' . $file->hashName();
             $resized->save(public_path('storage/' . $full_path));
             $event['banner_img'] = $full_path;
-    
         }
         $event->save();
         return redirect(route('admin.events.show', $event->slug));

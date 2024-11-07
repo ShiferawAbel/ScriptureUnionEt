@@ -40,7 +40,7 @@ class StoryController extends Controller
         $file = $request->file('cover_img');
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);
-        $resized = $img->resize(1154, 487);
+        $resized = $img->cover(1154, 487, 'center');
         $path = 'stories/cover_img' . $file->hashName();
         $resized->save(public_path('storage/' . $path));
         $data['cover_img'] = $path;
@@ -100,7 +100,7 @@ class StoryController extends Controller
             $file = $request->file('cover_img');
             $image_manager = new ImageManager(new Driver());
             $img  = $image_manager->read($file);
-            $resized = $img->resize(1154, 487);
+            $resized = $img->cover(1154, 487, 'center');
             $path = 'stories/cover_img' . $file->hashName();
             $resized->save(public_path('storage/' . $path));
             $data['cover_img'] = $path;

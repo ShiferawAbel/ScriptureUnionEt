@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 
 class CarouselController extends Controller
 {
@@ -26,11 +28,17 @@ class CarouselController extends Controller
             'header' => 'required|string',
             'body' => 'required|string',
         ]);
-        $full_path = $request->file('image')->store('public', 'carousels');
+        // $full_path = $request->file('image')->store('public', 'carousels');
+        $file = $request->file('image');
+        $image_manager = new ImageManager(new Driver());
+        $img  = $image_manager->read($file);
+        $resized = $img->cover(1154, 487, 'center');
+        $path = 'carousels/' . $file->hashName();
+        $resized->save(public_path('storage/' . $path));
         $carousel = Carousel::create([
             'header' => $request->input('header'),
             'body' => $request->input('body'),
-            'image' => $full_path,
+            'image' => $path,
         ]);
 
         return redirect(route('admin.index'));
@@ -46,20 +54,31 @@ class CarouselController extends Controller
         $data = $request->validate([
             'image' => 'image',
             'header' => 'required|string',
-            'body' => 'required|string',
+            'body' => 'string',
         ]);
+
         $carousel->update($request->except('image'));
+
         if ($request->file('image')) {
-            File::delete(public_path('user_uploads/carousels/banners/'.$carousel->image));
-            $file = $request->file('image');
-            if (Carousel::exists()) {
-                $file_name = date('YmdHi').(Carousel::orderBy('created_at', 'desc')->first()->id + 1).'.'.$request->file('image')->extension();
-            } else {
-                $file_name = date('YmdHi').'1.'.$request->file('image')->extension();
+            if (File::exists(public_path('storage/'.$carousel->image))) {
+                File::delete(public_path('storage/'.$carousel->image));
             }
-            $file->move(public_path('user_uploads/carousels'), $file_name);
-            $carousel['image'] = 'user_uploads/carousels/'.$file_name;
+
+            $file = $request->file('image');
+
+            $image_manager = new ImageManager(new Driver());
+
+            $img  = $image_manager->read($file);
+
+            $resized = $img->cover(1154, 487, 'center');
+
+            $path = 'carousels' . $file->hashName();
+
+            $resized->save(public_path('storage/' . $path));            
+            
+            $carousel['image'] = $path;
         }
+        
         $carousel->save();
         return redirect(route('admin.carousels.index'));
     }

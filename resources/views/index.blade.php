@@ -268,13 +268,13 @@
 
         <!-- story start -->
         <div class="container home-story">
-            <div class="text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center py-2 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="text-primary text-uppercase">STORIES</h6>
                 <h1 class="mb-3">CATCH UP WITH OUR UP-TO-DATE STORIES</h1>
             </div>
             <div class="container-custom wow fadeInUp" data-wow-delay="0.3s">
                 <div class="image-section">
-                    <img src="{{ asset('img/about-us-header.jpg') }}" alt="Golden Gate Bridge">
+                    <img src="{{ asset('img/about-us-header.jpg') }}" alt="Ethiopian Christian Students">
                 </div>
                 <div class="articles-section">
                     @foreach ($stories as $story)
