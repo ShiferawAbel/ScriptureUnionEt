@@ -183,17 +183,17 @@ class RequestIdController extends Controller
         $sample->save(public_path('id_cards/' . str_replace('/', '_' , $requestId->uuid) . '.png'));
         return redirect(route('admin.requestIds.index'));
     }
-
+    
     public function show(RequestId $request_id)
     {
         return view('id', compact('request_id'));
-
+        
     }
     public function edit(RequestId $request_id)
     {
         return view('admin.request_ids.edit', compact('request_id'));
     }
-
+    
     public function update(RequestId $request_id, Request $request)
     {
         $data = $request->validate([
@@ -208,6 +208,7 @@ class RequestIdController extends Controller
             'nationality_eng' => 'required|string',
             'profile' => 'image|mimes:jpeg,png,jpg',
         ]);
+        File::delete(public_path('id_cards/'.$request_id->uuid));
         $manager = new ImageManager(new Driver());
         $sample = $manager->read(public_path('img/id_sample.png'));
         $sample->text($request->full_name_amh, 350, 160, function($font) {
