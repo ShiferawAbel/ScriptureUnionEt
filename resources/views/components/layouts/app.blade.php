@@ -3,25 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The Scripture Union of Ethiopia (SUE) is a community of believers dedicated to living and serving by reading and obeying the word of God.">
-    <meta name="keywords" content="Scripture Union, Ethiopia, Christian Ministry, Youth Ministry, Bible Study, Salvation">
-    <meta name="author" content="Scripture Union of Ethiopia">
-    <title>The Scripture Union of Ethiopia (SUE)</title>
-    <link rel="canonical" href="https://www.suethiopia.org">
-    <meta property="og:title" content="The Scripture Union of Ethiopia (SUE)" />
-    <meta property="og:description"
-        content="A community of believers dedicated to living and serving by reading and obeying the word of God." />
-    <meta property="og:image" content="https://www.suethiopia.org/img/Asset 3" />
-    <meta property="og:url" content="https://www.suethiopia.org" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Scripture Union of Ethiopia (SUE)" />
-    <meta name="twitter:description"
-        content="A community of believers dedicated to living and serving by reading and obeying the word of God." />
-    <meta name="twitter:image" content="https://www.suethiopia.org/images/logo.png" />
-    <meta name="twitter:site" content="@SUethiopia" />
+    <meta name="description" content="@yield('meta_description', 'The Scripture Union of Ethiopia (SUE) is a community of believers dedicated to living and serving by reading and obeying the word of God.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Scripture Union, Ethiopia, Christian Ministry, Youth Ministry, Bible Study, Salvation')">
+    <meta name="author" content="@yield('meta_author', 'Scripture Union of Ethiopia')">
+    <title>@yield('meta_title', 'The Scripture Union of Ethiopia (SUE)')</title>
+    <link rel="canonical" href="@yield('meta_canonical', 'https://www.suethiopia.org')">
+    <meta property="og:title" content="@yield('meta_og_title', 'The Scripture Union of Ethiopia (SUE)')" />
+    <meta property="og:description" content="@yield('meta_og_description', 'A community of believers dedicated to living and serving by reading and obeying the word of God.')" />
+    <meta property="og:image" content="@yield('meta_og_image', 'https://www.suethiopia.org/img/Asset 3')" />
+    <meta property="og:url" content="@yield('meta_og_url', 'https://www.suethiopia.org')" />
+    <meta property="og:type" content="@yield('meta_og_type', 'website')" />
+    <meta name="twitter:card" content="@yield('meta_twitter_card', 'summary_large_image')" />
+    <meta name="twitter:title" content="@yield('meta_twitter_title', 'The Scripture Union of Ethiopia (SUE)')" />
+    <meta name="twitter:description" content="@yield('meta_twitter_description', 'A community of believers dedicated to living and serving by reading and obeying the word of God.')" />
+    <meta name="twitter:image" content="@yield('meta_twitter_image', 'https://www.suethiopia.org/images/logo.png')" />
+    <meta name="twitter:site" content="@yield('meta_twitter_site', '@SUethiopia')" />
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- Favicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -129,7 +127,8 @@
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a class="border-bottom" href="https://t.me/aeztechnologies">AEZ Technologies</a>
+                            Designed By <a class="border-bottom" href="https://t.me/aeztechnologies">AEZ
+                                Technologies</a>
                         </div>
                     </div>
                 </div>
