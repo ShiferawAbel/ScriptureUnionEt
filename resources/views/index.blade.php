@@ -22,7 +22,7 @@
               @foreach ($carousels as $carousel)
                 @if ($carousel->story)
                   <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->image) }}" alt="">
+                    <img class="img-fluid" src="{{ asset('storage/' . $carousel->story->cover_img) }}" alt="">
                     <div class="position-absolute">
                       <div class="container carousel-desc">
                         <div class="row justify-content-center">

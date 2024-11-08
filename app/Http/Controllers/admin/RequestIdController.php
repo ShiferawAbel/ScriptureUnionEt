@@ -286,15 +286,7 @@ class RequestIdController extends Controller
             $font->align('start');
             $font->valign('top');
         });
-
-        $sample->text($request_id->uuid, 140 , 106, function($font) {
-            $font->file(public_path('/admin-resources/font/Nunito-Regular.ttf'));
-            $font->size(25);
-            $font->color('#000');
-            $font->align('start');
-            $font->valign('top');
-            
-        });
+        
         if ($request->hasFile('profile')) {
             File::delete(public_path('storage/'.$request_id->profile));
             $path = $request->file('profile')->store('id_profiles', 'public');

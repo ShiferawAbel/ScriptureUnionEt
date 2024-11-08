@@ -31,7 +31,7 @@ class StoryController extends Controller
     {
         // dd($request->input('carousel'));
         $data = $request->validate([
-            'title' => ['required'],
+            'title' => ['required', 'unique:stories'],
             'cover_img' => 'required|image',
             'content' => ['required'],
             'images.*' => 'required|image|mimes:jpg,jpeg,png'
@@ -41,7 +41,7 @@ class StoryController extends Controller
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);
         $resized = $img->cover(1154, 487, 'center');
-        $path = 'stories/cover_img' . $file->hashName();
+        $path = 'stories/cover_img/' . $file->hashName();
         $resized->save(public_path('storage/' . $path));
         $data['cover_img'] = $path;
 
