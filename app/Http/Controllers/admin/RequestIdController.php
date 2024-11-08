@@ -135,18 +135,17 @@ class RequestIdController extends Controller
         });
 
         function generateRandomId($prefix = 'SUE', $length = 3) {
-            do {
-                $randomNumber = str_pad(mt_rand(1, 999), $length, '0', STR_PAD_LEFT); 
-                $exists = RequestId::where('uuid', $prefix . '/' . $randomNumber)->exists();
-            } while ($exists);
-        
             $year = Carbon::now()->month > 9 ? date('Y')-7 : date('Y')-8;
             $suffix = substr($year, -2);
+
+            do {
+                $randomNumber = str_pad(mt_rand(1, 999), $length, '0', STR_PAD_LEFT); 
+                $exists = RequestId::where('uuid', $prefix . '/' . $randomNumber . '/' . $suffix)->exists();
+            } while ($exists);
+        
         
             return $prefix . '/' . $randomNumber . '/' . $suffix;
         }
-        
-        
         
         $randomId = generateRandomId($prefix = $request->prefix);
         $sample->text($randomId, 40 , 490, function($font) {
