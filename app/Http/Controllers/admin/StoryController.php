@@ -101,10 +101,22 @@ class StoryController extends Controller
             $image_manager = new ImageManager(new Driver());
             $img  = $image_manager->read($file);
             $resized = $img->cover(1154, 487, 'center');
-            $path = 'stories/cover_img' . $file->hashName();
+            $path = 'stories/cover_img/' . $file->hashName();
             $resized->save(public_path('storage/' . $path));
             $data['cover_img'] = $path;
         }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('stories/images', 'public');
+                ImageModel::create([
+                    'image' => $path,
+                    'story_id' => $story->id,
+                ]);
+            }
+        }
+
+        // dd($data);
         $story->update($data);
 
         $story->save();

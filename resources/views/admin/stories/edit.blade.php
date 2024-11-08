@@ -26,14 +26,21 @@
             </div>
 
             <textarea name="content" id="editor"></textarea>
+
+            <div class="form-group mb-3 mt-4" id="bannerBox">
+                <label for="images-related">Add Additional Images To Your Story Here: </label>
+                <input id="images-related" name="images[]" type="file" multiple>
+                @error('images[]')
+                  <p>{{ $message }}</p>
+                @enderror
+              </div>   
             <button type="submit">Submit</button>
             </form>
         </div>
+        {{-- {{dd()}} --}}
     </div>
     </div>
-    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js">
-        {{ old('title') }}
-    </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <script>
         // Initialize CKEditor
@@ -43,7 +50,9 @@
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 }
             }).then(editor => {
-                editor.setData('{!! $story->content !!}');
+                const content = `{!! $story->content !!}`;
+                console.log(content);
+                editor.setData(content);
                 console.log('Editor was initialized', editor);
             })
             .catch(error => {
@@ -56,7 +65,7 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     document.getElementById('preview').src = e.target.result;
-                }
+                };
                 reader.readAsDataURL(file);
             }
         });

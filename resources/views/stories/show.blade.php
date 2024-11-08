@@ -8,7 +8,9 @@
     </div>
   </div>
   <!-- Page Header End -->
-
+  <div class="container">
+    {!! $story->content !!}
+  </div>
   <div class="container-fluid p-0" style="background-color: #2e97c4;">
     <div class="owl-carousel header-carousel position-relative">
       @foreach ($story->images as $image)
