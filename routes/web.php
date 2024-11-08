@@ -54,7 +54,25 @@ Route::get('about/leadership', [AboutController::class, 'leadership'])->name('le
 
 
 Route::get('/donate', function () {
-    return view('donate');
+    $meta_data = [
+        'title' => 'Donate - The Scripture Union of Ethiopia (SUE)',
+        'description' => 'Support the Scripture Union of Ethiopia by donating and helping us in our mission to serve through reading and obeying the word of God.',
+        'keywords' => 'Scripture Union, Ethiopia, Donate, Christian Ministry, Youth Ministry, Bible Study, Salvation',
+        'author' => 'Scripture Union of Ethiopia (suethiopia)',
+        'canonical' => env('APP_URL') . '/donate',
+        'og_title' => 'Donate - The Scripture Union of Ethiopia (SUE)',
+        'og_description' => 'Support the Scripture Union of Ethiopia by donating and helping us in our mission to serve through reading and obeying the word of God.',
+        'og_image' => env('APP_URL') . '/images/logo.png',
+        'og_url' => env('APP_URL') . '/donate',
+        'og_type' => 'website',
+        'twitter_card' => 'summary_large_image',
+        'twitter_title' => 'Donate - The Scripture Union of Ethiopia (SUE)',
+        'twitter_description' => 'Support the Scripture Union of Ethiopia by donating and helping us in our mission to serve through reading and obeying the word of God.',
+        'twitter_image' => env('APP_URL') . '/images/logo.png',
+        'twitter_site' => '@SUethiopia',
+    ];
+    
+    return view('donate', compact('meta_data'));
 })->name('donate');
 
 Route::get('/contact-us', [ContactController::class, 'create'])->name('contacts.create');
