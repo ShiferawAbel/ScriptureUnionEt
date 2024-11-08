@@ -144,7 +144,7 @@ class RequestIdController extends Controller
             } while ($exists);
         
         
-            return $prefix . '/' . $randomNumber . '/' . $suffix;
+            return strtoupper($prefix) . '/' . $randomNumber . '/' . $suffix;
         }
         
         $randomId = generateRandomId($prefix = $request->prefix);
