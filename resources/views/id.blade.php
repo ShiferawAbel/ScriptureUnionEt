@@ -9,7 +9,7 @@
                 <p class="text-muted"><strong>Job Title:</strong> {{ $request_id->role_eng }}</p>
                 <div class="text-left mt-2">
                     <p><strong>Office Address:</strong> {{ $request_id->address_eng }}</p>
-                    <p><strong>Phone:</strong> +251 123 456 789</p>
+                    <p><strong>Phone:</strong> {{$request_id->phone}}</p>
                     <div class="text-center mt-4"> <img src="{{asset('qr_codes/'.str_replace('/', '_', $request_id->uuid).'.png')}}" alt="QR Code"> </div>
                 </div>
             </div>
