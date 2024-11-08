@@ -2,7 +2,7 @@
   <!-- Page Header Start -->
   <div class="story-header">
     <img class="cover-img" src="{{ asset('storage/'.$story->cover_img) }}" alt="">
-    <img class="suLogo" src="{{ asset('img/su-logo.png') }}" alt="">
+    <img class="suLogo" src="{{ asset('img/Asset 3.png') }}" alt="">
     <div class="story-title">
       <h1>{{ $story->title }}</h1>
     </div>
