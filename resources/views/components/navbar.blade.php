@@ -48,7 +48,7 @@
                 <a href="#" class="nav-link dropdown-toggle {{ request()->is('stories*', 'annoucments*', 'videos*', 'newsletters*') ? 'active' : '' }}" data-bs-toggle="dropdown">Resources</a>
                 <div class="dropdown-menu fade-up m-0">
                     <a href="{{ route('stories.index') }}" class="dropdown-item">Stories</a>
-                    {{-- <a href="{{ route('annoucments.index') }}" class="dropdown-item">Annoucments</a> --}}
+                    <a href="{{ route('annoucments.index') }}" class="dropdown-item">Announcments</a>
                     {{-- <a href="{{ route('videos.index') }}" class="dropdown-item">Videos</a> --}}
                     {{-- <a href="{{ route('newsletters.index') }}" class="dropdown-item">News Letters</a> --}}
                     {{-- <a href="{{ route('videos.index') }}" class="dropdown-item">Salvation Stories</a> --}}

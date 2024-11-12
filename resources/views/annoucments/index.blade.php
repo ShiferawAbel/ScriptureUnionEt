@@ -1,6 +1,6 @@
 <x-layouts.app>
     <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
+    <div class="container-fluid page-header-about py-5" style="margin-bottom: 6rem;">
         <div class="container py-5">
             <h1 class="display-3 text-white mb-3 animated slideInDown">News and Annoucments</h1>
         </div>
@@ -14,8 +14,7 @@
         <a href="{{ route('annoucments.show', $annoucment) }}">
               <div class="card upcoming-event">
                 <div class="card-image">
-                  <img class="card-img-top" src="{{ asset('user_uploads/annoucments/thumbnails/'.$annoucment->thumbnail) }}">
-                  <span class="card-banner">Upcoming</span>
+                  <img class="card-img-top" src="{{ asset('storage/'.$annoucment->thumbnail) }}">
                   <span class="card-title">{{ $annoucment->headline }}</span>
                 </div>
                 <div class="card-body">
