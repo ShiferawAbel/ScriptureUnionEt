@@ -115,7 +115,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/annoucments', [App\Http\Controllers\admin\AnnoucmentController::class, 'index'])->name('admin.annoucments.index');
     Route::get('/annoucments/create', [App\Http\Controllers\admin\AnnoucmentController::class, 'create'])->name('admin.annoucments.create');
     Route::post('/annoucments/store', [App\Http\Controllers\admin\AnnoucmentController::class, 'store'])->name('admin.annoucments.store');
-    Route::get('/annoucments/{annoucment:slug}', [App\Http\Controllers\admin\AnnoucmentController::class, 'show'])->name('admin.annoucments.show');
+    Route::get('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'show'])->name('admin.annoucments.show');
     Route::get('/annoucments/{annoucment}/edit', [App\Http\Controllers\admin\AnnoucmentController::class, 'edit'])->name('admin.annoucments.edit');
     Route::patch('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'update'])->name('admin.annoucments.update');
     Route::delete('/annoucments/{annoucment}', [App\Http\Controllers\admin\AnnoucmentController::class, 'destroy'])->name('admin.annoucments.destroy');

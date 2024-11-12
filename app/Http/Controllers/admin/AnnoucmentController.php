@@ -31,7 +31,7 @@ class AnnoucmentController extends Controller
         $annoucment = Annoucment::create($data);
         $annoucment['thumbnail'] = $full_path;
         $annoucment->save();
-        return redirect(route('admin.annoucments.show', $annoucment->slug));
+        return redirect(route('admin.annoucments.show', $annoucment));
     }
 
     public function show(Annoucment $annoucment)

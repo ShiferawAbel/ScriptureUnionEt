@@ -5,10 +5,11 @@
         </div>
     </div>
     <div class="container row">
-    @foreach ($annoucments as $annoucment)
-    @php
+      @foreach ($annoucments as $annoucment)
+      {{-- @dd($annoucment) --}}
+      @php
       $body = substr($annoucment->body, 0, 100).'...'
-    @endphp
+      @endphp
     <div class="col-md-4 upcoming-event">
         <a href="{{ route('admin.annoucments.show', $annoucment) }}">
               <div class="card upcoming-event">
