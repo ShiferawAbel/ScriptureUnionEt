@@ -1,13 +1,18 @@
 <x-layouts.app>
     <!-- Page Header Start -->
-    <div class="container-fluid page-header-annoucment py-5" style="margin-bottom: 6rem; background: linear-gradient(rgba(6, 3, 21, .5), rgba(6, 3, 21, .5)), url({{asset('storage/'.$annoucment->thumbnail)}}) center no-repeat;
-">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $annoucment->headline }}</h1>
+    <!-- Page Header Start -->
+    <div class="story-header">
+        <img class="cover-img" src="{{ asset('storage/' . $annoucment->thumbnail) }}" alt="">
+        <img class="suLogo" src="{{ asset('img/Asset 3.png') }}" alt="">
+        <div class="story-title">
+            <h1>{{ $annoucment->headline }}</h1>
         </div>
     </div>
-    <!-- Page Header End -->
-    <div class="container p-5">
-        {{ $annoucment->body }}
+    <div class="container">
+        <div class="row">
+            <div class="col-12"> {!! $annoucment->body !!} </div>
+            <div class="col-12"> <img class="img-fluid w-50" src="{{ asset('storage/' . $annoucment->thumbnail) }}"
+                    alt="Announcement Image"> </div>
+        </div>
     </div>
 </x-layouts.app>
