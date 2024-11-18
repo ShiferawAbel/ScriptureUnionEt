@@ -17,7 +17,7 @@
                     <img src="{{ asset('img/surafel.png') }}" alt="Dr. Surafel Mulatu" class="img-fluid text-center">
                     <div class="leader-info text-center">
                         <h4 class="text-center">Dr. Surafel Mulatu</h4>
-                        <h6 class="text-center">Board Co-Chair</h6>
+                        <h6 class="text-center">Board Vice-Chair</h6>
                     </div>
                 </div>
                 <div class="col-md-4 row leader-card align-items-center">

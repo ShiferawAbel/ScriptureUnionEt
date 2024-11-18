@@ -36,7 +36,7 @@ class StoryController extends Controller
             'content' => ['required'],
             'images.*' => 'required|image|mimes:jpg,jpeg,png'
         ]);
-        // dd($request);
+
         $file = $request->file('cover_img');
         $image_manager = new ImageManager(new Driver());
         $img  = $image_manager->read($file);
