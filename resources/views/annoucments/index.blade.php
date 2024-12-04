@@ -2,7 +2,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header-about py-5" style="margin-bottom: 6rem;">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">News and Annoucments</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">News and Announcements</h1>
         </div>
     </div>
     <div class="container row">
@@ -23,7 +23,7 @@
                   </div>
                   <div class="card-action">
                     <a href="{{route('annoucments.show', $annoucment)}}">Read More</a>
-                    <span class="released-date">9min ago</span>
+                    {{-- <span class="released-date">9min ago</span> --}}
                   </div>
                 </div>
               </div>
