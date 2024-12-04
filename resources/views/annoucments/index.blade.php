@@ -22,7 +22,7 @@
                     <p class="text-dark">{{ $body }}</p>
                   </div>
                   <div class="card-action">
-                    <a href="#">Read More</a>
+                    <a href="{{route('annoucments.show', $annoucment)}}">Read More</a>
                     <span class="released-date">9min ago</span>
                   </div>
                 </div>

@@ -227,7 +227,7 @@
                 <p>Join our growing community and stay updated with our latest teachings, events, and spiritual growth
                     resources. By subscribing to our channel, you'll be the first to know about new videos, inspiring
                     messages, and opportunities to connect with other believers.</p>
-                <button class="Subscribe_Youtube btn " disabled>Visit</button>
+                <a class="Subscribe_Youtube btn btn-outlined" href="youtube.com/channel/SUEthiopia" target="_blank">Visit</a>
             </div>
             <div class="right mt-4">
                 <img src="{{ asset('img/about-us-header.jpg') }}" alt="Promotional Image">

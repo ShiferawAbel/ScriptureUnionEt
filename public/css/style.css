@@ -1070,12 +1070,15 @@ text-decoration: none;
 }
 
 
-.image {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
+figure.image {
+    width: 60%;
+    margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+    figure.image {
+        width: 100%;
+    }
 }
 
 

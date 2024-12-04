@@ -10,7 +10,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12"> {!! $annoucment->body !!} </div>
+            <div class="container"> <p class="p-styled">{!! $annoucment->body !!}</p> </div>
             <div class="col-12"> <img class="img-fluid w-50" src="{{ asset('storage/' . $annoucment->thumbnail) }}"
                     alt="Announcement Image"> </div>
         </div>
