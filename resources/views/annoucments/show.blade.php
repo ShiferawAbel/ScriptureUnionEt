@@ -10,9 +10,13 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="container"> <p class="p-styled">{!! $annoucment->body !!}</p> </div>
-            <div class="col-12"> <img class="img-fluid w-50" src="{{ asset('storage/' . $annoucment->thumbnail) }}"
-                    alt="Announcement Image"> </div>
+            <div class="container">
+                <p class="p-styled wow fadeInUp" data-wow-delay="0.5">
+                    <img style="float: left; width: 40%; margin-right: 20px;height: 250px"
+                        src="{{ asset('storage/' . $annoucment->thumbnail) }}" alt="">
+                    {!! $annoucment->body !!}
+                </p>
+            </div>
         </div>
     </div>
 </x-layouts.app>
